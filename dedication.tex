@@ -1,0 +1,29 @@
+\pagenumbering{roman} 				
+\setcounter{page}{1}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\ #1}}
+\renewcommand{\headrulewidth}{0.1ex}
+\renewcommand{\footrulewidth}{0.1ex}
+\fancyfoot[LE,RO]{\thepage}
+\fancypagestyle{plain}{\fancyhf{}\fancyfoot[LE,RO]{\thepage}\renewcommand{\headrulewidth}{0ex}}
+
+
+\vspace*{1mm}
+
+\begin{center}
+\section*{\Huge Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\vspace*{0.7cm}
+\end{center}
+
+\noindent We would like to give thank ... acknowledgements stuff 
+
+\vspace*{0.7cm}
+\begin{flushright}
+\myauthor
+\end{flushright}
+
+\cleardoublepage

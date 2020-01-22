@@ -1,0 +1,49 @@
+%% Master Thesis Template
+%% Please update the specification through this link: https://daim.idi.ntnu.no/howto_thesis_submission.pdf
+
+\documentclass[pdftex,10pt,b5paper,twoside]{book}
+\usepackage[lmargin=25mm,rmargin=25mm,tmargin=27mm,bmargin=30mm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[colorinlistoftodos,prependcaption]{todonotes}
+%\usepackage[title]{appendix}
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\presetkeys%
+    {todonotes}%
+    {inline,backgroundcolor=yellow}{}
+
+\input{docsetup.tex}
+\input{meta.tex}
+
+\begin{document}
+
+%% PART 1
+%%The title page will be automatically generated and added by the DAIM system
+%\input{title.tex}
+\input{dedication.tex}		%% Generates page numbers before the chapters (roman numbers)
+
+%% PART 2
+\input{summary.tex}		%% Optional
+%\input{preface.tex}		%% Optional
+\input{list.tex}			%% Generate TOC, list of tables, and list of figures automatically
+\input{abbreviations.tex}	%% Optional
+
+%% PART 3 -- The Chapters
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+\input{chapter4.tex}
+\input{chapter5.tex}
+\input{chapter6.tex}
+\input{chapter7.tex}
+\input{chapter8.tex}
+\input{chapter9.tex}
+%\input{chapter_dummy.tex}
+
+%% PART 4
+\input{references.tex}	%% Edit your references in "mylib.bib"
+\input{appendix.tex}		%% Optional
+
+\end{document}
