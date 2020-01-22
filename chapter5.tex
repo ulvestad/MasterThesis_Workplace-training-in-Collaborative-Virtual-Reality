@@ -6,8 +6,59 @@
 \section{Exploration and Planning}
 The fist phase of this project required extensive experimentation and planning as the use of VR technology with collaboration and how it can contribute to the experience of young job seekers is a relatively unexplored area of research. The primary objective for this phase was implementing a immersive and collaborative experience, but how this was to be achieved needed exploration and prototyping. As the aim for this project is to evaluate the collaborative workplace training in VR it first and foremost must support a collaborative environment in the VR world. This meant we had to implement multiplayer capability into existing workplace simulations from the ongoing project financed by NAV. It was decided that we would use Photon Unity Networking (PUN) \cite{PUN} as it enhances features built into Unity's built-in networking and UNet (Unity's multiplayer framework) will become deprecated within 2021.               
 
-\subsection{Researchers Night 2019 Questionnaire Analysis}
+\subsection{Researchers' Night 2019}
+As for the last 15 years NTNU has hosted \textit{Researchers' Night} (the youths research night) as part of a an initiative throughout Europe launched in 2005 as a means to educate and invite the youth inside the research that takes place. NTNU invited students and teachers from upper secondary and adult education institutions from Trøndelag. The IMTEL lab was present with VR and AR application tryouts and during the testing and talks we conducted a questionnaire with the aim of gathering preliminary data and opinions in relation to VR and collaboration with the respect to workplace training, see Figure \ref{fig:phase1RNGroup}. The reasoning to choosing this quantitiave data gathering method was justified by several aspects. First, quantity offers more universal means and criteria for evaluating key points and making generalised conclusions based on the result set \cite{oates2005researching}. Also, predefined answers (eg. closed answers) makes the questionnaire easy to complete for participants.
 
+\begin{figure}[!h]
+    \centering
+    \captionsetup{width=.8\linewidth}
+    \includegraphics[width=.9\textwidth]{./fig/phase_1/researcherNight/RN_group.jpg}
+    \caption{Researchers' Night 2019 showing the testing of VR application in action and group members from the IMTEL lab.}
+    \label{fig:phase1RNGroup}
+\end{figure}
+
+
+\subsubsection{The questionnaire}
+The questionnaire was comprised of two sections, one with general questions with age, sex and career guidance at school. The second contained questions aimed towards VR and the IMTEL labs' job applications (note that all participants did try a VR application before answering the questionnaire). It was generated using Google Forms \footnote{https://docs.google.com/forms/} an easy and useful questionnaire tool. Most questions where closed questions meaning they had pre-defined answers. We constructed the questionnaires in such a way that it produced both nominal, ratio and ordinal data. Most significant questions was ordinal on a consistent ranked/scale questions where the participants were asked to rank their agreement from  "Strongly disagree" to "Very agree" on a scale from 1-5. 
+The full questionnaire can be found in the appendix \textcolor{red}{ADD TO APPENDIX}. 
+
+\subsubsection{Analysis}
+The questionnaire had 27 answers consisting of 78\% males and 22\%women with age distribution from 13-32. The mode being 16 years with 37\% of the participants. The data results is presented in bar and pie charts using Google Forms own utilities. There was a general agreement amongst the responds that collaborating with peers and mentors would enhance the career guidance. 77\% respondents ranked 4 and 5 (on a scale of 1-5) that they strongly agree that having peers would be beneficial, see Figure \ref{fig:phase1RNPeer}.    
+
+\begin{figure}[!h]
+    \centering
+    \captionsetup{width=.7\linewidth}
+    \includegraphics[width=.8\textwidth]{./fig/phase_1/researcherNight/RN_careerguidenceMentor.PNG}
+    \caption{Bar chart showing the participants answers with the statement "Having a similar aged peer would enhance career guidance".}
+    \label{fig:phase1RNPeer}
+\end{figure}
+
+Figure \ref{fig:RN_Apps} show the distribution of the applications which participants tried during their visit at the IMTEL lab stand.  In regards to the use of these VR applications in relation to career guidance the participant mostly agreed that they should be a part of the guidance at school, see Figure \ref{fig:RN_careerguidenceSchool}. None of the participants ranked their agreement below 3 (out of 1-5, see Figure \ref{fig:RN_VRpeer}) when asked about having a fellow peer in the VR application and that it could be beneficial. Also, 85,2\% agreed with 4 and 5 (out of 1-5) that having a mentor or teacher in the VR application could also be beneficial, the mode being a rank 5 (51,9\%).
+This shows that the participants (comprised mostly of students at upper secondary school) agree that the use of VR can be beneficial in career guidance gives them a taste of different jobs and that having multiple (both peers and mentors) players can enhance the learning outcome and thus the experience. Based on evidence from this questionnaire it is clear that this is an instating field of study and it has gives us gives insight and thus motivation. However, we must also consider the limitations of this questionnaire which falls a bit short in regards to the number of participants and has almost but not correct research target audience in respect to age and education. That being said this questionnaire was only meant as preliminary data collection for for understanding and getting an overview of the field.          
+
+\begin{figure}[!h]
+    \centering
+    \captionsetup{width=.6\linewidth}
+    \includegraphics[width=.6\textwidth]{./fig/phase_1/researcherNight/RN_Apps.PNG}
+    \caption{Pie chart showing the distribution of the applications which participants tried during their visit at the IMTEL lab stand including Fishfarm, Windmill and Construction. }
+    \label{fig:RN_Apps}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \captionsetup{width=.7\linewidth}
+    \includegraphics[width=.8\textwidth]{./fig/phase_1/researcherNight/RN_careerguidenceSchool.PNG}
+    \caption{Bar chart showing the participants answers with the statement "Such applications should be a part of the career guidance at school".}
+    \label{fig:RN_careerguidenceSchool}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \captionsetup{width=.7\linewidth}
+    \includegraphics[width=.8\textwidth]{./fig/phase_1/researcherNight/RN_VRpeer.PNG}
+    \caption{Bar chart showing the participants answers with the statement "Learning outcome is greater when having a fellow peer in the VR application".}
+    \label{fig:RN_VRpeer}
+\end{figure}
 
 \subsection{Requirements}
 
