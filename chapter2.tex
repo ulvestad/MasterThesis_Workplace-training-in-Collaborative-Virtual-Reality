@@ -2,12 +2,7 @@
 
 \chapter{Background}
 
-\section{NAV}
-NAV is currently funding a pilot project in partnership with the IMTEL lab at NTNU investigating different XR technologies and attempting to determine their viability in helping those receiving support from NAV to find employment. As part of this, NAV and IMTEL has collaborated to create several workplace experiences to introduce new working environments to potential employees in a safe and educational environment.
 
-This thesis and underlying project is a part of this, and can be considered a branch project. While normal development continues on workplaces, this project attempt to research the effects that multi-user experiences have on the learning efficacy of the users attempting to find employment through NAV's programs.
-
-%Nyttig link :) https://www.nrk.no/vestfold/nytt-pilotprosjekt_-gaming-hjelper-johan-_22_-a-velge-riktig-yrke-1.14748067
 
 
 \section{Concepts}
@@ -46,7 +41,7 @@ Although, they are quite similar it is important to note and that for this proje
 
 
   
-\subsection{Immersion and presence} \label{immersionAndPresence}
+\subsubsection{Immersion and presence} \label{immersionAndPresence}
 It's important to note the difference between presence and immersion. While immersion refers to an an objective level of fidelity, which can be measured against the immersion levels of another application, presence refers to a person's subjective feeling of being in a location while physically being in another \cite{slater2003note}. With this project we hope to increase the presence of the user in the virtual workplaces, not necessarily the immersion.
 
 \subsection{Workspace Awareness in Groupware}
@@ -123,8 +118,7 @@ In the versions of the applications made for one user at a time, the guidance co
         \end{tabularx}
 \end{table}
 
-\subsection{Tutoring}
-For those struggling to enter the workforce, it is important that they are able to get the proper impression of a workplace. If more time is spent failing certain tasks rather then organically exploring the tasks at hand, the participant may be discouraged from trying more. Having a tutor or another similar figure present to help keep them on track can be quite beneficial as long as they follow some basic tutoring principles, according to a study by Douglas C. Merill in 1995 \cite{merrill1995tutoring}.
+
 
 \subsection{Computer-Supported Collaborative Learning} \label{CSCL}
 \label{section:CSCL}
@@ -137,11 +131,15 @@ The collaborative learning aspect is interesting because not only do you use col
 
 CSCL stresses collaboration among the users. When used properly, the users will learn together, motivate each other and gain a richer learning experience in general through collaborative learning.
 
+This sentiment is further reinforced in a 2017 paper by Greenwald et al. \cite{greenwald2017technology}, which states that "\textit{...direct mutual exchange about the digital content increases their relevance for users and supports mutual confirmation. Our studies show that users can build on body language and deictic gestures just as they do with real world objects and that collaborative visual search increases the understanding of all involved users.}" This supports the theory that applying collaborative learning to the NAV project will yield favourable results. The inclusion of VR allows the users to apply deictic gestures, use demonstrations and coordinate better. In general, it is a good way to increase workspace awareness, and will support several of the activities listed in table \ref{table:awarenessActivity}.
+
+\subsection{Collaboration in Virtual Reality}
+
 %\subsection{Collaborative Virtual Environments for Supporting
 %Learning Communities}
 %Monica Divitini and Ekatarina paper 
 
-\subsection{Education in VR}
+\subsection{Education in Virtual Reality}
 A literature review in 2015 found that the uses for virtual reality in education were many, stating that "Immersive VR can offer great advantages for learning:  [...] it supports training in a safe environment avoiding potential real dangers and [...] it increases the learner's involvement and motivation..." \cite{freina2015literature}. While there are a general consent among the scientific community that virtual reality can contribute to educational efficacy there are some aspects to consider when developing VR applications for educational use. Roussos et al. describes several dimensions in relation to virtual reality and learning including \textit{technical}, \textit{orientation}, \textit{affective}, \textit{cognitive} and \textit{pedagogical} aspects \cite{roussos1999learning}, as seen in Table \ref{table:awarenessAspects}.
 
 
@@ -173,11 +171,23 @@ A literature review in 2015 found that the uses for virtual reality in education
         \end{tabularx}
 \end{table}
 
+\subsubsection{Tutoring}
+For those struggling to enter the workforce, it is important that they are able to get the proper impression of a workplace. If more time is spent failing certain tasks rather then organically exploring the tasks at hand, the participant may be discouraged from trying more. Having a tutor or another similar figure present to help keep them on track can be quite beneficial as long as they follow some basic tutoring principles, according to a study by Douglas C. Merill in 1995 \cite{merrill1995tutoring}.
+
 \subsection{Gamification}
 Gamification has been a common practice of enhancing a service by including game design principles in a non-game context in order to add value and thereby encourage the user to complete tasks which might seem less interesting on their own. A study by Hamari et al. \cite{hamari2014does} showed that the process yields positive effects and concludes that gamification does work. The IMTEL lab has used gamification principles in several of their projects as a mean to engage its users.   
 
+\subsubsection{Serious Games}
+Serious games is a subsection of games that do not hold entertainment as their core principle. They can be made to tell a story, educate players about a topic or serve as an immersive way to explore a location otherwise inaccessible\cite{susi2007serious}. They offer a way to use gamification principles directly in an application, but even so, they differ somewhat from normal games when it comes to development.
+
+Using serious games for training and education comes with few requirements. For the user to gain anything, it is important that they can gain feedback and be properly assessed. They must also be set up properly to offer the correct level of challenge. Too little, and the player loses interest, while too much difficulty can cause anxiety and stres\cite{de2014serious}.
+
 \section{Technologies}
-This section briefly explains some of the main technologies and frameworks that were used during the development of the applications. 
+\label{sec:technologies}
+This section briefly explains some of the main technologies and frameworks that were used during the development of the artefacts necessary for the projects. 
+
+\subsection{Git}
+Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project we used GitLab \cite{GitLab} as Git-repository manager since the IMTEL lab has their own codebase there.
 
 \subsection{Unity}
 Unity is one of the most common game development engines used recently \cite{unity}. As this project builds an already established project, the same tools need to be used. Unity allows for quick editing of a scene, and provides a powerful toolset within its layers for developers. Scripting can be done with the C\# coding language when necessary, and it integrates well with numerous frameworks and plugins.
@@ -190,10 +200,14 @@ Unity is one of the most common game development engines used recently \cite{uni
 SteamVR is an API distributed by Valve Corporation. It makes development for VR significantly easier, in that we only need to target the API, and it will make it work for all the major VR headset brands without any extra effort. It also handles input from headsets, and translating the controller input to a fully animated controller inside the application \cite{steamVR}\cite{steamVRAPI}.
 
 \subsection{PUN2 - Photon Networking}
-Photon is a multiplayer framework that enables fast and easy setup of a multiplayer server and matchmaking. Specifically, their own wrapper of the framework for Unity, Photon Unity Networking (or PUN) can be imported directly into a Unity project and work seamlessly from there with minimal coding required to function. While the base level of functionality is quite simple, some more work is required to make it fit certain applications \cite{PUN}.
+Photon is a multiplayer game development framework that enables fast and easy setup of a multiplayer server and matchmaking. Specifically, their own wrapper of the framework for Unity, Photon Unity Networking (or PUN) can be imported directly into a Unity project and work seamlessly from there with minimal coding required to function. While the base level of functionality is quite simple,  some work is required to make it fit more advanced certain applications \cite{PUN}. 
 
-\subsection{Git}
-Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project we used GitLab \cite{GitLab} as Git-repository manager since the IMTEL lab has their own codebase there.
+The framework operates on an application/version system. For every program you intend to create and use with Photon, you need to register with Photon as its own application. You can then use this to watch oversee traffic, manage subscriptions, etc. Each application also supports versioning. If two players running the same program have different versions of it, as dictated by the \textit{GameVersion} variable, they will not be able to connect to each other, even if they're on the same application ID. With this, it can be ensured that players will only connect to those on the same version, hindering serious bugs from appearing due to differences in code or scenes
+
+Photon comes with several features straight out of the box, including matchmaking, in-room communication and dedicated servers. This makes it well suited for creating the required artefacts for the project. Features can be customised as needed, and while one can use the provided example scripts for basic game objects, they do not properly account for all the logic a game object can contain. In most cases, a custom script implementing the API has to be created to cover the needed functionality. As mentioned earlier, one of the artefacts of the project is planned to be a general platform which can be used to develop new projects without needing to do the more basic setup of Photon every time. This would include thins like voice chat, lobbies, launchers and avatar functionality.
+
+It's therefore important that sufficient time is set aside to not only learn the framework, but also create general solutions that can then be refined in more specific scripts on a per-need basis.
+
 
 
 \subsection{Head-mounted displays}
