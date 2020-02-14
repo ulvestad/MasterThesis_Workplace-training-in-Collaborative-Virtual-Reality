@@ -4,7 +4,7 @@
 \label{chap:phase1}
 
 \section{Exploration and Planning}
-The fist phase of this project required extensive experimentation and planning as the use of VR technology with collaboration and how it can contribute to the experience of young job seekers is a relatively unexplored area of research. The primary objective for this phase was implementing a immersive and collaborative experience, but how this was to be achieved needed exploration and prototyping. As the aim for this project is to evaluate the collaborative workplace training in VR it first and foremost must support a collaborative environment in the VR world. This meant we had to implement multiplayer capability into existing workplace simulations from the ongoing project financed by NAV. It was decided that we would use Photon Unity Networking (PUN) \cite{PUN} as it enhances features built into Unity's built-in networking and UNet (Unity's multiplayer framework) will become deprecated within 2021.               
+The first phase of this project required extensive experimentation and planning as the use of VR technology with collaboration and how it can contribute to the experience of young job seekers is a relatively unexplored area of research. The primary objective for this phase was implementing a immersive and collaborative experience, but how this was to be achieved needed exploration and prototyping. As the aim for this project is to evaluate the collaborative workplace training in VR it first and foremost must support a collaborative environment in the VR world. This meant we had to implement multiplayer capability into existing workplace simulations from the ongoing project financed by NAV. It was decided that we would use Photon Unity Networking (PUN) \cite{PUN} as it enhances features built into Unity's built-in networking and UNet (Unity's multiplayer framework) will become deprecated within 2021.               
 
 \subsection{Researchers' Night 2019}
 The last 15 years NTNU has hosted \textit{Researchers' Night} (the youths research night) as part of a an initiative throughout Europe launched in 2005 as a means to educate and invite the youth inside the research that takes place. September 27 NTNU invited students and teachers from upper secondary and adult education institutions from Trøndelag. The IMTEL lab was present with VR and AR application tryouts and during the testing and talks we conducted a questionnaire with the aim of gathering preliminary data and opinions in relation to VR and collaboration with the respect to workplace training, see Figure \ref{fig:phase1RNGroup}. The reasoning to choosing this quantitiave data gathering method was because quantity offers more universal means and criteria for evaluating key points and making generalised conclusions based on the result set \cite{oates2005researching}. Also, predefined answers (eg. closed answers) makes the questionnaire easy to complete for participants.
@@ -138,7 +138,23 @@ Testing of the first prototype took place with the help of NAV. Two laptops and 
 \end{figure}
 
 
-\subsection{User test data}
+\subsection{Expert Test Data}
+During the development of the first prototype, the opportunity was taken to gather some feedback from visitors to the lab who had expertise in at least one of the relevant fields related to the project. For example, people with a lot of VR experience, welfare workers and other types of expertise. Through these discussions, subtle changes could be made to the prototype and the plans for the next phase to better include the new knowledge. While some of it was new, parts of it simply confirmed what was already planned.
+
+The first time was a visit during a day dedicated to technology enhanced learning. After having tested the prototype so far, some feedback was given. This was mostly related to visual clarity and communication, and could be distilled into three points. First of all, since the fingers of the avatars were not animated, they felt that some other way of displaying accurate deictic gestures were needed, like a laser pointer. This was valuable feedback, and the decision was made to include the feature for the next iteration. 
+
+Next was voice, a feature that was already planned, but the importance of it was certainly highlighted. It became quite clear that without voice communication, the artefact was simply not usable for anything but two people with VR gear in the same room, a fairly unlikely occurrence outside of a VR lab.
+
+Finally, some comments were made about the avatar, which was at this point in time a grey capsule with a grey head and hands. There were some suggestions that another avatar would allow the users to immerse themselves more easily. 
+
+At another point in time, a presentation was held for the lab courtesy of a leading actor in the field, focusing on collaboration in virtual reality. The company itself has carved out a niche by serving customers with virtual reality meeting spaces where they can share 3d models and inspect and discuss projects while being a country apart. The subject of the avatars was discussed, as the company used full body avatars, as opposed to floating hands, body and a head. Correctly animating and interpolating the limbs and legs of the avatar was apparently quite an undertaking, and needed a lot of time, maths and skilled animators. While implementing an avatar like this was deemed out of scope, it was decided that the avatar should be updated in some manner to more accurately look human for the next phase, while still considering the uncanny valley. 
+
+%Dimension10 avatar/real
+
+
+\subsection{User Test Data}
+As per the plan, data was gathered in phase 1 through a semi-structured interview. As the raw data for this can be quite large, it can be found in appendix \ref{}.
+
 
 \subsection{Analysis}
 \subsubsection{Qualitative Textual Data Analysis}
