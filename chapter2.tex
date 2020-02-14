@@ -211,7 +211,7 @@ Git is a version-control-system for collaborative software development work. It 
 
 \subsection{Unity}
 \label{section: untiy}
-Unity is one of the most common game development engines used recently \cite{unity}. It is free to use, has a large community and a rich assets store. Unity allows for both 2D and 3D game development with support of physics, advanced graphics rendering and has basic and complex game objects ready to use. As this project contributes to an already established project, the same tools need to be used. Unity allows for quick editing of a scene, and provides a powerful toolset within its layers for developers. Scripting can be done with the C\# coding language when necessary, and it integrates well with numerous frameworks and plugins.
+Unity is one of the most common game development engines used recently \cite{unity}. It is free to use, has a large community and a rich assets store. Unity allows for both 2D and 3D game development with support of physics, advanced graphics rendering and has basic and complex game objects ready to use. As this project contributes to an already established project, the same tools need to be used. Unity allows for quick editing of a scene, and provides a powerful toolset within its layers for developers. Scripting can be done with the C\# or JavaScript coding language and it integrates well with numerous frameworks and plugins.
 
 \subsubsection{Other considerations: Unreal Engine 4}
 The other alternative to Unity for VR developments is the Unreal Engine 4 developments suite. It delivers real-time technology and provides an solid foundation for demanding applications across multiple platforms \cite{unrealEngine}. Unreal Engine 4 offers highly advanced visuals but has generally been considered to have a steeper learning curve than compared to Unity. It uses C++, a high level programming language. As mentioned in Section \ref{section: untiy} previous applications has been made using Unity so using Unreal would disallow the use of existing code.       
@@ -257,9 +257,9 @@ According to Alexander et al. (\citeyear{alexander2017virtual}) there are three 
 
 
 \subsubsection{Head-mounted display}
-Most virtual reality headsets are head-mounted devices that has separate images for each eye. This is a technique known as stereoscopy which creates the illusion of depth from images in order to provide a virtual reality experience. Commonly virtual reality headset systems comes with speakers, microphones, tracking sensors and game controllers. These systems tracks position of the player and the headset using the sensors which enables the program to correctly display part of game scenes relative to the angle and position of the head-mounted display (HMD).
+Most virtual reality headsets are head-mounted devices that has separate images for each eye. This is a technique known as stereoscopy which creates the illusion of depth from images in order to provide a virtual reality experience. Commonly virtual reality headset systems comes with speakers, microphone, tracking sensors and game controllers. These systems tracks position of the player and the headset using the sensors which enables the program to correctly display part of game scenes relative to the angle and position of the head-mounted display (HMD).
 
-Head-mounted displays gives a high feeling of immersions but there are important considerations in terms of display and hardware to be aware of as it can greatly effect the experience of the user. These are described in the Table \ref{table:hmdSpecs}. HMDs provides vivid and immersion full experiences however they can also have negative side effects like motion sickness. Reports shows that many users transition from a pleasurable sense of immersion to a high sense of discomfort, disorientation, and nausea \cite{munafo2017virtual}. 
+Head-mounted displays gives a high feeling of immersions but there are important considerations in terms of display and hardware to be aware of as it can greatly effect the experience of the user. These are described in the Table \ref{table:hmdSpecs}. HMDs provides a vivid and immersion full experiences however they can also have negative side effects like motion sickness. Reports shows that many users transition from a pleasurable sense of immersion to a high sense of discomfort, disorientation, and nausea \cite{munafo2017virtual}. 
 
 \begin{table}[!ht]
       \centering
@@ -276,7 +276,7 @@ Head-mounted displays gives a high feeling of immersions but there are important
         Refresh rate & How many frames the display can display per second. The higher the refresh rate the smoother the experience is. To avoid motion sickness in VR it is recommended to have a minimum of 90 Hz. 
         \\
         \vspace{0.2cm}
-        Field of view (FOV) & How much the user can see of the virtual world. The higher the field of view the more the user can see without rotating the head.
+        Field of view (FOV) & How much the user can see of the virtual world. The higher the field of view the more the user can see without rotating the head. A narrow FOV can make the user feel like they are looking at a screen through binoculars.
         \\
         \bottomrule
         \label{table:hmdSpecs}
@@ -284,7 +284,7 @@ Head-mounted displays gives a high feeling of immersions but there are important
 \end{table}
 
 
-Since the project uses OpenVR and SteamVR we are not limited to the development of software for specific head-mounted displays. The IMTEL lab offers several modern HMDs including HTC Vive Pro, Valve Index, HP Reverb Mixed Reality and numerous Oculus headsets. The main difference between these HMDs is the use of "base stations" - wall mounted tracking sensors. HTC Vive Pro (seen in Figure \ref{fig:htcVivePro}) uses these sensors, whereas the HP Reverb (seen in Figure \ref{fig:hpReverb}) does not. Instead it tracks controllers and position using built in sensors in the headset. This is useful when performing test outside the IMTEL lab as there is no need to use base stations.   
+Since this thesis will use OpenVR and SteamVR we are not limited to the development of software for specific head-mounted displays. The IMTEL lab offers several modern HMDs including HTC Vive Pro, Valve Index, HP Reverb Mixed Reality and numerous Oculus headsets. The main difference between these HMDs is the use of \textit{base stations}, i.e. wall mounted tracking sensors. HTC Vive Pro (seen in Figure \ref{fig:htcVivePro}) uses these sensors, whereas the HP Reverb (seen in Figure \ref{fig:hpReverb}) does not. Instead it tracks controllers and position using built in sensors in the headset. This is useful when performing test outside the IMTEL lab as there is no need to use base stations.   
 
 \begin{figure}[!ht]
     \centering
