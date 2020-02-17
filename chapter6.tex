@@ -3,6 +3,13 @@
 \chapter{Phase 2:  Main development}
 \label{chap:phase2}
 
+After the exploratory phase 1, phase 2 is more concerned with gathering concrete data. Functional requirements have been revised as a result of data gathered in phase 1, and more focus will be placed on creating a solid foundation as one of the major artefacts of the project. As the data in phase 1 indicated strongly toward a preference for multi-user experiences for workplace training, phase 2 can proceed mostly as planned.
+
+By spending a lot of time with the tools selected for the project in the first phase, it has become apparent as to why a general solution is needed. While some custom logic will always be needed, the overarching plan for the NAV project is to create a \textit{workplace experience catalogue} that will allow users to browse workplaces as needed. It's therefore paramount that the experience is the same to satisfy user expectations. A general solution will also produce clearer results that are not muddied by having different parts of the application respond, operate or appear differently. Less time can be spent creating fundamental logic, and more time spent on making sure that the custom logic parts work well.
+
+With this mind, the development work can be said to be split into two parts. One part will concern itself will implementing and creating a fully functional multi-user workplace experience as one of the two primary artefacts of the project. The other artefact and effort will be devoted to creating the general framework and mapping the process needed to convert a workplace experience to multi-user environment. As the artefacts created here will serve as a foundation for further development and research, a significant portion of time has been spent making sure that the artefacts created are up to the IMTEL lab standards, as well as following software architecture principles. In section \ref{} the details of this process will be explained. The following sections will detail the specific changes made to the artefact concerning the fully implemented workplace.
+
+
 \section{Planning and Changes}
 
 
@@ -35,9 +42,9 @@ Considering these criteria, the newly developed car mechanic workplace was chose
 
 \subsubsection{VR}
 \textcolor{red}{Skrive litt om laser/pointers, avatarer etc, ting vi har gjort for immersion/presence}
-In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct. Finding a way to let players highlight either their own location or the location of a specific object was also taking into consideration, and was decided to be implemented as long as time allowed for it. 
+In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct. Finding a way to let players highlight either their own location or the location of a specific object was also taken into consideration. After some discussion, the decision was made to implement a form of laser pointer that can be activated for each player. The laser has significantly more accuracy than the standard hand, and can be used to pinpoint rather small objects. 
 
-perhaps most important was the possibility of direct communication. To begin with, direct voice chat has been implemented in the application. The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
+Perhaps most important was the possibility of direct communication. To begin with, direct voice chat has been implemented in the application. The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure out who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
 
 
 \section{Implementation}
@@ -52,7 +59,8 @@ For those objects that did not fit neatly into the basic entity types, it become
 
 
 \subsection{Optimisation} \label{subsec:Optimisation}
-RPCalls and bugfixing
+\textcolor{red}{RPCalls and bugfixing}
+Over the course of the implementation of the artefacts, areas that could be improved and bugs that could be fixed appeared. As they were noticed, or certain parts caused issues, the issues were taken note of and general implementation continued. If a bug or piece of code was hindering the implementation it would be fixed as needed, otherwise left for later. At the tail end of the phase, they were prioritised and ordered, and they could then be fixed, one at a time. Among these were improvements to level loading, missing collision detectors for certain items, incorrectly synchronised objects, etc. Multiple passes were made to make sure that remote procedure calls were not being sent multiple times or being looped by firing other users' event handlers and so on. 
 
 
 

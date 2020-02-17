@@ -1,22 +1,36 @@
 %===================================== CHAP 3 =================================
 
 \chapter{Related Work}
+\label{chap:relatedWork}
 The recent advancement in virtual, augmented and mixed reality (VR/AR/MR) technologies by companies such as Oculus and Microsoft 
 has contributed to the development of applications which aims to solve real world problems. The field of Computer Supported Collaborative Learning (CSCL) (see Section \ref{section:CSCL}) and Computer Supported Cooperative Work (CSCW) has according to Ens et al. over the last three decades culminated in rich theory about collaboration and how it can be more than just the sum of its parts \cite{ens2019revisiting}.
 
 Although the use of VR/AR/MR for collaborative tasks has been studied considerably over the years, not much research has gone in the field of using VR, collaboration, design principles and tools for developing and evaluating collaborative workplace training and experience. 
 
-\textcolor{red}{Inclusion Criteria}
+\subsubsection{Inclusion Criteria}
+\label{section:inclusionCriteria}
+For related work to be eligible to included in this thesis there are elements that must be present in the research paper for it to selected. These characteristics are used as inclusion criteria in order to adjust scope of the search for related work. These are listed below.
 
-This section will review and discuss related work and then compare their respective features that are relevant for this thesis. 
+\begin{itemize}
+\label{itm:inclusionCriteria}
+\setlength\itemsep{0em}
+  \item Date of publication. Must have been published within the last 5 years.
+  \item Language of publication. Must be in English or Norwegian.
+  \item Must include virtual reality (VR).
+  \item Must include either collaboration aspect or teaching/workplace training aspect.
+\end{itemize}
+
+
+This chapter will review and discuss related work and then compare their respective features that are relevant for this thesis. 
 
 
 
 
-\section{Virtual Workplace Internship Using VR}
-The IMTEL lab (see Section \ref{section:context}) is researching an ongoing project called "virtual internships" which aims to help young job seekers getting insight into various professions including road construction and fishery worker using virtual reality. Prasolova-Førland et al. \cite{prasolova2019empowering} published a paper in 2019 detailing the results of their developed concept "immersive job taste" - an immersive and interactive experience in regards to the virtual internship project at IMTEL. The paper evaluated different virtual and augmented reality prototypes (including the "Fishery VR" application) and found that results indicate a generally positive attitude towards the concept of immersive job taste \cite{prasolova2019empowering}. The idea of the prototypes is to provide the feeling and an interactive experience of a real world workplace with basic training and introduction of its everyday tasks. This is illustrated in Figure \ref{fig:FisheryVR} showcasing some of the virtual workplace internship tasks and experiences available in the FisheryVR application, including fillet cutting and boat driving. 
+\section{Virtual Workplace Internship Using Virtual Reality}
+\label{section:VRworkplaceIntership}
+The IMTEL lab (see Section \ref{section:context}) is researching an ongoing project called "virtual internships" which aims to help young job seekers getting insight into various professions including road construction and fishery worker using virtual reality. Prasolova-Førland et al. \cite{prasolova2019empowering} published a paper in 2019 detailing the results of their developed concept "immersive job taste", an immersive and interactive experience in regards to the virtual internship project at IMTEL. The paper evaluated different virtual and augmented reality prototypes (including the "Fishery VR" application) and found that results indicate a generally positive attitude towards the concept of immersive job taste \cite{prasolova2019empowering}. The idea of the prototypes is to provide the feeling and an interactive experience of a real world workplace with basic training and introduction of its everyday tasks. This is illustrated in Figure \ref{fig:FisheryVR} showcasing some of the virtual workplace internship tasks and experiences available in the FisheryVR application, including fillet cutting and boat driving. 
 
- \begin{figure}[!h]
+ \begin{figure}[!ht]
      \centering
      \includegraphics[width=.7\textwidth]{./fig/related_work/fisheryVR.png}
      \caption{FisheryVR screenshots (left) and the user (right) \cite{prasolova2019empowering}.}
@@ -25,15 +39,26 @@ The IMTEL lab (see Section \ref{section:context}) is researching an ongoing proj
 
 Prasolova-Førland et al. (\citeyear{prasolova2019empowering}) states that it can provide a low-threshold alternative or supplement internships using innovative technologies with gaming elements. Gamification for training and educational purposes is a supported method as concluded by Hamari et al. \cite{hamari2014does}. These virtual reality applications allows young job seekers to gain interest and understanding about the workplace which was evident by the project test participants as they found them to enjoyable and engaging. 
 
-However, there are several aspects to consider when using virtual reality as a immersive tool for workplace experience. This includes the importance of feedback, engagement and self-efficacy. According to Prasolova-Førland et al. (\citeyear{prasolova2019empowering}) the literature and results indicate that more feedback in the application are needed for a higher educational experience. They suggested NPCs (non-playable characters) such as colleges. This can be transferable to our project, but instead of utilising NPCs we can embed multi user functionality. This enables participation of career guides, other peers and industry representatives in the same simulation which might increase engagement and realism. It also opens up for collaboration amongst players and as the paper describes the typical self-efficacy amongst the target group (ie. young job seekers) is low, but perhaps with collaboration opportunities and feedback this can have an positive impact and contribute to the learning efficacy.  
+However, there are several aspects to consider when using virtual reality as a immersive tool for workplace experience. This includes the importance of feedback, engagement and self-efficacy. According to Prasolova-Førland et al. (\citeyear{prasolova2019empowering}) the literature and results indicate that more feedback in the application are needed for a higher educational experience. They suggested NPCs (non-playable characters) such as colleges. This can be transferable to our project, but instead of utilising NPCs we can embed multi user functionality. This enables participation of career guides, other peers and industry representatives in the same simulation which might increase engagement and realism. It also opens up for collaboration amongst players and as the paper describes the typical self-efficacy amongst the target group (i.e. young job seekers) is low, but perhaps with collaboration opportunities and feedback this can have an positive impact and contribute to the learning efficacy.  
 
 
 
+\section{ElectroVR: Collaborative Learning in Virtual Reality}
+\label{section:electroVR}
+In 2019 Greenwald et al. published a paper were they presented ElectroVR, an playground for collaborative simulation-based exploratory learning using virtual reality \cite{greenwald2019electrovr}. The project presents a demo application combining three learning approaches including embodied learning in immersive six-degree-of-freedom (6DoF)  VR,  simulation-based  exploratory  learning,  and collaborative learning. The system allows two co-located users using HTC Vive as HMDs to explore and interact with the environment which is based electricity and  magnetism simulations, see Figure \ref{fig:electroVR}.
 
-\section{Collaborative VR Neurosurgical Training}
-A 2007 paper by Kockro et al. describes their attempt at making a collaborative virtual reality environment for planning and training for neurosurgery \cite{kockro2007collaborative}. This came at a time where HMDs were less accessible, so the technology is not quite the same as is used now, but still falls within the MR spectrum. This project uses an interactive console with hand- and device-tracking that allows for manipulation of 3D data. This data is then displayed with a stereoscopic projector to the rest of the team so the collaboration can take place.
+ \begin{figure}[!ht]
+     \centering
+     \includegraphics[width=.9\textwidth]{./fig/related_work/electroVR.PNG}
+     \caption{ElectroVR in use with visualisations and avatar representation (left) \cite{greenwald2019electrovr}. }
+     \label{fig:electroVR}
+ \end{figure}
+ 
+Greenwald et al. (\citeyear{greenwald2019electrovr}) convey that the system shows off co-located, multi-user tracked virtual reality and a playback system for narrative sequences prepared by instructors. The system can therefore support the use of only peers (learners) or a more instruction focused use with a single peer and instructor. They use a client server architecture to allow for synchronisation of interactive objects such as tools or avatars. The avatars are simple representations of the users with corresponding movement which according to  Greenwald et al. \cite{greenwald2017investigating} yields a strong a sense of social presence and is effective for gesture based communication. There is also narrator functionality allowing recordings of sound to be played back to learners as part of the instructions, but there are no real-time voice chat.
 
-Perhaps the most interesting part is that they mention they underestimated the importance of collaboration for learning, stating that "\textit{...collaboration is more important than we imagined, and that the mutual exchange of individual concepts and ideas is a real benefit...}". A previous attempt had been made without the collaborative aspect, but had not achieved the same results. This lends some credence to our initial hypothesis that the efficacy of the NAV applications could be improved were multi user functionality to be introduced. 
+Noticeably the system is built on previous work and integration done by the same author in 2017 where they described \textit{"CocoVerse"}, a shared co-located virtual environment for collaboration \cite{greenwald2017multi}. The paper lacks adequate data results and analysis and cannot therefore a this point of time conclude with any legitimate findings based on the system. They do however emphasise that this is a ongoing project and that initial testing by students have given positive feedback. The future of this project will investigate the effectiveness of collaborative learning in virtual reality through rigorously testing \cite{greenwald2019electrovr}.  
+
+
 
 
 
@@ -51,34 +76,61 @@ Perhaps the most interesting part is that they mention they underestimated the i
 % \end{figure}
 
 
-\section{Language Teaching}
+\section{Other considerations}
+As described in the epigraph of this chapter (see List \ref{itm:inclusionCriteria}) we presented inclusion criteria for related work. There are however some research papers which falls short of these but contribute with interesting and noteworthy features. These will be presented in this section.     
+
+\subsection{Collaborative Virtual Reality Neurosurgical Training}
+A 2007 paper by Kockro et al. describes their attempt at making a collaborative virtual reality environment for planning and training for neurosurgery \cite{kockro2007collaborative}. This came at a time where HMDs were less accessible, so the technology is not quite the same as is used now, but still falls within the MR spectrum. This project uses an interactive console with hand- and device-tracking that allows for manipulation of 3D data. This data is then displayed with a stereoscopic projector to the rest of the team so the collaboration can take place.
+
+Perhaps the most interesting part is that they mention they underestimated the importance of collaboration for learning, stating that "\textit{...collaboration is more important than we imagined, and that the mutual exchange of individual concepts and ideas is a real benefit...}". A previous attempt had been made without the collaborative aspect, but had not achieved the same results. This lends some credence to our initial hypothesis that the efficacy of the NAV applications could be improved were multi user functionality to be introduced. 
+
+\subsection{Language Teaching in Virtual Reality}
 The IMTEL lab has produced several master thesis in relation to VR applications. One thesis by  Morte and Skjæveland \cite{morte2019effects} is not directly relevant in regards to workplace training, but their application has features which can be beneficial for this project. The project focused on language teaching using collaborative techniques to help immigrants learn Norwegian. While their focus was on language teaching, there are still some valuable experiences to learn from, particularly when it came to the technical implementation including voice-chat and their networked multiplayer framework utilisation. Morte and Skjæveland found that distributed collaboration has potential and that the increased presence affect the motivation of the  users. Their application also included that option of having symmetric or asymmetric roles for its users, meaning one can be a student and student or student and teacher displayed as avatars in the VR environment. This can be transferred to our projects where we would have the possibility to be either a job seeker or a supervisor/mentor in the workplace training environment.     
 
 \section{Comparison of related work}
- 
-Table \ref{table:comparisonRelatedWork} provides an overview the relevant features the different related work have. It is only intended to summarise the the superficial aspects of the works, and act as a guide as to where one can find information about different implementations of a feature or combination thereof, e.g. multiplayer and VR or remote workplace training.
+Table \ref{table:comparisonRelatedWork} provides an overview of the relevant features the different related work have. The comparison includes features which we have identified as being important for this thesis by studying previous applications and existing research in the related field. 
 
+An application has the features if it uses virtual reality, has multiplayer functionality (networked connection), includes workplace training, allows for collaboration, provides real world simulations (e.g. changing a tire), allow users to talk and hear each other using microphones and speakers, users are situated in the same space (co-located) or provides functionality for remote use (users not in the same space) and it allows for users to have the same role (symmetric role) or asymmetric roles such as peer and instructor.         
+It is intended to summarise the the superficial aspects of the works, and act as a guide as to where one can find information about different implementations of a feature or combination thereof, e.g. multiplayer and VR or remote workplace training.  
+\\
+\newcommand*\ON[0]{$\surd$}
+\newcommand*\LIM[0]{$\div$}
+\\ "\ON" = has the feature.
+\\ "\LIM" = has the feature, but is limited.
 
-\begin{table}[!h]
-\centering
-\begin{tabular}{|l|p{2cm}|p{2cm}|p{2cm}|}
-\hline
-                        & Neurosurgical Training    & Archaeological excavation & Language teaching \\ \hline
-VR                      &                           &                           & X                 \\ \hline
-Multiplayer             & /                         & /                         & X                 \\ \hline
-Workplace training      &                           & X                         &                   \\ \hline
-Real-world simulation   & X                         & X                         &                   \\ \hline
-Voice-chat              &                           &                           & X                  \\ \hline
-Co-located              & X                         & X                         & X                 \\ \hline
-Remote                  &                           & X                         & X                   \\ \hline 
-Symmetric role          & X                         & X                         & X                  \\ \hline 
-Asymmetric role         &                           &                           & X                   \\ \hline 
-\end{tabular}
-\captionsetup{width=.8\linewidth}
-\caption{Comparison of applications, and relevant features for each of them.
-\\ ”X” = has the feature.
-\\”-” = has the feature, but is limited.}
-\label{table:comparisonRelatedWork}
+\begin{table}[!ht]
+    \begin{center}
+    \begin{tabular}{@{}lcccc@{}}
+           & \multicolumn{4}{c}{\textbf{Related Work}}
+    \\  \cmidrule{2-5}
+           & \textbf{Workplace}
+    \\       
+             \textbf{Features}
+           & \textbf{Internship}
+           & \textbf{ElectroVR}
+           & \textbf{Related Work}
+           & \textbf{Related Work 2}
+    \\ \midrule
+       VR                           & \ON & \ON  & \ON & 
+    \\ Multiplayer                  &     & \LIM &     & \ON 
+    \\ Workplace training           & \ON &      &     & 
+    \\ Collaboration                &     & \ON  &     & 
+    \\ Real-world simulation        & \ON & \LIM &     & 
+    \\ Voice-chat                   &     &      & \ON & 
+    \\ Co-located                   & \ON & \ON  & \ON &  
+    \\ Remote                       &     &      & \ON &     
+    \\ Symmetric role               & \ON & \ON  & \ON & \ON  
+    \\ Asymmetric role              &     & \ON  &     &
+    \\ \bottomrule
+    \end{tabular}
+    \captionsetup{width=1\linewidth}
+    \caption{Comparison of applications, and relevant features for each of them.}
+    \label{table:comparisonRelatedWork}
+    \end{center}
 \end{table}
+
+
+\subsection{Our implementation} 
+Include our application in the table with our included features. 
 
 \cleardoublepage
