@@ -207,23 +207,23 @@ Using serious games for training and education comes with few requirements. For 
 This section briefly explains some of the main technologies and frameworks that were used during the development of the artefacts necessary for the projects. 
 
 \subsection{Git}
-Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project we used GitLab \cite{GitLab} as Git-repository manager since the IMTEL lab has their own codebase there. To make Unity work with Git we needed to configure Unity for version control adding specific \textit{.gitignore} settings and using Git LFS (large file system) with corresponding \textit{.gitattributes} settings so that Git tracks large files but keeps them out of the GitLab repository. 
+Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project we used GitLab \cite{GitLab} as Git-repository manager since the IMTEL lab has their own codebase there. To make Unity work with Git we needed to configure Unity for version control adding specific \textit{.gitignore} settings and using Git LFS (large file system) with corresponding \textit{.gitattributes} settings so that Git tracks large files but keep them out of the GitLab repository. 
 
 \subsection{Unity}
 \label{section: untiy}
 Unity is one of the most common game development engines used recently \cite{unity}. It is free to use, has a large community and a rich assets store. Unity allows for both 2D and 3D game development with support of physics, advanced graphics rendering and has basic and complex game objects ready to use. As this project contributes to an already established project, the same tools need to be used. Unity allows for quick editing of a scene, and provides a powerful toolset within its layers for developers. Scripting can be done with the C\# or JavaScript coding language and it integrates well with numerous frameworks and plugins.
 
 \subsubsection{Other considerations: Unreal Engine 4}
-The other alternative to Unity for VR developments is the Unreal Engine 4 developments suite. It delivers real-time technology and provides an solid foundation for demanding applications across multiple platforms \cite{unrealEngine}. Unreal Engine 4 offers highly advanced visuals but has generally been considered to have a steeper learning curve than compared to Unity. It uses C++, a high level programming language. As mentioned in Section \ref{section: untiy} previous applications has been made using Unity so using Unreal would disallow the use of existing code.       
+The other alternative to Unity for VR developments is the Unreal Engine 4 developments suite. It delivers real-time technology and provides an solid foundation for demanding applications across multiple platforms \cite{unrealEngine}. Unreal Engine 4 offers highly advanced visuals but has generally been considered to have a steeper learning curve than compared to Unity. It uses C++, a high level programming language. As mentioned in Section \ref{section: untiy} previous applications has been made using Unity so using Unreal would disallow the use of existing code without rewriting it.       
 
 \subsection{Virtual Reality SDKs}
 For developing VR applications in Unity there exists several software development kits (SDKs) including SteamVR, Oculus and Windows Mixed Reality \footnote{https://docs.unity3d.com/Manual/XRPluginArchitecture.html} which is used for connecting with the VR hardware and enables support for building applications for targeted devices.  
 
-Previous internship development at the IMTEL lab has used SteamVR which is mainly target for HTC Vive but is fully compatible with other HMDs including Oculus Rift and Touch. For this project OpenVR and SteamVR is chosen as OpenVR enables support for building applications for OpenVR/SteamVR supported devices (eg. most devices at the IMTEL lab). Using OpenVR we can target any platform where SteamVR as, since SteamVR is an implementation of OpenVR, but it also ensures we are not limtied to SteamVR devices.  Figure \ref{fig:vr_sdk} describes the arrangement of the SDKs in this project. The greyed out boxes are SDKs not used in this project, and the green (OpenVR) and red (SteamVR) are SDKs and APIs used in the VR application.
+Previous internship development at the IMTEL lab has used SteamVR which is mainly target for HTC Vive but is fully compatible with other HMDs including Oculus Rift and Touch. For this project OpenVR and SteamVR is chosen as OpenVR enables support for building applications for OpenVR/SteamVR supported devices (eg. most devices at the IMTEL lab). Using OpenVR we can target any platform where SteamVR as, since SteamVR is an implementation of OpenVR, but it also ensures we are not limtied to SteamVR devices.  Figure \ref{fig:vr_sdk} describes the arrangement of the SDKs in this project. The greyed out boxes are SDKs not used in this project, and the green (OpenVR) and red (SteamVR) are SDKs and APIs used in the VR application. As illustrated in the figure we target the SteamVR API in our application but it uses OpenVR which is why it wraps the SDK.
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[width=1\textwidth]{./fig/background/VR_sdk.png}
+    \includegraphics[width=0.9\textwidth]{./fig/background/VR_sdk.png}
     \caption{Illustration of virtual reality SDKs their connection to the application and VR hardware. }
     \label{fig:vr_sdk}
 \end{figure}
@@ -235,7 +235,14 @@ OpenVR is an SDK and API distributed by Valve Corporation that allows access to 
 SteamVR is an API and runtime distributed by Valve Corporation. It makes development for VR significantly easier, in that we only need to target the API, and it will make it work for all the major VR headset brands without any extra effort. It also handles input from headsets, and translating the controller input to a fully animated controller inside the application \cite{steamVR}\cite{steamVRAPI}.
 
 \subsection{PUN2 - Photon Networking}
-Photon is a multiplayer game development framework that enables fast and easy setup of a multiplayer server and matchmaking. Specifically, their own wrapper of the framework for Unity, Photon Unity Networking (or PUN) can be imported directly into a Unity project and work seamlessly from there with basic coding required to function. While the base level of functionality is quite simple, considerable work is required to make it fit more advanced certain applications \cite{PUN}. 
+Photon is a multiplayer game development framework that enables fast and easy setup of a multiplayer server and matchmaking. Specifically, their own wrapper of the framework for Unity, Photon Unity Networking (or PUN) can be imported directly into a Unity project and work seamlessly from there with basic coding required to function. While the base level of functionality is quite simple, considerable work is required to make it fit more advanced certain applications \cite{PUN}. This includes specific features like callbacks, interfaces, components to synchronise GameObjects and Remote Procedure Calls (RPCs). PUN2 uses the client-server architecture, a highly common and used distributed model for networked related communication as illustrated in Figure \ref{fig:ClientServer}, for tasks as matchmaking and synchronisation of data between all clients. 
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{./fig/background/ClientServer.png}
+    \caption{Illustration of client-server architecture used for this application. }
+    \label{fig:ClientServer}
+\end{figure}
 
 The framework operates on an application/version system. For every program you intend to create and use with Photon, you need to register with Photon as its own application. You can then use this to watch oversee traffic, manage subscriptions, etc. Each application also supports versioning. If two players running the same program have different versions of it, as dictated by the \textit{GameVersion} variable, they will not be able to connect to each other, even if they are on the same application ID. With this, it can be ensured that players will only connect to those on the same version, hindering serious bugs from appearing due to differences in code or scenes.
 
@@ -284,7 +291,7 @@ Head-mounted displays gives a high feeling of immersions but there are important
 \end{table}
 
 
-Since this thesis will use OpenVR and SteamVR we are not limited to the development of software for specific head-mounted displays. The IMTEL lab offers several modern HMDs including HTC Vive Pro, Valve Index, HP Reverb Mixed Reality and numerous Oculus headsets. The main difference between these HMDs is the use of \textit{base stations}, i.e. wall mounted tracking sensors. HTC Vive Pro (seen in Figure \ref{fig:htcVivePro}) uses these sensors, whereas the HP Reverb (seen in Figure \ref{fig:hpReverb}) does not. Instead it tracks controllers and position using built in sensors in the headset. This is useful when performing test outside the IMTEL lab as there is no need to use base stations.   
+Since this thesis uses OpenVR and SteamVR we are not limited to the development of software for specific head-mounted displays. The IMTEL lab offers several modern HMDs including HTC Vive Pro, Valve Index, HP Reverb Mixed Reality and numerous Oculus headsets. The main difference between these HMDs is the use of \textit{base stations}, i.e. wall mounted tracking sensors. HTC Vive Pro (seen in Figure \ref{fig:htcVivePro}) uses these sensors, whereas the HP Reverb (seen in Figure \ref{fig:hpReverb}) does not. Instead it tracks controllers and position using built in sensors in the headset. This is useful when performing test outside the IMTEL lab as there is no need to use base stations.   
 
 \begin{figure}[!ht]
     \centering

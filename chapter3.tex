@@ -103,10 +103,10 @@ As described in the epigraph of this chapter (see List \ref{itm:inclusionCriteri
 \subsection{Collaborative Virtual Reality Neurosurgical Training}
 A 2007 paper by Kockro et al. describes their attempt at making a collaborative virtual reality environment for planning and training for neurosurgery \cite{kockro2007collaborative}. This came at a time where HMDs were less accessible, so the technology is not quite the same as is used now, but still falls within the MR spectrum. This project uses an interactive console with hand- and device-tracking that allows for manipulation of 3D data. This data is then displayed with a stereoscopic projector to the rest of the team so the collaboration can take place.
 
-Perhaps the most interesting part is that they mention they underestimated the importance of collaboration for learning, stating that "\textit{...collaboration is more important than we imagined, and that the mutual exchange of individual concepts and ideas is a real benefit...}". A previous attempt had been made without the collaborative aspect, but had not achieved the same results. This lends some credence to our initial hypothesis that the efficacy of the NAV applications could be improved were multi user functionality to be introduced. 
+Perhaps the most interesting part is that they mention they underestimated the importance of collaboration for learning, stating that "\textit{...collaboration is more important than we imagined, and that the mutual exchange of individual concepts and ideas is a real benefit...}" \cite{kockro2007collaborative}. A previous attempt had been made without the collaborative aspect, but had not achieved the same results. This lends some credence to our initial hypothesis that the efficacy of the NAV applications could be improved were multi user functionality to be introduced. 
 
 \subsection{Language Teaching in Virtual Reality}
-The IMTEL lab has produced several master thesis in relation to VR applications. One thesis by  Morte and Skjæveland \cite{morte2019effects} is not directly relevant in regards to workplace training, but their application has features which can be beneficial for this project. The project focused on language teaching using collaborative techniques to help immigrants learn Norwegian. While their focus was on language teaching, there are still some valuable experiences to learn from, particularly when it came to the technical implementation including voice-chat and their networked multiplayer framework utilisation. Morte and Skjæveland found that distributed collaboration has potential and that the increased presence affect the motivation of the  users. Their application also included that option of having symmetric or asymmetric roles for its users, meaning one can be a student and student or student and teacher displayed as avatars in the VR environment. This can be transferred to our projects where we would have the possibility to be either a job seeker or a supervisor/mentor in the workplace training environment.     
+The IMTEL lab has produced several master thesis in relation to VR applications. One thesis by  Morte and Skjæveland \cite{morte2019effects} is not relevant in regards to workplace intership, but their application has features which can be beneficial for this project. The project focused on language teaching using collaborative techniques to help immigrants learn Norwegian. While their focus was on language teaching, there are still some valuable experiences to learn from, particularly when it came to the technical implementation including voice-chat and their networked multiplayer framework utilisation. Morte and Skjæveland (\citeyear{morte2019effects}) found that distributed collaboration has potential and that the increased presence affect the motivation of the  users. Their application also included that option of having symmetric or asymmetric roles for its users, meaning one can be a student and student or student and teacher displayed as avatars in the VR environment. This can be transferred to our projects where we would have the possibility to be either a job seeker or a supervisor/mentor in the workplace training environment.     
 
 \section{Comparison of related work}
 Table \ref{table:comparisonRelatedWork} provides an overview of the relevant features the different related work have. The comparison includes features which we have identified as being important for this thesis by studying previous applications and existing research in the related field. 
@@ -152,6 +152,40 @@ It is intended to summarise the the superficial aspects of the works, and act as
 
 
 \subsection{Our implementation} 
-Include our application in the table with our included features. 
+Table \ref{table:comparisonOurApp} lists key features from related work applications and the features which are developed for our implementation of an collaborative virtual reality workplace used in this thesis.
+
+\begin{table}[!ht]
+    \begin{center}
+    \begin{tabular}{@{}l c c c c @{}}
+           & \multicolumn{3}{c}{\textbf{Related Work}}
+    \\  \cmidrule{2-4}
+           & \textbf{Workplace}
+    \\       
+             \textbf{Features}
+           & \textbf{Internship}
+           & \textbf{ElectroVR}
+           & \textbf{CoVAR}
+           & \textbf{Our application}
+    \\ \midrule
+       VR                           & \ON & \ON  & \ON  & \ON
+    \\ Multiplayer                  &     & \LIM & \LIM & \ON
+    \\ Workplace training           & \ON &      &      & \ON
+    \\ Collaboration                &     & \ON  &      & \ON
+    \\ Real-world simulation        & \ON & \LIM & \ON  & \ON
+    \\ Voice-chat                   &     &      &      & \ON
+    \\ Co-located                   & \ON & \ON  & \LIM & \ON
+    \\ Remote                       &     &      & \ON  & \ON    
+    \\ Symmetric role               & \ON & \ON  & \LIM & \ON  
+    \\ Asymmetric role              &     & \ON  & \LIM & \ON
+    \\ \bottomrule
+    \end{tabular}
+    \captionsetup{width=1\linewidth}
+    \caption{Related work applications and their features compared to our implementation.}
+    \label{table:comparisonOurApp}
+    \end{center}
+\end{table}
+
+
+
 
 \cleardoublepage
