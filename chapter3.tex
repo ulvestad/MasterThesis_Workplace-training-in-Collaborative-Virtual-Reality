@@ -9,7 +9,7 @@ Although the use of VR/AR/MR for collaborative tasks has been studied considerab
 
 \subsubsection{Inclusion Criteria}
 \label{section:inclusionCriteria}
-For related work to be eligible to included in this thesis there are elements that must be present in the research paper for it to selected. These characteristics are used as inclusion criteria in order to adjust scope of the search for related work. These are listed below.
+For related work to be eligible to included in this thesis there are elements that must be present in the research paper for it to selected. These characteristics are used as inclusion criteria in order to adjust scope of the search for related work. These are listed below:
 
 \begin{itemize}
 \label{itm:inclusionCriteria}
@@ -62,6 +62,24 @@ Noticeably the system is built on previous work and integration done by the same
 
 
 
+\section{CoVAR: Virtual and Augmented System for Remote Collaboration}
+In 2017 Piumsomboon et al. publsihed a paper presenting a remote collaboration system combining augmented reality, virtual reality, and natural communication to create new types of collaboration \cite{piumsomboon2017covar}. Named \textit{CoVAR}, the system aims to combine the best of both VR and AR and use their respecting strengths by reconstructing the environment seen by the user who is wearing AR headset (Microsoft HoloLens) and displaying it to the VR user (using HTC Vive) so that they both share the same view, see Figure \ref{fig:coVAR}. Thus enabling collaboration for the use of observing 3D objects, experience scenes/environments or other. Remote collaboration is achieved by using an client server architecture where data synchronisation is handled by Unity networking, UNet (which at the point of writing this thesis is deprecated) \footnote{https://support.unity3d.com/hc/en-us/articles/360001252086-UNet-Deprecation-FAQ}.
+
+
+\begin{figure}[!ht]
+     \centering
+     \includegraphics[width=.9\textwidth]{./fig/related_work/coVAR.png}
+     \captionsetup{width=0.9\linewidth}
+     \caption{CoVAR in use with reconstrucuted enviroment (A left) and AR user (B left) and VR user (B right) looking at a block object.  \cite{greenwald2019electrovr}. }
+     \label{fig:coVAR}
+ \end{figure}
+
+The system has various interaction methods, virtual awareness cues and view enhancement to support and enhance collaboration. Interaction methods includes hand gestures, head gaze, and eye gaze input. The paper describes collaborative gaze as a technique where users gaze at the same target object to trigger an action such as revealing hidden information \cite{piumsomboon2017covar}.  Virtual awareness cues includes methods as a ray showing the users eye direction. View enhancement techniques includes features like "god" or "miniature" mode and snapping the VR user to the AR users head placement.
+
+This system is intriguing as it provides a new approach to collaborative VR and AR, combining both of them. The gazing technique is interesting for collaboration as it illustrates interest in objects and according to Piumsomboon et al. (\citeyear{piumsomboon2017covar}) allows the VR user to know exactly where the AR user is and what they were looking at. However, CoVAR supports remote collaboration but does not implement voice communication solo relying on gestures and gazing which can be potentially be challenging for the users.   
+
+
+
 % \section{Archaeological excavation}
 % In 2004 Benko et al. published a paper were they presented VITA (visual interaction tool for archaeology) an experimental collaborative mixed reality system for offsite visualisation of an archaeological dig \cite{benko2004collaborative}. The system allowed multiple archaeologists to collaborate remotely using several interaction methods including gestures to manipulate and explore a real life terrain model, see Figure \ref{fig:VITA}. The system utilised see-through HMDs (augmented reality headset) and a high resolution screen to visualise the archaeological dig sites, a fairly complex system architecture with several components. To facility collaboration between the users of the system used voice commands and hand gestures. The paper evaluated the user experience using experts in the archaeological field, stating the initial user reactions were very positive \cite{benko2004collaborative}.
 
@@ -74,6 +92,9 @@ Noticeably the system is built on previous work and integration done by the same
 %     \caption{Two users simultaneously collaborate in VITA. \cite{benko2004collaborative}}
 %     \label{fig:VITA}
 % \end{figure}
+
+
+
 
 
 \section{Other considerations}
@@ -100,7 +121,7 @@ It is intended to summarise the the superficial aspects of the works, and act as
 
 \begin{table}[!ht]
     \begin{center}
-    \begin{tabular}{@{}lcccc@{}}
+    \begin{tabular}{@{}l c c c c @{}}
            & \multicolumn{4}{c}{\textbf{Related Work}}
     \\  \cmidrule{2-5}
            & \textbf{Workplace}
@@ -108,19 +129,19 @@ It is intended to summarise the the superficial aspects of the works, and act as
              \textbf{Features}
            & \textbf{Internship}
            & \textbf{ElectroVR}
+           & \textbf{CoVAR}
            & \textbf{Related Work}
-           & \textbf{Related Work 2}
     \\ \midrule
-       VR                           & \ON & \ON  & \ON & 
-    \\ Multiplayer                  &     & \LIM &     & \ON 
-    \\ Workplace training           & \ON &      &     & 
-    \\ Collaboration                &     & \ON  &     & 
-    \\ Real-world simulation        & \ON & \LIM &     & 
-    \\ Voice-chat                   &     &      & \ON & 
-    \\ Co-located                   & \ON & \ON  & \ON &  
-    \\ Remote                       &     &      & \ON &     
-    \\ Symmetric role               & \ON & \ON  & \ON & \ON  
-    \\ Asymmetric role              &     & \ON  &     &
+       VR                           & \ON & \ON  & \ON  & 
+    \\ Multiplayer                  &     & \LIM & \LIM &  
+    \\ Workplace training           & \ON &      &      & 
+    \\ Collaboration                &     & \ON  &      & 
+    \\ Real-world simulation        & \ON & \LIM & \ON  & 
+    \\ Voice-chat                   &     &      &      & 
+    \\ Co-located                   & \ON & \ON  & \LIM &  
+    \\ Remote                       &     &      & \ON  &     
+    \\ Symmetric role               & \ON & \ON  & \LIM &   
+    \\ Asymmetric role              &     & \ON  & \LIM  &
     \\ \bottomrule
     \end{tabular}
     \captionsetup{width=1\linewidth}
