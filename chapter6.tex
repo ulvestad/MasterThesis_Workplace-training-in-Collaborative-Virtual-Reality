@@ -25,8 +25,9 @@ Voice chat will be implemented. Customise avatar before joining in some fashion.
   \item [\textbf{F3}] A player shall be represented as a avatar with corresponding movement from the VR world to the real world.
   \item [\textbf{F4}] The application must offer the option of using VR equipment or desktop mode (mouse and keyboard) for interaction.
   \item [\textbf{F5}] The application must contain a scene with tasks enabling collaborative learning.
-  \item [\textbf{F6}] Users should be able to interact with the environment.
-  \item [\textbf{F7}] Users should be able to communicate through integrated voice chat functionality.
+  \item [\textbf{F6}] The application must offer the option of using VR equipment or desktop mode(mouse and keyboard) for interaction.
+  \item [\textbf{F7}] Users should be able to interact with the environment.
+  \item [\textbf{F8}] Users should be able to communicate through integrated voice chat functionality.
 \end{enumerate}
 
 \subsection{Development Decisions}
@@ -61,6 +62,8 @@ For those objects that did not fit neatly into the basic entity types, it become
 \subsection{Optimisation} \label{subsec:Optimisation}
 \textcolor{red}{RPCalls and bugfixing}
 Over the course of the implementation of the artefacts, areas that could be improved and bugs that could be fixed appeared. As they were noticed, or certain parts caused issues, the issues were taken note of and general implementation continued. If a bug or piece of code was hindering the implementation it would be fixed as needed, otherwise left for later. At the tail end of the phase, they were prioritised and ordered, and they could then be fixed, one at a time. Among these were improvements to level loading, missing collision detectors for certain items, incorrectly synchronised objects, etc. Multiple passes were made to make sure that remote procedure calls were not being sent multiple times or being looped by firing other users' event handlers and so on. 
+
+A helper method has also been created to help keep the code general. Instead of creating a new remote procedure call every time one is needed, one can simply pass the desired method call as a argument to the helper, and the method will initiate the desired remote procedure call. 
 
 
 

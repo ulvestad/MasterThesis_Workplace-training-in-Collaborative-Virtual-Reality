@@ -44,6 +44,23 @@ Although, they are quite similar it is important to note and that for this proje
 \subsubsection{Immersion and presence} \label{immersionAndPresence}
 It's important to note the difference between presence and immersion. While immersion refers to an an objective level of fidelity, which can be measured against the immersion levels of another application, presence refers to a person's subjective feeling of being in a location while physically being in another \cite{slater2003note}. With this project we hope to increase the presence of the user in the virtual workplaces, not necessarily the immersion.
 
+\subsubsection{Social presence}
+Presence refers to the subjective feeling of being somewhere else than you are physically, but it can be split into three types of presence, of which social presence is the most relevant for this paper. Self-presence refers to the feeling of being connected to your virtual body, tele-presence refers to the subjective feeling of being spatially located elsewhere than your physical body, and social presence refers to the feeling of being in the presence of another intelligence. If the feeling of social presence is not high enough, the other part is felt to simply be an artificial entity.
+
+One of the primary goals of the project is to create a high level of social presence. Social presence was defined by Biocca in a 1997 paper as "\textit{The minimum level of social presence occurs when users feel that a form, behaviour, or sensory experience indicates the presence of another intelligence. The amount of social presence is the degree to which a user feels access to the intelligence, intentions, and sensory impressions of another}\cite{biocca1997cyborg}."
+
+There are several conditions that can affect the social presence of a user, one of which is the visual representation. While it may seem logical to assume that a higher degree of photographic or anthropomorphic realism for avatars would increase the feeling of social presence, studies show that this may not be enough. The two things that seem to be the most important for social presence is the presence of a visual representation and a more behaviourally realistic visual representation. People show increased involvement and engagement when the person they are communicating with is visible at all, or has a profile picture instead of a default picture. While a high degree of photo realism can be used, it will be detrimental if there is not a commensurate increase in behavioural realism\cite{oh2018systematic}.
+
+Interactivity is another part of social presence. Skalski noted that being able to interact with virtual agents increased users feeling of social presence\cite{skalski2007role}. There are also several other aspects that can affect social presence, such as haptic feedback, depth cues, audio quality and display types\cite{oh2018systematic}. 
+
+In general, social presence is at the heart of this paper, and seeing the effects social presence has on the overall presence and what that can do for the overall engagement and experience of the users will be an important part of the project. The hypothesis that an increase in social presence will make the applications more engaging than they are now appears to be supported by the literature, as "...studies show that the vivid perceptions of another person often lead to greater enjoyment and social influence in neutral and positive contexts\cite{oh2018systematic}".
+
+
+
+
+
+
+
 \subsection{Workspace Awareness in Groupware}
 When collaborating with others, there are several ways in which we gather information. Many of these are subtle and perhaps not outright obvious, but are important none the less as ways to collaborate efficiently. The awareness of others' location, actions and intentions in regard to the task are referred to as \textit{workspace awareness}.
 
@@ -200,6 +217,11 @@ They can be made to tell a story, educate players about a topic or serve as an i
 
 Using serious games for training and education comes with few requirements. For the user to gain anything, it is important that they can gain feedback and be properly assessed. They must also be set up properly to offer the correct level of challenge. Too little, and the player loses interest, while too much difficulty can cause anxiety and stress \cite{de2014serious}. Prasolova-Førland et al. (\citeyear{prasolova2019empowering}) recommends care should be taken to balance the educational purpose and entertainment aspects when developing applications for career guidance.
 
+\subsection{Immersive Job Taste}
+Professors at the IMTEL lab has developed the concept \textit{immersive job taste} as part of the ongoing NAV  project. The concept is designed as a mean to provide a virtual and interactive experience of various occupations with elements of workplace training \cite{fominykh2019immersive}. The target audience for immersive job taste is  young job seekers, e.g. unemployed high school students, with the aim of giving the unemployed a look and experience a different occupations so that they can get a feeling of the daily activities and atmosphere so that they could perhaps avoid wrong career decisions. 
+
+According to Fominykh and Prasolova-Førland (\citeyear{fominykh2019immersive}) this concept can make job searching more motivating and provide a more accurate image of a workplace compared to text descriptions. In their research paper confirms that immersive and gaming technologies used in immersive job taste applications contributes to an engaging alternative for young job seekers \cite{fominykh2019immersive}. The concept has also seen recognition from the world beeing awarded in EuroVR 2018 conference for best demo \cite{euroVR} and was a breakthrough finalist in AWE (Augmented World Expo) 2018 \cite{aweAwards}.
+
 
 
 \section{Technologies}
@@ -235,7 +257,9 @@ OpenVR is an SDK and API distributed by Valve Corporation that allows access to 
 SteamVR is an API and runtime distributed by Valve Corporation. It makes development for VR significantly easier, in that we only need to target the API, and it will make it work for all the major VR headset brands without any extra effort. It also handles input from headsets, and translating the controller input to a fully animated controller inside the application \cite{steamVR}\cite{steamVRAPI}.
 
 \subsection{PUN2 - Photon Networking}
-Photon is a multiplayer game development framework that enables fast and easy setup of a multiplayer server and matchmaking. Specifically, their own wrapper of the framework for Unity, Photon Unity Networking (or PUN) can be imported directly into a Unity project and work seamlessly from there with basic coding required to function. While the base level of functionality is quite simple, considerable work is required to make it fit more advanced certain applications \cite{PUN}. This includes specific features like callbacks, interfaces, components to synchronise GameObjects and Remote Procedure Calls (RPCs). PUN2 uses the client-server architecture, a highly common and used distributed model for networked related communication as illustrated in Figure \ref{fig:ClientServer}, for tasks as matchmaking and synchronisation of data between all clients. 
+Photon is a multiplayer game development framework that enables fast and easy setup of a multiplayer server and matchmaking. Specifically, their own wrapper of the framework for Unity, Photon Unity Networking (or PUN) can be imported directly into a Unity project and work seamlessly from there with basic coding required to function. While the base level of functionality is quite simple, considerable work is required to make it fit more advanced certain applications \cite{PUN}. PUN2 includes specific features like callbacks, interfaces, components to synchronise GameObjects and Remote Procedure Calls (RPCs). It uses the client-server architecture, a highly common and used distributed model for networked related communication as illustrated in Figure \ref{fig:ClientServer}, for tasks as matchmaking and synchronisation of data between all clients. 
+
+Take for example a remote procedure call (RPC) or an data stream writing procedure for the updated position of an GameObject. Here the data flows from one client to the PUN2 server using the network (i.e. internet) where it is processed and is sent back to all or specific clients where the GameObject is transformed with its new position (x,y,z coordinates in 3D space). In this project we have configured the application to use servers located in in Europe for a boost in performance and reduced network connectivity related issues. PUN2 also allows to target specific specific clients for RPC calls (see Section \ref{subsec:Optimisation} for more). 
 
 \begin{figure}[!ht]
     \centering
