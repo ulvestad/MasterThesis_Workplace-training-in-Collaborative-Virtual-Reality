@@ -19,7 +19,7 @@ The last 15 years NTNU has hosted \textit{Researchers' Night} (the youths resear
 
 
 \subsubsection{The questionnaire}
-The questionnaire was comprised of two sections, one with general questions with age, sex and career guidance at school. The second contained questions aimed towards VR and the IMTEL labs' job applications (note that all participants did try a VR application before answering the questionnaire). It was generated using Google Forms \footnote{https://docs.google.com/forms/} an easy and useful questionnaire tool. Most questions where closed questions meaning they had pre-defined answers. We constructed the questionnaires in such a way that it produced both nominal, ratio and ordinal data. Most significant questions was ordinal on a consistent ranked/scale questions where the participants were asked to rank their agreement from  "Strongly disagree" to "Very agree" on a scale from 1-5. 
+The questionnaire was comprised of two sections, one with general questions with age, sex and career guidance at school. The second contained questions aimed towards VR and the IMTEL labs' job applications (note that all participants did try a VR application before answering the questionnaire). It was generated using Google Forms \footnote{https://docs.google.com/forms/} an easy and useful questionnaire tool. Most questions where closed questions meaning they had pre-defined answers. We constructed the questionnaires in such a way that it produced both nominal, ratio and ordinal data. Most significant questions was ordinal on a consistent ranked/scale questions where the participants were asked to rank their agreement from  "Strongly disagree" to "Strongly agree" on a scale from 1-5. 
 The full questionnaire can be found in the appendix \textcolor{red}{ADD TO APPENDIX}. 
 
 \subsubsection{Analysis}
@@ -68,7 +68,14 @@ After sitting down and discussing the acquired information, a few key decisions 
 
 The final core need for phase 1 is angled more toward the needs of the IMTEL lab. Should it be the case that the multiplayer component is something they wish to bring forward to new workplaces they develop, a general framework or set of guidelines for multiplayer that they can build upon is wanted. With this framework/set of guidelines, a new workplace could be made to work with multiplayer from the get go, drastically reducing the amount of work needed to get multiplayer running for future projects.
 
-This lead to the following functional requirements for phase 1: 
+Aside from explicit user that need to be considered in the project, there is also a need to consider what is necessary to support the user from a theoretical standpoint. As the aim is to create a collaborative experience, there is a need to weigh the options available against the cost of implementing them. Looking back at chapter \ref{chap:background}, there are many aspects related to working using groupware, as well as CSCL and presence that can be used to ensure a better experience for the user.
+
+For one, the user should to a high degree be aware of the other user's intention and actions, as well what artefact they are currently interacting with. Their location, motion and field of view are all important to discern this this information, and so it reinforces the need to have a fully tracked avatar that other users can see an infer information from.
+
+The avatar helps support not only the "What" element, but also the elements of the "Where" an "Who" category from table \ref{table:awarenessPresent}, and can in general be seen as the strongest contributor to all the categories of workspace awareness introduced in this table. It also acts as a simplification of communication, as seen in table \ref{table:awarenessActivity}. Through the use of an avatar in virtual space, it is also easier to coordinate action, as one can easily see what the other user us doing, and when they need assistance or guidance.
+
+
+This leads to the following functional requirements for phase 1: 
 
 
 \begin{enumerate}
@@ -148,7 +155,7 @@ Next was voice, a feature that was already planned, but the importance of it was
 
 Finally, some comments were made about the avatar, which was at this point in time a grey capsule with a grey head and hands. There were some suggestions that another avatar would allow the users to immerse themselves more easily. 
 
-At another point in time, a presentation was held for the lab courtesy of a leading actor in the field, focusing on collaboration in virtual reality. The company itself has carved out a niche by serving customers with virtual reality meeting spaces where they can share 3d models and inspect and discuss projects while being a country apart. The subject of the avatars was discussed, as the company used full body avatars, as opposed to floating hands, body and a head. Correctly animating and interpolating the limbs and legs of the avatar was apparently quite an undertaking, and needed a lot of time, maths and skilled animators. While implementing an avatar like this was deemed out of scope, it was decided that the avatar should be updated in some manner to more accurately look human for the next phase, while still considering the uncanny valley. 
+At another point in time, a presentation was held for the lab courtesy of a leading actor in the field, focusing on collaboration in virtual reality. The company itself has carved out a niche by serving customers with virtual reality meeting spaces where they can share 3D models and inspect and discuss projects while being a country apart. The subject of the avatars was discussed, as the company used full body avatars, as opposed to floating hands, body and a head. Correctly animating and interpolating the limbs and legs of the avatar was apparently quite an undertaking, and needed a lot of time, maths and skilled animators. While implementing an avatar like this was deemed out of scope, it was decided that the avatar should be updated in some manner to more accurately look human for the next phase, while still considering the uncanny valley. 
 
 %Dimension10 avatar/real
 
