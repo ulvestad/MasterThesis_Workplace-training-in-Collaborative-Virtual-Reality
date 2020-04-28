@@ -7,7 +7,7 @@ After the exploratory phase 1, phase 2 is more concerned with gathering concrete
 
 By spending a lot of time with the tools selected for the project in the first phase, it has become apparent as to why a general solution is needed. While some custom logic will always be needed, the overarching plan for the NAV project is to create a \textit{workplace experience catalogue} that will allow users to browse workplaces as needed. It's therefore paramount that the experience is the same to satisfy user expectations. A general solution will also produce clearer results that are not muddied by having different parts of the application respond, operate or appear differently. Less time can be spent creating fundamental logic, and more time spent on making sure that the custom logic parts work well.
 
-With this mind, the development work can be said to be split into two parts. One part will concern itself will implementing and creating a fully functional multi-user workplace experience as one of the two primary artefacts of the project. The other artefact and effort will be devoted to creating the general framework and mapping the process needed to convert a workplace experience to multi-user environment. As the artefacts created here will serve as a foundation for further development and research, a significant portion of time has been spent making sure that the artefacts created are up to the IMTEL lab standards, as well as following software architecture principles. In section \ref{} the details of this process will be explained. The following sections will detail the specific changes made to the artefact concerning the fully implemented workplace.
+With this mind, the development work can be said to be split into two parts. One part will concern itself will implementing and creating a fully functional multi-user workplace experience as one of the two primary artefacts of the project. The other artefact and effort will be devoted to creating the general framework and mapping the process needed to convert a workplace experience to multi-user environment. As the artefacts created here will serve as a foundation for further development and research, a significant portion of time has been spent making sure that the artefacts created are up to the IMTEL lab standards, as well as following software architecture principles. In section \ref{section:Phase2Implentation} the details of this process will be explained. The following sections will detail the specific changes made to the artefact concerning the fully implemented workplace.
 
 
 \section{Planning and Changes}
@@ -56,6 +56,7 @@ Perhaps most important was the possibility of direct communication. To begin wit
 
 
 \section{Implementation}
+\label{section:Phase2Implentation}
 As the implementation got started, it was obvious that some sort of triage needed to be performed. The overall application was broken into its composite pieces, and to the highest degree possible, components were separated and isolated. In the case of the car mechanic application, it consisted of two main scenes, one small and one large. First was the wardrobe, where players had to equip the proper equipment before heading into the garage proper. There wasn't too much happening here, so to begin with the only thing implemented was the ability for the multiple players to enter the garage through the door.
 
 Once inside the garage, the meat of the matter becomes prevalent. The garage contains four separate cars that all have various tasks assigned to them. These were from the start designed separately, with no overlap, which made it easy to focus on one of them at a time. Making sure that each task worked over the network had varying degrees of complexity, largely dependant on the tasks' original complexity. For each of the task, understanding the code was essential. This led to some time being spent on each task simply breaking down the code and structure of each game object. Once thoroughly understood, the basic networking pieces could then be added, and the necessary components and scripts switched out for new, networked variants created in phase one (See chapter \ref{chap:phase1}). For those tasks that required further networking, or had some state that needed to be uniquely maintained, new scripts were created as required, while still aiming to maintain simplicity.  In so far as it was possible, adherence to certain principles was kept a high priority. \textcolor{red}{DRA INN MASSE PROGARK KUNNSKAP HER}
@@ -79,9 +80,9 @@ One of the more complex challenges encountered was the fact that the workplace b
 
 \subsubsection{Covid-19 pandemic}
 \label{section:covid19}
-Due to the global corona virus pandemic (Covid-19) and restrictions issued by the Norwegian government as part of their actions to prevent spread of the disease \cite{FhiCorona} impediments arose. Social distancing, isolation and the considerable risk of transferring the virus from the VR headsets and controllers meant that the VR lab at the university was closed until further notice and that scheduled testing with the primary target group could not be carried out as planned. Although some user testing was completed before the restrictions, we did not manage to get enough satisfactory results. More about this in Section \ref{section:secondEvalPhase2}. It became clear that proper data collection to answer Secondary RQ1 (see Section \ref{RQ}) was not feasible, as it meant we would need both mentors and peers using VR equipment they do not have at home or be localised at the VR lab at the same time which is not permitted. However, we did plan to run test for data collection with both peers and mentors. 
+Due to the global corona virus pandemic (Covid-19) and restrictions issued by the Norwegian government as part of their actions to prevent spread of the disease \cite{FhiCorona} impediments arose. Social distancing, isolation and the considerable risk of transferring the virus from the VR headsets and controllers meant that the VR lab at the university was closed until further notice and that scheduled testing with the primary target group could not be carried out as planned. Although some user testing was completed before the restrictions, we did not manage to get enough satisfactory results. More about this in Section \ref{section:secondEvalPhase2}. It became clear that proper data collection to answer Secondary RQ1 (see Section \ref{RQ}) was not feasible, as it meant we would need both mentors and peers using VR equipment they do not have at home or be localised at the VR lab at the same time which is not permitted. However, we did plan to run test for data collection with both peers and mentors. Further details of plan is described in section \ref{section:secondEvalPhase2}.
 
-As discussed with our supervisors in the preliminary phase of the pandemic we decided to add a research question which shifts focus to remote collaboration as a career guidance tool. However, we consider the RQ1 as part of future work, see Section \ref{} for more. 
+As discussed with our supervisors in the preliminary phase of the pandemic we decided to add a research question which shifts focus to remote collaboration as a career guidance tool. However, we consider the RQ1 as part of future work, see Section \ref{section:futureWork} for more. 
 
 Covid-19 also meant we had continue work from home by setting up temporary VR stations in our apartments. Relatively small areas was not ideal for tracking and movement, but we adapted to the situation. As for the VR equipment we got dealt Oculus Rift and Rift S. We therefore had to accommodate to new controller bindings and setup as we previously mainly worked on HTC Vive and Index, i.e. non-Oculus devices.            
 
@@ -92,16 +93,71 @@ Covid-19 also meant we had continue work from home by setting up temporary VR st
 \section{Second Evaluation}
 \label{section:secondEvalPhase2}
 
-In order to evaluate the collaborative features we developed for this phase we utilised a reliable and well established method called system usability scale (or SUS). The scale gives a number representing a composite measure of the overall usability of the system being studied \cite{brooke1996sus}. In order for SUS to have the best result it is important that the test is performed before any discussion around the trial of the system takes place, which is why in our evaluation it was at the  top of the questions. 
+In order to evaluate the usability of the application and collaborative features we developed for this phase we utilised a reliable and well established method called system usability scale (or SUS). The scale gives a number representing a composite measure of the overall usability of the system being studied \cite{brooke1996sus}. In order for SUS to have the best result it is important that the test is performed before any discussion around the trial of the system takes place, which we tried our best to ensue.
+The SUS questions were translated in the native language (Norwegian) and included in a separate category in a survey amongst two other likert scale questions categories related to career guidance/career choice and collaboration mechanisms. This is a popular strategy for user evaluation of a computer system \cite{oates2005researching}. Some of the question was adapted and utilised from a evaluation system designed by an associate professor from the Department of Education and Lifelong Learning at NTNU. The survey can be found in appendix \ref{}.
+The plan for the user testing was to conduct twelve separate tests were pairs of two, either peer and peer or peer and mentor, tried out the application in VR before answering the survey. This meant we would have 24 answers, half of which was peer and peer pairs and the other half peer and mentor. The peers would consist of young job seekers and the mentors would be career councillors from NAV Jobbhuset Falkenborg.
+
+
+\begin{figure}[H]
+  \centering
+   \captionsetup{width=.9\linewidth}
+    \includegraphics[width=0.9\textwidth]{fig/phase_2/phase2_testing.jpg}
+ \caption{User testing in progress at the IMTEL lab and the users perspective inside the application.}
+\label{fig:tastingPhase2}
+\end{figure}
 
 
 \subsection{User test data}
-
-
+As mentioned in the challenges we faced for this phase the Covid-19 pandemic meant that we were not able to complete our planned testing. We were only able to conduct six tests, i.e. \textit{3*2} pairs of peers, thus missing the other half of mentors and peers. Ideally we would have gotten the last half and from there we could  compare the data sets of the two half's. Because of the restrictions we were not able to complete the testing and thus it meant we could not evaluate what the effects of collaborating in virtual reality with a peer compared to a mentor was. At the time of writing the restrictions are still in effect leaving us unable to properly discuss and answer the Secondary RQ1.     
 
 
 \subsection{Analysis}
+Although we did not complete the user testing we still got half of the data points of what intended, and they will be presented here. An important note is that we cannot definitely conclude or properly discuss using these results as they are incomplete and the number of answers is not enough for quantitative analysis but we will present key and interesting findings still. Since we used survey as the testing method the results are based on measure quantities of those primary users participating and not subjective opinions which means that potential findings still hold some good value for the thesis.       
 
+\subsubsection{Quantitative Data Analysis}
+In order to get meaningful information from the quantitative data we utilised different techniques to help manage, view and analyse it. The survey mainly consisted of likert scales, which is the ordinal data type, meaning the numbers are allocated to a quantities scale \cite{oates2005researching}. For example in our survey they were asked to grade their experience with VR on a scale from 1-5, where 1 is "Low degree" and 5 was "High degree". The survey had nominal data points as well which describes categories instead of number or scale,such as Yes/No scale. Finally, interval data type was used in regards to the age of the users, where measurement is along a scale but the points on the scale intervals with a fixed number such as the age intervals: 10-20, 21-30, 31-40. 
+
+Through organisation of the data into using visual aids and statistics we were able to identify interesting findings. The survey had six answers consisting of one woman and five males with age distribution 18-25 years. Of those none had tried NAV VR applications before. The data results is presented in bar charts and was constructed using an online chart maker. 
+
+
+
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.5\textwidth}
+    \captionsetup{width=0.9\linewidth}
+    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabIncreaseCareer.PNG}
+    \caption{Bar chart showing the participants answers with the statement "".}
+    \label{fig:phase2_collabIncreaseCareer}
+  \end{subfigure}
+  \hfill%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \captionsetup{width=0.9\linewidth}
+    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabMoreEngaged.PNG}
+    \caption{Bar chart showing the participants answers with the statement "".}
+    \label{fig:phase2_collabMoreEngaged}
+  \end{subfigure}
+  \hfill%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \captionsetup{width=0.9\linewidth}
+    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabSelfEfficacy.PNG}
+    \caption{Bar chart showing the participants answers with the statement "".}
+    \label{fig:phase2_collabMoreEngaged}
+  \end{subfigure}
+  \hfill%
+  \begin{subfigure}[b]{0.5\textwidth}
+    \captionsetup{width=0.9\linewidth}
+    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabPlanningDoing.PNG}
+    \caption{Bar chart showing the participants answers with the statement "".}
+    \label{fig:phase2_collabMoreEngaged}
+  \end{subfigure}
+\end{figure}
+
+
+%TO-DO:
+% - Mean, mode etc. 
+%- SUS number 
+%- Figure X shows 
+%- Figure X illustrates
 
 \subsubsection{Interacting in VR}
 
