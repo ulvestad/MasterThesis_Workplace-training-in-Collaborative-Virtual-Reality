@@ -117,47 +117,119 @@ Although we did not complete the user testing we still got half of the data poin
 \subsubsection{Quantitative Data Analysis}
 In order to get meaningful information from the quantitative data we utilised different techniques to help manage, view and analyse it. The survey mainly consisted of likert scales, which is the ordinal data type, meaning the numbers are allocated to a quantities scale \cite{oates2005researching}. For example in our survey they were asked to grade their experience with VR on a scale from 1-5, where 1 is "Low degree" and 5 was "High degree". The survey had nominal data points as well which describes categories instead of number or scale,such as Yes/No scale. Finally, interval data type was used in regards to the age of the users, where measurement is along a scale but the points on the scale intervals with a fixed number such as the age intervals: 10-20, 21-30, 31-40. 
 
-Through organisation of the data into using visual aids and statistics we were able to identify interesting findings. The survey had six answers consisting of one woman and five males with age distribution 18-25 years. Of those none had tried NAV VR applications before. The data results is presented in bar charts and was constructed using an online chart maker. 
-
-
+Through organisation of the data into using visual aids and statistics we were able to identify interesting findings. The survey had six answers consisting of one woman and five males with age distribution 18-25 years. Of those, none had tried NAV VR applications before. Data results is presented in bar charts and was constructed using an online chart maker. 
 
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.5\textwidth}
-    \captionsetup{width=0.9\linewidth}
-    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabIncreaseCareer.PNG}
-    \caption{Bar chart showing the participants answers with the statement "".}
+    \captionsetup{width=0.8\linewidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/charts/collabIncreaseCareer.PNG}
+    \caption{}
     \label{fig:phase2_collabIncreaseCareer}
   \end{subfigure}
   \hfill%
   \begin{subfigure}[b]{0.5\textwidth}
-    \captionsetup{width=0.9\linewidth}
-    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabMoreEngaged.PNG}
-    \caption{Bar chart showing the participants answers with the statement "".}
+    \captionsetup{width=0.8\linewidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/charts/collabMoreEngaged.PNG}
+    \caption{}
     \label{fig:phase2_collabMoreEngaged}
   \end{subfigure}
   \hfill%
   \begin{subfigure}[b]{0.5\textwidth}
-    \captionsetup{width=0.9\linewidth}
-    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabSelfEfficacy.PNG}
-    \caption{Bar chart showing the participants answers with the statement "".}
+    \captionsetup{width=0.8\linewidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/charts/collabSelfEfficacy.PNG}
+    \caption{}
     \label{fig:phase2_collabMoreEngaged}
   \end{subfigure}
   \hfill%
   \begin{subfigure}[b]{0.5\textwidth}
-    \captionsetup{width=0.9\linewidth}
-    \includegraphics[width=0.9\textwidth]{fig/phase_2/charts/collabPlanningDoing.PNG}
-    \caption{Bar chart showing the participants answers with the statement "".}
+    \captionsetup{width=0.8\linewidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/charts/collabPlanningDoing.PNG}
+    \caption{}
     \label{fig:phase2_collabMoreEngaged}
   \end{subfigure}
+  \caption{Bar charts showing the participants likert scale answers to various statements.}
+  \label{fig:phase2_allCharts}
 \end{figure}
 
-
+There was a general consent...
 %TO-DO:
 % - Mean, mode etc. 
-%- SUS number 
 %- Figure X shows 
 %- Figure X illustrates
+
+
+%However, we must also consider the limitations of this questionnaire which falls a bit short in  regards  to  the  number  of  participants  and  has  almost  but  not  correct  research  target audience in respect to age and education.  That being said this questionnaire was only meant as preliminary data collection for for understanding and getting an overview of the field.
+
+
+
+\subsubsection{SUS score}
+In order interpret the system usability scale (SUS) score we needed to calculate the score for each participant, which gives a number from 0-100. This will result in a score which can be used as interpretations of usability performance of the system in the aspects of effectiveness, efficiency, and overall ease of use \cite{SusMeasuringInterpret}. However, we wanted to get the average SUS score, which we simply got by adding all individual scores and divided by the number of scores. The following steps is required for each score calculation: 
+
+
+\begin{enumerate}
+  \item Converted each scale into points for all ten answers, see Table \ref{table:SUSconversionPoints}. 
+  \item Calculate X. \textit{X = sum of the points for all odd-numbered questions – 5}  
+  \item Calculate Y. \textit{Y =  25 – Sum of the points for all even-numbered questions}
+  \item Calculate SUS score. \textit{SUS Score =} $(X + Y) * 2.5$ 
+\end{enumerate}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+{ \textbf{Scale}} & { \textbf{Point}} \\ \hline
+Strongly Disagree                     & 1                                     \\ 
+Disagree                              & 2                                     \\ 
+Neutral                               & 3                                     \\ 
+Agree                                 & 4                                     \\ 
+Strongly Agree                        & 5                                     \\ 
+\end{tabular}
+\caption{SUS scale/point conversion table.}
+\label{table:SUSconversionPoints}
+\end{table}
+
+Using this method we calculated the SUS score for each of the participants. The results can be found in Table \ref{table:SUSscores}. This gives an average SUS score of: 
+
+\[\overline{SUS} = \frac{68 + 32.5 + 42.5 + 82.25 + 85 + 70}{6} = \frac{379.25}{6} \approx 63.2\]
+
+According to Table \ref{table:SUSinterpret} this results in a \textit{Poor} adjective rating of the usability for the collective participants. The average SUS score is 68 \cite{SusMeasuringInterpret}. However, due the number of data entries being low (six participants) the average score is highly affected by scores which are very low or opposite. The median SUS score 69, which correlates to a \textit{Good} rating and is above the average SUS score. Also interesting is the number of the SUS scores and their coherent adjective rating. Here we find 2 scores in the \textit{Excellent} rating, 1 in the \textit{Good} rating, 2 in the \textit{Okay} rating, and finally 2 in \textit{Awful} rating. This shows that there is divided opinions about the usability of such an VR application. This may have something correlation to the fact that non of the users had tried had tried NAV VR applications before and that they had limited experience with VR. 
+
+
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+{ \textbf{Participant ID}} & { \textbf{SUS score}} \\ \hline
+2   & 32.5                                     \\ 
+3   & 42.5                                    \\ 
+1   & 68                                   \\ 
+6   & 70                                     \\ 
+4   & 82.25                                    \\ 
+5   & 85                                     \\ 
+\end{tabular}
+\caption{SUS scores for each participant sorted ascending by score.}
+\label{table:SUSscores}
+\end{table}
+
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l|l}
+{ \textbf{SUS score}} & { \textbf{Grade}} & { \textbf{Adjective rating}} \\ \hline
+$>$ 80.3   & A &  Excellent                                 \\ 
+68 – 80.3   & B & Good                                  \\ 
+68   & C   &   Okay                              \\ 
+51 – 68   & D   &  Poor                               \\ 
+$<$ 51  & F      &     Awful                         \\ 
+\end{tabular}
+\caption{SUS scores and their rating \cite{SusMeasuringInterpret}.}
+\label{table:SUSinterpret}
+\end{table}
+
+
+
 
 \subsubsection{Interacting in VR}
 
