@@ -7,24 +7,24 @@ After the exploratory phase 1, phase 2 is more concerned with gathering concrete
 
 By spending a lot of time with the tools selected for the project in the first phase, it has become apparent as to why a general solution is needed. While some custom logic will always be needed, the overarching plan for the NAV project is to create a \textit{workplace experience catalogue} that will allow users to browse workplaces as needed. It's therefore paramount that the experience is the same to satisfy user expectations. A general solution will also produce clearer results that are not muddied by having different parts of the application respond, operate or appear differently. Less time can be spent creating fundamental logic, and more time spent on making sure that the custom logic parts work well.
 
-With this mind, the development work can be said to be split into two parts. One part will concern itself will implementing and creating a fully functional multi-user workplace experience as one of the two primary artefacts of the project. The other artefact and effort will be devoted to creating the general framework and mapping the process needed to convert a workplace experience to multi-user environment. As the artefacts created here will serve as a foundation for further development and research, a significant portion of time has been spent making sure that the artefacts created are up to the IMTEL lab standards, as well as following software architecture principles. In section \ref{section:Phase2Implentation} the details of this process will be explained. The following sections will detail the specific changes made to the artefact concerning the fully implemented workplace.
+With this mind, the development work can be said to be split into two parts. One part will concern itself will implementing and creating a fully functional multi-user workplace experience as one of the two primary artefacts of the project. The other artefact and effort will be devoted to creating the general framework and mapping the process needed to convert a workplace experience to multi-user environment. As the artefacts created here will serve as a foundation for further development and research, a significant portion of time has been spent making sure that the artefacts created are up to the IMTEL lab standards, as well as following software architecture principles. In section \ref{section:Phase2Implentation} the details of this process will be explained. The following sections will detail the specific changes made to the artefact concerning the fully implemented workplace and an evaluation the artefact created.
 
 
 \section{Planning and Changes}
 
 
 \subsection{Changes}
-The changes to the application is based on the analysis done in the previous phase. From table \ref{table:themesInterview1} we presented sub-themes which after some internal discussion resulted in an agreement (which we felt covered the most important aspects) that we should add the following changes to this phase's development and implementation. 
+The changes to the application is based mostly on the analysis done in the previous phase. From table \ref{table:themesInterview1} we presented sub-themes which after some internal discussion resulted in an agreement (which we felt covered the most important aspects) that we should add the following changes to this phase's development and implementation process. 
 
 \begin{description}
     \item [Change 1]\hfill \\
-    A fully functional virtual workplace environment must support multi-user functionality meaning objects, avatars, movement etc. should be networked and other data should be serialised in data stream to and from servers. 
+    A fully functional virtual workplace environment which support multi-user functionality. Meaning objects, avatars, movement etc. should be networked and other data should be serialised in data streams to and from servers. 
     \item [Change 2]\hfill \\
-    Direct communication so that users has the possibility to talk to each other. Using voice chat user should only hear others talk, not themselves, avoiding echo.  
+    Direct communication so that users has the possibility to talk to each other. With voice chat users should only hear others talk, not themselves, avoiding echo and misinterpretations.  
     \item [Change 3]\hfill \\
-    Collaborative features should be available for VR users, such as a laser pointer to pinpoint or mark objects and hand gesticulation.  
+    Collaborative features should be available for VR users, such as hand gesticulation and a laser pointer to pinpoint or mark objects.
     \item [Change 4]\hfill \\
-    More realistic avatars with some aspect of penalisation. 
+    More realistic avatars with some aspect of personalisation. 
 \end{description}
 
 
@@ -32,6 +32,7 @@ The changes to the application is based on the analysis done in the previous pha
 
 
 \subsection{Updated Requirements}
+As mentioned above this phase adds several changes to the artefact. The requirements marked in bold are additions for this phase.
 
 \begin{enumerate}
   \setlength\itemsep{0em}
@@ -41,9 +42,9 @@ The changes to the application is based on the analysis done in the previous pha
   \item [\textbf{F4}] The application must offer the option of using VR equipment or desktop mode (mouse and keyboard) for interaction.
   \item [\textbf{F5}] The application must contain a scene with tasks enabling collaborative learning.
   \item [\textbf{F6}] The multiplayer component must be generalisable and scalable to work with other NAV applications.
-  \item [\textbf{F7}] The application must be a virtual workplace with multi user functionality.
-  \item [\textbf{F8}] Users should be able to communicate through integrated voice chat functionality.
-   \item [\textbf{F9}] VR users should be able use tool(s) to mark or pinpoint objects or locations.
+  \item [\textbf{F7}] \textbf{The application must be a virtual workplace with multi user functionality}.
+  \item [\textbf{F8}] \textbf{Users should be able to communicate through integrated voice chat functionality}.
+   \item [\textbf{F9}] \textbf{VR users should be able use tool(s) to mark or pinpoint objects or locations}.
 \end{enumerate}
 
 \subsection{Development Decisions}
@@ -55,20 +56,57 @@ Secondly was the issue of scope and complexity. To properly test the possibiliti
 
 The recency of the workplace was also a concern. Due to the nature of the collaboration between the IMTEL lab and NAV, the developers of the older projects are not necessarily ready, or available at all, to help with issues, even if the application was made at the lab. As such, it would be helpful to use a fairly new workplace.
 
-Considering these criteria, the newly developed car mechanic workplace was chosen. In this workplace, the users can attempt several different tasks in a garage, with the aim of introducing the user to some of the tasks a car mechanic might face in a normal workday  \textcolor{red}{CITE IMTEL PAPER OM  MECHANIC WORKPLACE HER}.
+Considering these criteria, the newly developed car mechanic workplace was chosen. In this workplace, the users can attempt several different tasks in a garage, with the aim of introducing the user to some of the tasks a car mechanic might face in a normal workday \cite{IMTELinternships}.
 
-\subsubsection{VR}
-\textcolor{red}{Skrive litt om laser/pointers, avatarer etc, ting vi har gjort for immersion/presence}
-In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct. Finding a way to let players highlight either their own location or the location of a specific object was also taken into consideration. After some discussion, the decision was made to implement a form of laser pointer that can be activated for each player. The laser has significantly more accuracy than the standard hand, and can be used to pinpoint rather small objects. 
 
-Perhaps most important was the possibility of direct communication. To begin with, direct voice chat has been implemented in the application. The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure out who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
+\begin{figure}[H]
+  \centering
+    \captionsetup{width=1\linewidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/Car-mechanic-app-screen.jpg}
+    \caption{Screenshots of the car mechanic workplace application. \textit{Credit: IMTEL lab}}
+\label{fig:Car-mechanic-app}
+\end{figure}
+
+
+\subsubsection{Virtual Reality}
+In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct.
+According  to  Wallach  et  al. it is possible that users of a VR application often focus on discordant elements in the VR environment rather than accurate element which might indicate that the feeling of presence is influenced by the existence of such discordant elements \cite{presenceInVirtualReality:}. A more realistic visual representation for a human as an avatar can therefore, as outlined in section \ref{section:socialPrecence}, contribute to an increased feeling of social presence. 
+
+Finding a way to let players highlight either their own location or the location of a specific object was also taken into consideration. After some discussion, the decision was made to implement a form of laser pointer that can be activated for each player. The laser has significantly more accuracy than the standard hand, and can be used to pinpoint rather small objects. 
+
+Perhaps most important was the possibility of direct communication. To begin with, direct voice chat has been implemented in the application. A important consideration was the that audio quality had to be good with little to none background noise and echo as it can impact both the usability and the feeling of social presence (see section \ref{section:socialPrecence}) for the users. 
+The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure out who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
 
 
 \section{Implementation}
 \label{section:Phase2Implentation}
-As the implementation got started, it was obvious that some sort of triage needed to be performed. The overall application was broken into its composite pieces, and to the highest degree possible, components were separated and isolated. In the case of the car mechanic application, it consisted of two main scenes, one small and one large. First was the wardrobe, where players had to equip the proper equipment before heading into the garage proper. There wasn't too much happening here, so to begin with the only thing implemented was the ability for the multiple players to enter the garage through the door.
+As the implementation got started, it was obvious that some sort of triage needed to be performed. The overall application was broken into its composite pieces, and to the highest degree possible, components were separated and isolated. In the case of the car mechanic application, it consisted of two main scenes, one small and one large. First was the wardrobe, where players had to equip the proper equipment before heading into the garage proper, see figure \ref{fig:wardrobeApp}.
 
-Once inside the garage, the meat of the matter becomes prevalent. The garage contains four separate cars that all have various tasks assigned to them. These were from the start designed separately, with no overlap, which made it easy to focus on one of them at a time. Making sure that each task worked over the network had varying degrees of complexity, largely dependant on the tasks' original complexity. For each of the task, understanding the code was essential. This led to some time being spent on each task simply breaking down the code and structure of each game object. Once thoroughly understood, the basic networking pieces could then be added, and the necessary components and scripts switched out for new, networked variants created in phase one (See chapter \ref{chap:phase1}). For those tasks that required further networking, or had some state that needed to be uniquely maintained, new scripts were created as required, while still aiming to maintain simplicity.  In so far as it was possible, adherence to certain principles was kept a high priority. \textcolor{red}{DRA INN MASSE PROGARK KUNNSKAP HER}
+
+\begin{figure}[]
+  \centering
+  \begin{subfigure}[b]{0.9\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/wardrobe.PNG}
+    \caption{Screenshot of the wardrobe model in Unity.}
+    \label{fig:wardrobeApp}
+  \end{subfigure}
+  \hfill%
+  \begin{subfigure}[b]{0.7\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/toolsWall.PNG}
+    \caption{Tool wall with different networked tools.}
+    \label{fig:toolWall}
+  \end{subfigure}
+  \hfill%
+  \caption{The wardrobe scene.}
+  \label{fig:phase2Wardrobe}
+\end{figure}
+
+
+There wasn't too much happening here, so to begin with we made sure player instances and avatar representations were instantiated correctly in the room. We also added a simple wall with different tools that the awaiting users could interact with, adapting scripts for object networking and serialisation from phase 1, see figure \ref{fig:toolWall}. Other than that the last thing that was implemented was the ability for the multiple players to enter the garage through the door. Generally, in a online multiplayer game there is the master-client which handles scene changes, as was the case with standard PUN2 framework. We added logic in the network code so that whomever opens the door, even though it is not the master-client, and callback is sent to the the master-client telling a scene change needs to happened. It is an adaption of the software design pattern \textit{Observer Pattern}, where if one object is modified dependant objects gets notified.    
+
+
+
+Once inside the garage, the meat of the matter becomes prevalent. The garage contains four separate cars that all have various tasks assigned to them. These were from the start designed separately, with no overlap, which made it easy to focus on one of them at a time. Making sure that each task worked over the network had varying degrees of complexity, largely dependant on the tasks' original complexity. For each of the task, understanding the code was essential. This led to some time being spent on each task simply breaking down the code and structure of each game object. Once thoroughly understood, the basic networking pieces could then be added, and the necessary components and scripts switched out for new, networked variants created in phase one (see chapter \ref{chap:phase1}). For those tasks that required further networking, or had some state that needed to be uniquely maintained, new scripts were created as required, while still aiming to maintain simplicity.  In so far as it was possible, adherence to certain principles was kept a high priority. \textcolor{red}{DRA INN MASSE PROGARK KUNNSKAP HER}
 
 
 \subsection{Improving the serialisation of network objects}
@@ -237,7 +275,7 @@ $<$ 51  & F      &     Awful                         \\
 
 
 \subsubsection{Visibility}
-As presented in the analysis the feeling of presence, e.g. the feeling of being in the VR environment, varied quite a lot, see Figure \ref{fig:phase2_collabPlanning}. According to Wallach et al. there a number of factors including technological, user and interaction variables \cite{presenceInVirtualReality:}. Technical variables such as display resolution or consistent sensor inputs may have a impact on the users and should considered. Also, the degree of interaction in the application can influence the presence as it can focus their attention and result in increased involvement \cite{presenceInVirtualReality:}. 
+As presented in the analysis the feeling of presence, e.g. the feeling of being in the VR environment, varied quite a lot, see Figure \ref{fig:phase2_collabPlanning}. There a number of factors including technological, user and interaction variables that influences presence \cite{oh2018systematic} \cite{presenceInVirtualReality:}. Technical variables such as display resolution or consistent sensor inputs may have a impact on the users and should considered. Also, the degree of interaction in the application can influence the presence as it can focus their attention and result in increased involvement \cite{presenceInVirtualReality:}. 
 Some participants pointed out after the testing that the voice communication worked well, but they had some difficulty identifying who talked and when. This may be optimised by speech indicators, such as an speaker symbol over the avatar, or other animations.     
 
 \subsubsection{Remote career guidance}
