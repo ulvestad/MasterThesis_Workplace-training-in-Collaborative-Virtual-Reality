@@ -69,13 +69,32 @@ Considering these criteria, the newly developed car mechanic workplace was chose
 
 
 \subsubsection{Virtual Reality}
-In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct.
+In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct.  See figure \ref{fig:phase2Avatars}.
 According  to  Wallach  et  al. it is possible that users of a VR application often focus on discordant elements in the VR environment rather than accurate element which might indicate that the feeling of presence is influenced by the existence of such discordant elements \cite{presenceInVirtualReality:}. A more realistic visual representation for a human as an avatar can therefore, as outlined in section \ref{section:socialPrecence}, contribute to an increased feeling of social presence. 
 
 Finding a way to let players highlight either their own location or the location of a specific object was also taken into consideration. After some discussion, the decision was made to implement a form of laser pointer that can be activated for each player. The laser has significantly more accuracy than the standard hand, and can be used to pinpoint rather small objects. 
 
 Perhaps most important was the possibility of direct communication. To begin with, direct voice chat has been implemented in the application. A important consideration was the that audio quality had to be good with little to none background noise and echo as it can impact both the usability and the feeling of social presence (see section \ref{section:socialPrecence}) for the users. 
 The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure out who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
+
+
+\begin{figure}[]
+  \centering
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/oldAvatar1.png}
+    \caption{The old avatar model from phase 1 with a grey colour schema.}
+    \label{fig:oldAvatar}
+  \end{subfigure}
+    \hfill%
+  \begin{subfigure}[b]{0.4\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/avatarModel.PNG}
+    \caption{The enhanced avatar model with more realistic colours, hat, gloves and name tag.}
+    \label{fig:newAvatar}
+  \end{subfigure}
+  \hfill%
+  \caption{Iterations of the avatar model.}
+  \label{fig:phase2Avatars}
+\end{figure}
 
 
 \section{Implementation}
