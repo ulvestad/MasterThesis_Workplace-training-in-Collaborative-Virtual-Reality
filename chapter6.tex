@@ -1,6 +1,6 @@
 %===================================== CHAP 6 =================================
 
-\chapter{Phase 2:  Main development}
+\chapter{Phase 2:  Application implementation}
 \label{chap:phase2}
 
 After the exploratory phase 1, phase 2 is more concerned with gathering concrete data. Functional requirements have been revised as a result of data gathered in phase 1, and more focus will be placed on creating a solid foundation as one of the major artefacts of the project. As the data in phase 1 indicated strongly toward a preference for multi-user experiences for workplace training, phase 2 can proceed mostly as planned.
@@ -72,7 +72,7 @@ Considering these criteria, the newly developed car mechanic workplace was chose
 In response to feedback, several decisions were made in this phase to enhance the experience of the individual users, and how they could interact in VR. This included altering the avatars to be less grey and dull, so that they would not blend into the environment as much. They were also given a hat so that their silhouette would be more distinct.  See figure \ref{fig:phase2Avatars}.
 According  to  Wallach  et  al. it is possible that users of a VR application often focus on discordant elements in the VR environment rather than accurate element which might indicate that the feeling of presence is influenced by the existence of such discordant elements \cite{presenceInVirtualReality:}. A more realistic visual representation for a human as an avatar can therefore, as outlined in section \ref{section:socialPrecence}, contribute to an increased feeling of social presence. 
 
-Finding a way to let players highlight either their own location or the location of a specific object was also taken into consideration. After some discussion, the decision was made to implement a form of laser pointer that can be activated for each player. The laser has significantly more accuracy than the standard hand, and can be used to pinpoint rather small objects. 
+Finding a way to let players highlight either their own location or the location of a specific object was also taken into consideration. After some discussion, the decision was made to implement a form of laser pointer that can be activated for each player. The laser has significantly more accuracy than the standard hand, and can be used to pinpoint rather small objects. Example of use cases can be seen in \ref{fig:phase2Laser}.
 
 Perhaps most important was the possibility of direct communication. To begin with, direct voice chat has been implemented in the application. A important consideration was the that audio quality had to be good with little to none background noise and echo as it can impact both the usability and the feeling of social presence (see section \ref{section:socialPrecence}) for the users. 
 The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure out who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
@@ -97,20 +97,39 @@ The effect on collaboration with voice chat would have to be investigated before
 \end{figure}
 
 
+\begin{figure}[]
+  \centering
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/laser1.png}
+    \caption{A user pinpointing a loose hose in the engine compartment with the laser.}
+    \label{fig:laser1}
+  \end{subfigure}
+    \hfill%
+  \begin{subfigure}[b]{0.45\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/laser2.PNG}
+    \caption{A career guide highlighting a calibre bolt for the users who need help to complete the task.}
+    \label{fig:laser2}
+  \end{subfigure}
+  \hfill%
+  \caption{Laser pointer feature in action during testing.}
+  \label{fig:phase2Laser}
+\end{figure}
+
+
 \section{Implementation}
 \label{section:Phase2Implentation}
 As the implementation got started, it was obvious that some sort of triage needed to be performed. The overall application was broken into its composite pieces, and to the highest degree possible, components were separated and isolated. In the case of the car mechanic application, it consisted of two main scenes, one small and one large. First was the wardrobe, where players had to equip the proper equipment before heading into the garage proper, see figure \ref{fig:wardrobeApp}.
 
 
-\begin{figure}[]
+\begin{figure}[H]
   \centering
-  \begin{subfigure}[b]{0.9\textwidth}
+  \begin{subfigure}[b]{0.47\textwidth}
     \includegraphics[width=1\textwidth]{fig/phase_2/implementation/wardrobe.PNG}
     \caption{Screenshot of the wardrobe model in Unity.}
     \label{fig:wardrobeApp}
   \end{subfigure}
   \hfill%
-  \begin{subfigure}[b]{0.7\textwidth}
+  \begin{subfigure}[b]{0.47\textwidth}
     \includegraphics[width=1\textwidth]{fig/phase_2/implementation/toolsWall.PNG}
     \caption{Tool wall with different networked tools.}
     \label{fig:toolWall}
@@ -121,11 +140,34 @@ As the implementation got started, it was obvious that some sort of triage neede
 \end{figure}
 
 
-There wasn't too much happening here, so to begin with we made sure player instances and avatar representations were instantiated correctly in the room. We also added a simple wall with different tools that the awaiting users could interact with, adapting scripts for object networking and serialisation from phase 1, see figure \ref{fig:toolWall}. Other than that the last thing that was implemented was the ability for the multiple players to enter the garage through the door. Generally, in a online multiplayer game there is the master-client which handles scene changes, as was the case with standard PUN2 framework. We added logic in the network code so that whomever opens the door, even though it is not the master-client, and callback is sent to the the master-client telling a scene change needs to happened. It is an adaption of the software design pattern \textit{Observer Pattern}, where if one object is modified dependant objects gets notified.    
+There was not too much happening here, so to begin with we made sure player instances and avatar representations were instantiated correctly in the room. We also added a simple wall with different tools that the awaiting users could interact with, adapting scripts for object networking and serialisation from phase 1, see figure \ref{fig:toolWall}. Other than that the last thing that was implemented was the ability for the multiple players to enter the garage through the door. Generally, in a online multiplayer game the master-client  handles scene changes, as was the case with standard PUN2 framework. We added logic in the network code so that whomever opens the door, even though it is not the master-client, and callback is sent to the the master-client telling a scene change needs to happened. It is an adaption of the software design pattern \textit{Observer Pattern}, where if one object is modified dependant objects gets notified.    
 
 
 
-Once inside the garage, the meat of the matter becomes prevalent. The garage contains four separate cars that all have various tasks assigned to them. These were from the start designed separately, with no overlap, which made it easy to focus on one of them at a time. Making sure that each task worked over the network had varying degrees of complexity, largely dependant on the tasks' original complexity. For each of the task, understanding the code was essential. This led to some time being spent on each task simply breaking down the code and structure of each game object. Once thoroughly understood, the basic networking pieces could then be added, and the necessary components and scripts switched out for new, networked variants created in phase one (see chapter \ref{chap:phase1}). For those tasks that required further networking, or had some state that needed to be uniquely maintained, new scripts were created as required, while still aiming to maintain simplicity.  In so far as it was possible, adherence to certain principles was kept a high priority. \textcolor{red}{DRA INN MASSE PROGARK KUNNSKAP HER}
+Once inside the garage, the meat of the matter becomes prevalent. The garage contains four separate cars that all have various tasks assigned to them, see figure \ref{fig:phase2Garage} for an overview. These were from the start designed separately, with no overlap, which made it easy to focus on one of them at a time. Making sure that each task worked over the network had varying degrees of complexity, largely dependant on the tasks' original complexity. For each of the task, understanding the code was essential. This led to some time being spent on each task simply breaking down the code and structure of each game object. Once thoroughly understood, the basic networking pieces could then be added, and the necessary components and scripts switched out for new, networked variants created in phase one (see chapter \ref{chap:phase1}). For those tasks that required further networking, or had some state that needed to be uniquely maintained, new scripts were created as required, while still aiming to maintain simplicity.  In so far as it was possible, adherence to certain principles was kept a high priority. 
+
+In terms of computer software programming we followed several design principals which included \textit{ modularisation}, \textit{high cohesion - low coupling} and \textit{ entity-component}. Unity already provides the entity-component patterns as default, where entities are instances of \textit{GameObjects} and they get their logic (interaction, movement etc.) by classes (scripts) extending the base class \textit{Component}. These classes inherits some useful methods and operators. 
+Modularisation refers to the principal of splitting and dividing the system into independent modules which gives the benefit of an easier system to understand and use, while allowing re-usage any number of times. Lastly, we tried to adhere to the high cohesion - low coupling principle which emphasis that classes should only do related things while being as independent of other classes as possible.    
+
+As detailed in section \ref{section:pun2} we also used the \textit{client-server architecture} as our computing model. 
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.47\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/workshop1.PNG}
+    \caption{Screenshot from position of where the player objects are instantiated.}
+    \label{fig:garage1}
+  \end{subfigure}
+  \hfill%
+  \begin{subfigure}[b]{0.47\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/workshop2.PNG}
+    \caption{Screenshot from opposite side of the garage. Fours cars with unique and accurate tasks.}
+    \label{fig:garage2}
+  \end{subfigure}
+  \hfill%
+  \caption{The garage scene.}
+  \label{fig:phase2Garage}
+\end{figure}
 
 
 \subsection{Improving the serialisation of network objects}
