@@ -4,7 +4,7 @@
 \label{chap:phase3}
 
 \section{Planning and Changes}
-Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to combat Covid-19 (see Section \ref{section:covid19}), effectively preventing us from going through with the plans that were laid out for this phase. Coupled with an enforced work from home situation, and the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be ran at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed.
+Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to combat Covid-19 (see Section \ref{section:covid19}), effectively preventing us from going through with the plans that were laid out for this phase. Coupled with an enforced work from home situation, and the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be ran at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed. A brief overview of the changes can be seen below
 
 \subsection{Changes}
 \begin{description}
@@ -14,7 +14,19 @@ Phase 3 was originally meant to contain changes and finishing touches based on t
     Artefact must be changed to a file runnable by end-users with minimal to no input from developers.
     \item [Change 3]\hfill \\
     Features need to be complete and usable, or potentially removed if their unfinished state interferes with normal use of artefact.
+    \item[Change 4]\hfill \\
+    Modified research questions, as new circumstances made them difficult to answer properly.
 \end{description}
+
+\subsection{Changes to Research Questions}
+As a direct result of the Covid-19 situation, it became unfeasible to complete the research question looking into the difference between collaborating with a peer compared to a mentor, as it was impossible to set up a day for testing the scenarios properly. In order to thoroughly answer this RQ, we felt we needed more people, and the time to test with multiple combinations of peers, mentors and experts. As such, secondary RQ2 will not be answered in a way we had hoped to. See \textit{Future Work} in section \ref{section:futureWork} for more on this.
+
+On the other hand, the new circumstances paved the way for another research question. During a discussion held with IMTEL and NAV, a need to figure out what parts are essential for remote career guidance to work was expressed. 
+
+Since the new plan already included testing with NAV clients remotely, this new topic could be integrated seamlessly into the paper with only some minor adjustments to surveys and plans. Therefore, work began on stabilising features in the application so remote guidance could work smoothly. With the final features nailed down, the survey could be updated to find out which of them were essential, and whether any features were missing that we had not considered.
+
+\subsection{Planned Artefact Changes}
+
 
 \subsection{Final Requirements}
 \begin{enumerate}
@@ -23,20 +35,24 @@ Phase 3 was originally meant to contain changes and finishing touches based on t
 
 
 
+
 \subsection{Development Decisions}
 \subsubsection{VR}
 
-\section{Implementation}
+\section{Final Artefact}
+Ingress om appen
 
-\subsubsection{Lobby Supporting Different Applications}
-As part of the larger collaboration project between IMTEL and NAV, it's natural for new projects to build on the older ones, like this one did. To keep this going, a lot of effort went into making sure the artefact is reusable and easy to build further should the need arise to do so. As part of this, the starting screen of the application has received a new feature, where the user can select which application they would like to start. To demonstrate the possibility, a demo room was made, so that the user can correctly select different rooms and see the feature in action. It also servers to demonstrate how to implement a new scene for future developers who may use the lobby system.
 
-Skriv om hvordan lobby støtter flere apper. Vi har laget en demo app i tilegg til autoVR. Dette er fordi det svarer til siste RQ om : Secondary RQ4:”What  are  the  challenges  of  implementing  collaborative  features  in  an  ongoing project?"
+\subsection{Lobby Supporting Different Applications}
+As part of the larger collaboration project between IMTEL and NAV, it's natural for new projects to build on the older ones, like this one did. To keep this going, a lot of effort went into making sure the artefact is reusable and easy to build further should the need arise to do so. As part of this, the starting screen of the application has received a new feature, where the user can select which application they would like to start. To demonstrate the possibility, a demo room was made, so that the user can correctly select different rooms and see the feature in action. It also servers to demonstrate how to implement a new scene for future developers who may use the lobby system. This aligns closely with secondary RQ4, as part of the challenge of implementing these features is that they must be general enough to work in a multitude of scenarios.
+
 
 
 
 \subsection{Improvements}
+Lasperpeker?
 \subsubsection{Usability}
+Hva gjorde vi av usability?
 \subsubsection{Other}
 
 \subsection{Unimplemented Features}
@@ -44,10 +60,23 @@ Skriv om hvordan lobby støtter flere apper. Vi har laget en demo app i tilegg t
 \subsubsection{Other}
 
 
-\section{Third Evaluation}
-More about a Kompentanse Norge og presentasjon over Zoom + Microsoft form etc. 
 
-\subsection{Expert test data}
+
+
+\section{Third Evaluation}
+While evaluation turned out to be more difficult than anticipated, tests were still able to be performed with some effort. As planned, tests with the  users remain the primary source of data, but the new circumstances placed further importance on expert evaluation to garner additional data sets.
+
+\subsection{Remote User Tests}
+
+
+
+\subsection{Expert Evaluation}
+While work was underway in securing testers for the planned remote guidance tests, other avenues for feedback were also pursued. Due to the special circumstances, there was some concern enough test data could not be secured. By working with various relevant collaboration partners of IMTEL, we could present the project and garner feedback and opinions from experts in the fields of career guidance and mentoring. While this alone is not a satisfactory type or amount of data, it is helpful to see their opinion on what we've made, particularly for the RQ that pertain to remote guidance, i.e. RQ2 and RQ3.
+
+This data will primarily be gathered using Microsoft Forms, where a survey was created through multiple iterations. A copy of this form can be seen in appendix \ref{}. 
+
+
+More about a Kompentanse Norge og presentasjon over Zoom + Microsoft form etc. 
 %Graph data: 
 
 %Learning
@@ -57,6 +86,7 @@ More about a Kompentanse Norge og presentasjon over Zoom + Microsoft form etc.
 %VR mode vs. desktop
 
 %Expert feedback
+
 
 
 \subsection{Analysis}

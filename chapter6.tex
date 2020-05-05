@@ -32,7 +32,7 @@ The changes to the application is based mostly on the analysis done in the previ
 
 
 \subsection{Updated Requirements}
-As mentioned above this phase adds several changes to the artefact. The requirements marked in bold are additions for this phase.
+As mentioned above this phase adds several changes to the artefact. The requirements outlined in bold are additions for this phase.
 
 \begin{enumerate}
   \setlength\itemsep{0em}
@@ -146,7 +146,7 @@ There was not too much happening here, so to begin with we made sure player inst
 
 Once inside the garage, the meat of the matter becomes prevalent. The garage contains four separate cars that all have various tasks assigned to them, see figure \ref{fig:phase2Garage} for an overview. These were from the start designed separately, with no overlap, which made it easy to focus on one of them at a time. Making sure that each task worked over the network had varying degrees of complexity, largely dependant on the tasks' original complexity. For each of the task, understanding the code was essential. This led to some time being spent on each task simply breaking down the code and structure of each game object. Once thoroughly understood, the basic networking pieces could then be added, and the necessary components and scripts switched out for new, networked variants created in phase one (see chapter \ref{chap:phase1}). For those tasks that required further networking, or had some state that needed to be uniquely maintained, new scripts were created as required, while still aiming to maintain simplicity.  In so far as it was possible, adherence to certain principles was kept a high priority. 
 
-In terms of computer software programming we followed several design principals which included \textit{ modularisation}, \textit{high cohesion - low coupling} and \textit{ entity-component}. Unity already provides the entity-component patterns as default, where entities are instances of \textit{GameObjects} and they get their logic (interaction, movement etc.) by classes (scripts) extending the base class \textit{Component}. These classes inherits some useful methods and operators. 
+In terms of software conventions we followed several design principles which included \textit{ modularisation}, \textit{high cohesion - low coupling} and \textit{ entity-component}. Unity already provides the entity-component patterns as default, where entities are instances of \textit{GameObjects} and they get their logic (interaction, movement etc.) by classes (scripts) extending the base class \textit{Component}. These classes inherits some useful methods and operators. 
 Modularisation refers to the principal of splitting and dividing the system into independent modules which gives the benefit of an easier system to understand and use, while allowing re-usage any number of times. Lastly, we tried to adhere to the high cohesion - low coupling principle which emphasis that classes should only do related things while being as independent of other classes as possible.    
 
 As detailed in section \ref{section:pun2} we also used the \textit{client-server architecture} as our computing model. 
@@ -171,15 +171,31 @@ As detailed in section \ref{section:pun2} we also used the \textit{client-server
 
 
 \subsection{Improving the serialisation of network objects}
-For those objects that did not fit neatly into the basic entity types, it becomes necessary to create a Photon View script specific to that object that describes how the object is supposed to transfer its' data over the network to the other clients. When that is done, it is important to remember that since serialisation needs to be done manually, so does other things, like lag compensation. If the object also has triggers or other important changes that depend on user input, remote procedure calls from the Photon API can be very handy. It allows the player to request other clients to perform certain procedures remotely, hence the name. Using these RPCs, the state of the tasks can then be easily maintained across all clients, even with more complex state and triggers.
+For those objects that did not fit neatly into the basic entity types, it becomes necessary to create a Photon View script specific to that object that describes how the object is supposed to transfer its' data over the network to the other clients. When that is done, it is important to remember that since serialisation needs to be done manually, so does other things, like lag compensation. If the object also has triggers or other important changes that depend on user input, remote procedure calls from the Photon API can be very handy. It allows the player to request other clients to perform certain procedures remotely, hence the name. Using these RPCs, the state of the tasks can then be easily maintained across all clients, even with more complex state and triggers. A good example of the usefulness of an RPC method call is how it greatly simplified the serialisation of the complex car lift mechanism (see Figure \ref{fig:carlift}). With this callback we could ignore the data serialisation for necessary states of the left and right piston, outer scissor and inner scissor mechanism, top plate and all other GameObjects seen in Figure \ref{fig:carliftTree}. Instead we call a method on remote players with one of three states: still (0), up (1) or down (-1). The local player then handles the rest with little alteration to original code.
 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.61\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/carHoist.PNG}
+ \caption{The car lift mechanism in the application.}
+  \label{fig:carlift}
+  \end{subfigure}
+  \hfill%
+  \begin{subfigure}[b]{0.28\textwidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/carliftTreee.PNG}
+    \caption{Hierarchy of \textit{Lift} prefab.}
+    \label{fig:carliftTree}
+  \end{subfigure}
+  \hfill%
+  \caption{The car lift prefab from the garage scene.}
+  \label{fig:phase2CarLift}
+\end{figure}
 
 
 \subsection{Optimisation} \label{subsec:Optimisation}
-\textcolor{red}{RPCalls and bugfixing}
 Over the course of the implementation of the artefacts, areas that could be improved and bugs that could be fixed appeared. As they were noticed, or certain parts caused issues, the issues were taken note of and general implementation continued. If a bug or piece of code was hindering the implementation it would be fixed as needed, otherwise left for later. At the tail end of the phase, they were prioritised and ordered, and they could then be fixed, one at a time. Among these were improvements to level loading, missing collision detectors for certain items, incorrectly synchronised objects, etc. Multiple passes were made to make sure that remote procedure calls were not being sent multiple times or being looped by firing other users' event handlers and so on. 
 
-A helper method has also been created to help keep the code general. Instead of creating a new remote procedure call every time one is needed, one can simply pass the desired method call as a argument to the helper, and the method will initiate the desired remote procedure call. 
+A helper method has also been created to help keep the code general. Instead of creating a new remote procedure call every time one is needed, one can simply pass the desired method call as a argument to the helper, and the method will initiate the desired remote procedure call. We also optimised which remote clients which gets the RPC call, reducing network traffic and complexity. For instance we could specifically target the \textit{MasterClient}, the \textit{others} (all but the masterclient) or simply every remote client connected.     
 
 
 
@@ -200,13 +216,13 @@ Covid-19 also meant we had continue work from home by setting up temporary VR st
 
 \section{Second Evaluation}
 \label{section:secondEvalPhase2}
-
 In order to evaluate the usability of the application and collaborative features we developed for this phase we utilised a reliable and well established method called system usability scale (or SUS). The scale gives a number representing a composite measure of the overall usability of the system being studied \cite{brooke1996sus}. In order for SUS to have the best result it is important that the test is performed before any discussion around the trial of the system takes place, which we tried our best to ensue.
-The SUS questions were translated in the native language (Norwegian) and included in a separate category in a survey amongst two other likert scale questions categories related to career guidance/career choice and collaboration mechanisms. This is a popular strategy for user evaluation of a computer system \cite{oates2005researching}. Some of the question was adapted and utilised from a evaluation system designed by an associate professor from the Department of Education and Lifelong Learning at NTNU. The survey can be found in appendix \ref{}.
-The plan for the user testing was to conduct twelve separate tests were pairs of two, either peer and peer or peer and mentor, tried out the application in VR before answering the survey. This meant we would have 24 answers, half of which was peer and peer pairs and the other half peer and mentor. The peers would consist of young job seekers and the mentors would be career councillors from NAV Jobbhuset Falkenborg.
+The SUS questions were translated in the native language (Norwegian) and included in a separate category in a survey, amongst two other likert scale questions categories related to career guidance/career choice and collaboration mechanisms. This is a popular strategy for user evaluation of a computer system \cite{oates2005researching}. Some of the question was adapted and utilised from a evaluation system designed by an associate professor from the Department of Education and Lifelong Learning at NTNU. Questions about career guidance, engagement and self-efficacy measurements where aimed to answer the primary RQ. SUS scale provides answer for usability, e.g. secondary RQ2. Comparing feedback from (peer + peer) vs. (peer + career guide) would provide answers to secondary RQ1.  The survey can be found in appendix \ref{}.
+
+The plan for the user testing was to conduct twelve separate tests were pairs of two, either peer and peer or peer and mentor, tried out the application in VR before answering the survey. This meant we would have 24 answers, half of which was peer and peer pairs and the other half peer and mentor. The peers would consist of young job seekers and the mentors would be career councillors from NAV Jobbhuset Falkenborg. Figure \ref{fig:tastingPhase2} shows a user equipped with HTC Vive testing the application and the experience once inside the virtual environment. 
 
 
-\begin{figure}[H]
+\begin{figure}[]
   \centering
    \captionsetup{width=.9\linewidth}
     \includegraphics[width=0.9\textwidth]{fig/phase_2/phase2_testing.jpg}
@@ -228,7 +244,7 @@ In order to get meaningful information from the quantitative data we utilised di
 Through organisation of the data into using visual aids and statistics we were able to identify interesting findings. The survey had six answers consisting of one woman and five males with age distribution 18-25 years. Of those, none had tried NAV VR applications before. Data results is presented in bar charts and was constructed using an online chart maker. 
 
 
-\begin{figure}[H]
+\begin{figure}[]
   \begin{subfigure}[b]{0.5\textwidth}
     \captionsetup{width=0.8\linewidth}
     \includegraphics[width=1\textwidth]{fig/phase_2/charts/collabIncreaseCareer.PNG}
