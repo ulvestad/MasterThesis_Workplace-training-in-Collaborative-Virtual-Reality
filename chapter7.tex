@@ -1,7 +1,10 @@
 %===================================== CHAP 7 =================================
 
-\chapter{Phase 3: Last Requirements and Finishing Up} \label{chap:7}
+\chapter{Phase 3: Last Requirements and Finishing Up} 
+\label{chap:7}
 \label{chap:phase3}
+The primary target for the last and final phase of this thesis was to implement additional requirements, complete the artefact as a general multi-user framework to serve as a foundation for future development and analyse user test data. The following sections will detail changes due to Covid-19, development decisions and implementation as well as an evaluation of this phase's artefact.                 
+
 
 \section{Planning and Changes}
 Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to combat Covid-19 (see Section \ref{section:covid19}), effectively preventing us from going through with the plans that were laid out for this phase. Coupled with an enforced work from home situation, and the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be ran at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed. A brief overview of the changes can be seen below
@@ -11,7 +14,7 @@ Phase 3 was originally meant to contain changes and finishing touches based on t
     \item [Change 1]\hfill \\
     Support for multiple concurrent rooms must be made. 
     \item [Change 2]\hfill \\
-    Artefact must be changed to a file runnable by end-users with minimal to no input from developers.
+    Artefact must be changed to an executable file by end-users with minimal to no input from developers.
     \item [Change 3]\hfill \\
     Features need to be complete and usable, or potentially removed if their unfinished state interferes with normal use of artefact.
     \item[Change 4]\hfill \\
@@ -19,32 +22,60 @@ Phase 3 was originally meant to contain changes and finishing touches based on t
 \end{description}
 
 \subsection{Changes to Research Questions}
-As a direct result of the Covid-19 situation, it became unfeasible to complete the research question looking into the difference between collaborating with a peer compared to a mentor, as it was impossible to set up a day for testing the scenarios properly. In order to thoroughly answer this RQ, we felt we needed more people, and the time to test with multiple combinations of peers, mentors and experts. As such, secondary RQ2 will not be answered in a way we had hoped to. See \textit{Future Work} in section \ref{section:futureWork} for more on this.
+As a direct result of the Covid-19 situation, it became unfeasible to complete the research question looking into the difference between collaborating with a peer compared to a mentor, as it was impossible to set up a day for testing the scenarios properly. In order to thoroughly answer this research questions, we concluded we needed more people, and the time to test with multiple combinations of peers, mentors and experts. As such, secondary RQ1 will not be answered in a way we had hoped to. See \textit{Future Work} in section \ref{section:futureWork} for more on this.
 
-On the other hand, the new circumstances paved the way for another research question. During a discussion held with IMTEL and NAV, a need to figure out what parts are essential for remote career guidance to work was expressed. 
+On the other hand, the new circumstances paved the way for an additional research question. During a discussion held with IMTEL and NAV, a need to figure out what parts are essential for remote career guidance to work was expressed.  Thus, a new research question (secondary RQ2) was drafted, see section \ref{RQ}, with the aim of assessing essentials needed for collaborative VR in order for it to be applied effectively as a remote career guidance tool. 
 
-Since the new plan already included testing with NAV clients remotely, this new topic could be integrated seamlessly into the paper with only some minor adjustments to surveys and plans. Therefore, work began on stabilising features in the application so remote guidance could work smoothly. With the final features nailed down, the survey could be updated to find out which of them were essential, and whether any features were missing that we had not considered.
+A revised plan for this phase was drafted to handle the new situation regarding the Covid-19 restrictions and adapt the changes to the research questions. The new plan included testing with NAV clients remotely, online seminars and testing with experts from NAV, Kompetanse Norge and Arbeids- og velferdsdirektoratet. See section \ref{section:evalPhase3} for more details.    
 
-\subsection{Planned Artefact Changes}
+As such, the new topic regarding remote career guidance could be integrated seamlessly into the paper with only some minor adjustments to surveys and plans. Therefore, work began on stabilising features in the application so remote guidance could work smoothly. With the final features nailed down, the survey could be updated to find out which of them were essential, and whether any features were missing that we had not considered.
 
 
 \subsection{Final Requirements}
+As outlined previously this phase sees changes to the artefact and past plans. The requirements outlined in bold are additions for this phase.
+
 \begin{enumerate}
-  \item [\textbf{F1}] Users should be able to interact with the environment.
+  \setlength\itemsep{0em}
+    \item [\textbf{F1}] The applications must allow multiple players to join the same scene.
+    \item [\textbf{F2}] Interactable objects must be serialised and and synchronised over the network.
+    \item [\textbf{F3}] A player shall be represented as a avatar with corresponding movement from the VR world to the real world.
+    \item [\textbf{F4}] The application must offer the option of using VR equipment or desktop mode (mouse and keyboard) for interaction.
+    \item [\textbf{F5}] The application must contain a scene with tasks enabling collaborative learning.
+    \item [\textbf{F6}] The multiplayer component must be generalisable and scalable to work with other NAV applications.
+    \item [\textbf{F7}] The application must be a virtual workplace with multi user functionality.
+    \item [\textbf{F8}] Users should be able to communicate through integrated voice chat functionality.
+    \item [\textbf{F9}] VR users should be able use tool(s) to mark or pinpoint objects or locations.
+    \item [\textbf{F10}] \textbf{The application must support a lobby system allowing multiple concurrent instances of an application to run simultaneously}.
+    \item [\textbf{F11}] \textbf{A room instance should support at least sixteen VR or desktop users to join.}
+    \item [\textbf{F12}] \textbf{A distributable executable file must be made available to users.}
 \end{enumerate}
 
 
 
 
 \subsection{Development Decisions}
-\subsubsection{VR}
+While the previous phase focused on creating a fully functional multi-user collaborative workplace by implementing a car mechanic workplace and due a slight adjustment to this phase's target, phase 3 is about adding remote usage possibilities in the existing artefact while finishing up prioritised features.  
+
+
+\subsubsection{Remote application}
+In order for the virtual workplace to be used successfully in remote circumstances, it was decided that the artefact needed updates to the limited \textit{Launcher} logic. Architecture, setup, network related methods and callbacks as well as optimisation settings needed an overhaul so that clients could seamlessly host, create and join instances of different applications (rooms). The launcher logic should also include an example including a new application (not car mechanic) so that it could serve as a foundation for future development and be utilised for the basics of implementing multi-user mechanisms.   
+
+\subsubsection{Usability}
+As this phase's artefact should include a distributable file for the end users we determined that we must consider the usability of it. Considering objectives such as intuitiveness, feedback, instructions and ease of use. 
+
+
+\subsubsection{Networking}
+It was also found that the existing application with all its serialised data and networked tasks was put through some sort of benchmarking with the limit of connected users, ensuring a stable experience across any HMD or laptop.    
+
+
+
 
 \section{Final Artefact}
-Ingress om appen
+As the development phases came to a close, and the highest priority requirements were finished up, a final version of the artefact was created and prepared for the last phase of testing. To be able to test properly, it is important that all testers experience the same artefact. By prioritising the features with the greatest impact on the overall experience, it is possible to create an artefact that captures the essence of the concepts presented in the paper. While not every feature that may have been wanted has been implemented, the final artefact still stands as a usable proof of concept with a fully functional lobby system, app selection and a network synced virtual reality workplace.
 
 
 \subsection{Lobby Supporting Different Applications}
-As part of the larger collaboration project between IMTEL and NAV, it's natural for new projects to build on the older ones, like this one did. To keep this going, a lot of effort went into making sure the artefact is reusable and easy to build further should the need arise to do so. As part of this, the starting screen of the application has received a new feature, where the user can select which application they would like to start. To demonstrate the possibility, a demo room was made, so that the user can correctly select different rooms and see the feature in action. It also servers to demonstrate how to implement a new scene for future developers who may use the lobby system. This aligns closely with secondary RQ4, as part of the challenge of implementing these features is that they must be general enough to work in a multitude of scenarios.
+Being a part of the larger collaboration project between IMTEL and NAV, it is natural for new projects to build on the older ones, like this one did. To keep this going, a lot of effort went into making sure the artefact is reusable and easy to build further should the need arise to do so. As part of this, the starting screen of the application has received a new feature, where the user can select which application they would like to start. To demonstrate the possibility, a demo room was made, so that the user can correctly select different rooms and see the feature in action. It also servers to demonstrate how to implement a new scene for future developers who may use the lobby system. This aligns closely with secondary RQ4, as part of the challenge of implementing these features is that they must be general enough to work in a multitude of scenarios.
 
 
 
@@ -64,9 +95,11 @@ Hva gjorde vi av usability?
 
 
 \section{Third Evaluation}
+\label{section:evalPhase3}
 While evaluation turned out to be more difficult than anticipated, tests were still able to be performed with some effort. As planned, tests with the  users remain the primary source of data, but the new circumstances placed further importance on expert evaluation to garner additional data sets.
 
 \subsection{Remote User Tests}
+Since tests could no longer be performed at the lab or at the offices of NAV, the tests had to be adapted to fit the new circumstances. That meant finding testers who were available who also had VR gear at home. This turned out to be somewhat difficult, and a significant amount of time has been spent finding testers so that the project could finish as planned. With no access
 
 
 
@@ -75,8 +108,8 @@ While work was underway in securing testers for the planned remote guidance test
 
 This data will primarily be gathered using Microsoft Forms, where a survey was created through multiple iterations. A copy of this form can be seen in appendix \ref{}. 
 
+The largest opportunity for this happened in late April, where a chance presented itself for a presentation and discussion with Kompetanse Norge\ref{kompetanseNorge}, a directorate of the government department of education. While their field of interest is more centered on the education and re-education of adults, rather than young job seekers working with NAV, their expertise in the field of career guidance could be useful nonetheless. The survey we had prepared for the final phase, with the extra questions for remote guidance, was employed afterwards in an attempt to gain a secondary data source. From the about 50 to 60 people we interacted with, 13 chose to respond to the survey. While the amount of respondents was not entirely as high as hoped considering this was not a random selection for participants, their status as a secondary data source mitigates this somewhat, as this data was always considered secondary to the data gathered from the primary target group, which would be of the qualitative sort.
 
-More about a Kompentanse Norge og presentasjon over Zoom + Microsoft form etc. 
 %Graph data: 
 
 %Learning

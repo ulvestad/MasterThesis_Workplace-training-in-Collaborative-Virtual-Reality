@@ -93,7 +93,17 @@ This leads to the following functional requirements for phase 1:
 Since one of the purposes of the project was to heighten the quality and experience of the existing applications developed at the IMTEL lab, the choice of development platform was already locked in. As the projects had used Unity before and due to the substantial support of well integrated frameworks (as detailed in section \ref{section: untiy}) we opted to continue doing exactly that. 
 
 \subsubsection{Networking framework}
-As detailed in section \ref{section:pun2} the PUN2 networking framework for Unity supports a wide range of useful methods and features. Unity's own UNet multiplayer framework  was another option but it was quickly discarded as Unity themselves has deprecated the solution limiting support and updates for several features. Therefore the obvious choice was PUN2 as the IMTEL lab hopes to utilise the networking foundation for existing and future projects.       
+As detailed in section \ref{section:pun2} the PUN2 networking framework for Unity supports a wide range of useful methods and features. Unity's own UNet multiplayer framework  was another option but it was quickly discarded as Unity themselves has deprecated the solution limiting support and updates for several features. Their application programming interface (API) are however fairly similar, with the main difference between Unity networking and Photon networking being their architecture required to use the API. Figure \ref{fig:phase1_unetVSpun} illustrates this difference. PUN2 allows peer-to-peer communication, a feature which might become useful in future development.  
+The obvious choice was therefore PUN2 as the IMTEL lab hopes to utilise the networking foundation for existing and future projects.   
+
+\begin{figure}[]
+  \centering
+    \captionsetup{width=.7\linewidth}
+    \includegraphics[width=0.7\textwidth]{fig/phase_1/punVSunet.png}
+ \caption{Architecture models of UNet and PUN. \textit{Credit: Raywenderlich}}
+\label{fig:phase1_unetVSpun}
+\end{figure}
+
 
 
 \section{Implementation}
