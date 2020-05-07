@@ -57,15 +57,23 @@ As outlined previously this phase sees changes to the artefact and past plans. T
 While the previous phase focused on creating a fully functional multi-user collaborative workplace by implementing a car mechanic workplace and due a slight adjustment to this phase's target, phase 3 is about adding remote usage possibilities in the existing artefact while finishing up prioritised features.  
 
 
-\subsubsection{Remote application}
+\subsubsection{Remote application use}
 In order for the virtual workplace to be used successfully in remote circumstances, it was decided that the artefact needed updates to the limited \textit{Launcher} logic. Architecture, setup, network related methods and callbacks as well as optimisation settings needed an overhaul so that clients could seamlessly host, create and join instances of different applications (rooms). The launcher logic should also include an example including a new application (not car mechanic) so that it could serve as a foundation for future development and be utilised for the basics of implementing multi-user mechanisms.   
 
 \subsubsection{Usability}
-As this phase's artefact should include a distributable file for the end users we determined that we must consider the usability of it. Considering objectives such as intuitiveness, feedback, instructions and ease of use. 
+While the previous phases focused on application implementation and  development of a general framework for multi-user environment, we also considered the aspect of user experience. However, it was mainly in relation to the VR aspect, not so much in terms of other parts such as the user interface for the lobby. For the application to be used remote by users, this phase's artefact should include a distributable file. Hence, more consideration towards the software usability must be taken. A general rule of thumb while developing software is to have a goal that whomever (young digitally-skilled or elderly with little skill) should be able use it with as little support as possible. With that in mind, the development must consider subjective objectives such as intuitiveness, ease of use, feedback, and efficiency to hopefully increase the overall satisfaction for the end users.
+
 
 
 \subsubsection{Networking}
-It was also found that the existing application with all its serialised data and networked tasks was put through some sort of benchmarking with the limit of connected users, ensuring a stable experience across any HMD or laptop.    
+Due to the shift of focus for this phase we discussed possible arising challenges we could fase. One of them being an increased number of concurrent users. From previous phases the intention of the artefact accommodate collaboration mechanisms by having two or three users (possibly more but a intended cap at six). Either two VR users and a guide using desktop, or any other combination. Now that the artefact is distributable we decided that in should at least sustain sixteen concurrent users per room (application instance) to better accommodate remote application use. An increase of minimum 150\%. 
+The PUN2 framework we opted for and used in development uses Photon Cloud to host the server-side of the application. Photon has several subscription plans for this, including a free \textit{Public Cloud}. This was the plan we used in phase 1 and 2. At the time it was the obvious choice, being free and plenty of capability for the intended use. This plan supports up to 20 Concurrent Users (CCU), i.e the number of users allowed to connect to the application, eighth thousand monthly activities and 500 msg/s per room. The other subscription plans \textit{Premium Cloud} and \textit{Enterprise Cloud} can handle 50.000+ CCU but has a cost of at least \$580 per month. After some network traffic calculations and discussion we decided the \textit{Public Cloud} could still satisfy our needs, but some restrictions in the code was needed to limit the number of users to sixteen. 
+
+
+
+%Faster datatransfer? no need to always go through server. 
+%se figure fra chap 5 
+
 
 
 
