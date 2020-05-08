@@ -66,8 +66,8 @@ While the previous phases focused on application implementation and  development
 
 
 \subsubsection{Networking}
-Due to the shift of focus for this phase we discussed possible arising challenges we could fase. One of them being an increased number of concurrent users. From previous phases the intention of the artefact accommodate collaboration mechanisms by having two or three users (possibly more but a intended cap at six). Either two VR users and a guide using desktop, or any other combination. Now that the artefact is distributable we decided that in should at least sustain sixteen concurrent users per room (application instance) to better accommodate remote application use. An increase of minimum 150\%. 
-The PUN2 framework we opted for and used in development uses Photon Cloud to host the server-side of the application. Photon has several subscription plans for this, including a free \textit{Public Cloud}. This was the plan we used in phase 1 and 2. At the time it was the obvious choice, being free and plenty of capability for the intended use. This plan supports up to 20 Concurrent Users (CCU), i.e the number of users allowed to connect to the application, eighth thousand monthly activities and 500 msg/s per room. The other subscription plans \textit{Premium Cloud} and \textit{Enterprise Cloud} can handle 50.000+ CCU but has a cost of at least \$580 per month. After some network traffic calculations and discussion we decided the \textit{Public Cloud} could still satisfy our needs, but some restrictions in the code was needed to limit the number of users so that it does not exceed the CCU cap. 
+Due to the shift of focus for this phase we discussed possible arising challenges we could fase. One of them being an increased number of concurrent users. From previous phases the intention of the artefact accommodate collaboration mechanisms by having two or three users (possibly more, but a intended cap at six). Either two VR users and a guide using desktop, or any other combination. Now that the artefact is distributable we decided that in should at least sustain sixteen concurrent users per room (application instance) to better accommodate remote application use. An increase of minimum 150\%. 
+The PUN2 framework we opted for and used in development uses Photon Cloud to host the server-side of the application. Photon has several subscription plans for this, including a free \textit{Public Cloud}. That was the plan we used in phase 1 and 2. At the time it was the obvious choice, being free and plenty of capability for the intended use. This plan supports up to 20 Concurrent Users (CCU), i.e the number of users allowed to connect to the application, eighth thousand monthly activities and 500 msg/s per room. The other subscription plans \textit{Premium Cloud} and \textit{Enterprise Cloud} can handle 50.000+ CCU but has a cost of at least \$580 per month. After some network traffic calculations and discussion we decided the \textit{Public Cloud} could still satisfy our needs, but some restrictions in the code was needed to limit the number of users so that it does not exceed the CCU cap. 
 
 
 
@@ -119,22 +119,17 @@ Then the system fetches all the corresponding rooms (application instances) host
 
 \begin{figure}[H]
   \centering
-   \captionsetup{width=.7\linewidth}
-    \includegraphics[width=0.7\textwidth]{fig/phase_3/implementation/Lobby2MultiRoomsSelectedSmall.jpg}
+   \captionsetup{width=.8\linewidth}
+    \includegraphics[width=0.8\textwidth]{fig/phase_3/implementation/Lobby2MultiRoomsSelectedSmall.jpg}
  \caption{Cropped screenshot of the lobby, listing hosted rooms and a user ready to join a selected room.}
 \label{fig:phase3_LobbyMultiRoomsSelectSmall}
 \end{figure}
 
 The process of creating a room was to a great extent simplified (while ensuring functionality is kept) so that most users could perform the operation. Only a name for the rooms is required. It does not even need to be unique, as we accounted for it in our code. Custom logic assigns a unique ID number to a room instance, which is then used as a key identifier when for instance a user wants to join that room. Once a user successfully creates a room on the server, the client joins the room and their local player instance is instantiated. They are now the masterclient of the room. If they were to leave, and other users are connected to the room, the masterclient privileges are delegated to another user. Otherwise the room is closed. After the client has created and joined the room, a callback is made to all connected remote clients in the lobby and the room is added and displayed in the list of rooms. 
 
-To join a hosted room the user only needs to selected the desired one from the list by clicking on it and press \textit{Join selected room}. As a verification that the correct room is selected a text string below the join button is updated with the corresponding room name. Similar to creating a room, the process of joining is automated. The difference being there is no need to create it, just instantiate the clients local player instance. 
+To join a hosted room the user only needs to selected the desired one from the list by clicking on it and press \textit{Join selected room}. As a verification that the correct room is selected, a text string below the join button is updated with the corresponding room name, see figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. Similar to creating a room, the process of joining is automated. The difference being there is no need to create it, just instantiate the client's local player instance. 
 
 A player cap of 16 concurrent users are set for each room. The number of connected clients in a room are shown list of rooms as with the name, type of application and ID. See figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall} for an example.  
-
-
-
-
-
 
 
 To demonstrate the new feature that allows multiple applications in the lobby system, a demo room was made. It allows the users select different rooms and see the new feature in action. It also servers to demonstrate how to implement a new scene for future developers who may use the lobby system. This aligns closely with secondary RQ4, as part of the challenge of implementing these features is that they must be general enough to work in a multitude of scenarios. Figure \ref{fig:phase3_demoApp} is a screenshot of the demo application scene. 
@@ -144,7 +139,7 @@ To demonstrate the new feature that allows multiple applications in the lobby sy
   \centering
    \captionsetup{width=.9\linewidth}
     \includegraphics[width=0.9\textwidth]{fig/phase_3/implementation/demoApp.PNG}
- \caption{A demo application with some collaboration mechanism and networked integration.}
+ \caption{A demo application with basic collaboration mechanism and networked integration.}
 \label{fig:phase3_demoApp}
 \end{figure}
 
