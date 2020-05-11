@@ -57,7 +57,7 @@ As outlined previously this phase sees changes to the artefact and past plans. T
 While the previous phase focused on creating a fully functional multi-user collaborative workplace by implementing a car mechanic workplace and due a slight adjustment to this phase's target, phase 3 is about adding remote usage possibilities in the existing artefact while finishing up prioritised features.  
 
 
-\subsubsection{Remote application use}
+\subsubsection{Remote Application Use}
 In order for the virtual workplace to be used successfully in remote circumstances, it was decided that the artefact needed updates to the limited \textit{Launcher} logic. Architecture, setup, network related methods and callbacks as well as optimisation settings needed an overhaul so that clients could seamlessly host, create and join instances of different applications (rooms). The launcher logic should also include an example including a new application (not car mechanic) so that it could serve as a foundation for future development and be utilised for the basics of implementing multi-user mechanisms.   
 
 \subsubsection{Usability}
@@ -83,6 +83,7 @@ As the development phases came to a close, and the highest priority requirements
 
 
 \subsection{Lobby Supporting Different Applications}
+\label{section:lobbySystem}
 Being a part of the larger collaboration project between IMTEL and NAV, it is natural for new projects to build on the older ones, like this one did. To keep this going, a lot of effort went into making sure the artefact is reusable and easy to build further should the need arise to do so. As part of this, the starting screen of the application has received updates, as seen in figure \ref{fig:phase3_lobby1}. All the elements in the user interface was redesigned to support multiple resolutions so that the layout adapts to it.  
 We also including a new feature, where the user can select which application they would like to start as a mean to ease the reusability and future development. Seen in figure \ref{fig:phase3_dropwdown}. This allows future developers to effortlessly target any desired scene (or application) to be created as a public hosted instance on the server so that users can join. 
 However, it must be pointed out that this does not serialise or network objects within the scene automatically. Players that join the room are synced, but every other interactable object requires some variation of PUN2 networking implementation. 
@@ -139,7 +140,7 @@ To demonstrate the new feature that allows multiple applications in the lobby sy
   \centering
    \captionsetup{width=.9\linewidth}
     \includegraphics[width=0.9\textwidth]{fig/phase_3/implementation/demoApp.PNG}
- \caption{A demo application with basic collaboration mechanism and networked integration.}
+ \caption{The demo application with basic collaboration mechanism and networked integration.}
 \label{fig:phase3_demoApp}
 \end{figure}
 
@@ -149,28 +150,59 @@ To demonstrate the new feature that allows multiple applications in the lobby sy
 
 
 \subsection{Improvements}
-Lasperpeker?
+
+
+\subsubsection{Identifiable rooms}
+In the preliminary stage of this phase the primary target to begin with was to implement a functional lobby system as described in section \ref{section:lobbySystem}. To start the rooms where only had an identification number and the type of application as room name. The ID was given when the room was created. This meant the creator of a room did not know the ID and it was hard for other users to identify which room they were supposed to join. As such we improved the situation by allowing the users to enter a custom name for the room so that other users could identify it by its name.   
+
+
+\subsubsection{Custom keybindings}
+As mentioned in the previous chapter (see section \ref{section:covid19}) we had gotten Oculus devices to support our work from home. We was therefore somewhat forced to adapt and as such we added custom controller binding settings so that features such as laserpointer is supported for Oculus Rift controllers.   
+
+
+
 \subsection{Usability}
-Hva gjorde vi av usability?
+As a measure to hopefully increase the users opinion about subjective objectives related to the artefacts usability we considered and added different heuristics. 
 
-- feedback tekst i lobby
-- buttons er active når mar har oppfylt krav som romnavn, ellers er de deaktiverte. 
-- symboler for å signlarisere aktivitet som skjern, f.eks. fetching av rom har sync symbol
-- buttons blir grønne når man hover over den (hvis de er aktive) for å signlaisere at de kan trykkes på
+Firstly, we added symbols and status text so that the user has visibility of the system status. As an example the lobby displays a loading symbol and appropriate text in the rooms list while it is fetching data, see figure \ref{fig:phase3_LobbyScene1}.  
+To prevent error by the user, some buttons were disabled until the user has fulfilled the requirements. In our solution the user needs to enter a name for the rooms before the \textit{Create own room} button becomes active and clickable.
+Use of consistent elements such as colour scheme, size of buttons, text font and other mechanisms was adapted so that situations stay the same for the user. For example a mouse hovering over a button yields the same green colour overlay to signal that it can be clicked. See figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. 
 
 
-\subsection{Optimisation}
 
 \subsection{Challenges}
 
+\subsubsection{Corrupted Prefabs}
+The work from home environment presented some issues that were not expected occurred. When work was done at the lab, the computers were kept up to date, programs were updated and things ran smoothly. When setting up at home, a fair bit of time was spent correctly setting up VR headsets on home computers, and importing the project files onto a new install of Unity. One of the issues was related to Unity prefabs and Blender files. During an import, several prefabs stopped working properly due to a lacking blender install. References to these prefabs broke, models did not show up as intended, and related networking components stopped working. 
+
+As it turns out, .blend files open in Blender in the background, and are exported as .fbx files. But even when blender was installed on both computers used during the work from home period, there were still issues with certain .blend files not being properly exported. Something about these files in particular must have used a newer function of Blender, as they were finally solved when the Blender version of the second computer was completely reinstalled to make sure the newest version was present on both computers. 
+
+
+
+\subsubsection{GameObject tag - NullReferenceException}
+During the work on a distributable executable file we experienced a bug in the build process. The application worked as expected when running it from the editor but running it from the executable after the build process we would encounter a \textit{NullReferenceException}. This exception is raised when the system is trying to access a reference variable which does not reference to anything. It turns out if there is a removed tag in tag index, Unity wont see this change and the build file will try to access a variable which does not exist. In the application we used methods to get GameObjects by their tag, which was what raised the error. After much debugging the issue was solved by simply restarting Unity so that references and metadata was updated.  
+
+
 \subsection{Unimplemented Features}
-- speech indicators
+Due to unexpected situations, corresponding changes and limited time some features we wanted was not implemented. 
+
+\subsubsection{Speech Indicator}
+As mentioned in the previous chapter (see section \ref{section:phase2visibility}) some users have difficulty identifying who talks and when. One idea was to add speech indicators on avatars which is visible when a user talks in the application as a mean to aid the visibility of speech amongst users, both VR and desktop users. Figure \ref{fig:phase3_speech} shows how such indicators might look.
 
 
-\subsubsection{Feature 1}
-\subsubsection{Other}
+\begin{figure}[H]
+  \centering
+   \captionsetup{width=.6\linewidth}
+    \includegraphics[width=0.6\textwidth]{fig/phase_3/implementation/speechIndicator.PNG}
+ \caption{An example of how speech indicator might look.}
+\label{fig:phase3_speech}
+\end{figure}
 
 
+\subsubsection{Synchronised finger movement}
+A discussed, but not implemented feature was the synchronisation and networking of the animated hands that Steam VR provides. While the hands of the user is correctly tracked and displayed to other users, the fingers are set in a static position. For the user, the fingers animate correctly, and change according to the input on the controller.
+
+When weighing the pros and cons of the feature, simplification of communication (See table \ref{table:awarenessActivity} is the concept that weighs most heavily. Deictic gestures is one of the most basic forms of communication, and any feature strengthening the users ability to communicate is worth considering for implementation. When prioritising different features, finger movements was not considered as important as other aspects of the artefact. To begin with, the avatars as they are now are not accurate or realistic, with missing limbs and little to no animation on the head. The direction, position and rotation of the hands were thought to serve satisfyingly as a representation of deictic gestures. Therefore, finger movements were considered unnecessary for the current implementation, but may be considered later in the IMTEL project life cycle.
 
 
 
@@ -179,14 +211,16 @@ Hva gjorde vi av usability?
 While evaluation turned out to be more difficult than anticipated, tests were still able to be performed with some effort. As planned, tests with the  users remain the primary source of data, but the new circumstances placed further importance on expert evaluation to garner additional data sets.
 
 \subsection{Remote User Tests}
-Since tests could no longer be performed at the lab or at the offices of NAV, the tests had to be adapted to fit the new circumstances. That meant finding testers who were available who also had VR gear at home. This turned out to be somewhat difficult, and a significant amount of time has been spent finding testers so that the project could finish as planned. With no access
+Since tests could no longer be performed at the lab or at the offices of NAV, the tests had to be adapted to fit the new circumstances. That meant finding testers who were available who also had VR gear at home. This turned out to be somewhat difficult, and a significant amount of time has been spent finding testers so that the project could finish as planned. Due to the collaboration with NAV, the task of finding suitable testers could be at least partially delegated to our collaborators at NAV. Since this would take an undetermined amount of time, time could be spent finishing up other aspects of the artefact that needed work or more polish to ensure the best result.
+
+Around the middle of May, with testers finally found, the actual tests could proceed as planned. Due to the new circumstances the amount of testers was drastically lower than initially planned for, so the methodology of testing had to be adjusted as well. More focus had to be placed on the qualitative data, to make sure the samples obtained were useful and thorough. The 
 
 
 
 \subsection{Expert Evaluation}
-While work was underway in securing testers for the planned remote guidance tests, other avenues for feedback were also pursued. Due to the special circumstances, there was some concern enough test data could not be secured. By working with various relevant collaboration partners of IMTEL, we could present the project and garner feedback and opinions from experts in the fields of career guidance and mentoring. While this alone is not a satisfactory type or amount of data, it is helpful to see their opinion on what we've made, particularly for the RQ that pertain to remote guidance, i.e. RQ2 and RQ3.
+While work was underway in securing testers for the planned remote guidance tests, other avenues for feedback were also pursued. Due to the special circumstances, there was some concern enough test data could not be secured. By working with various relevant collaboration partners of IMTEL, we could present the project and garner feedback and opinions from experts in the fields of career guidance and mentoring. While this alone is not a satisfactory type or amount of data, it is helpful to see their opinion on what we have made, particularly for the research questions that pertain to remote guidance, i.e. RQ2 and RQ3.
 
-This data will primarily be gathered using Microsoft Forms, where a survey was created through multiple iterations. A copy of this form can be seen in appendix \ref{}. 
+This data will primarily be gathered using Microsoft Forms, where a survey was created through multiple iterations. A copy of this form can be seen in appendix \ref{}. Microsoft Forms was selected as it was suggested by the our advisers and complies with concerns regarding general data protection rules (GDPR).
 
 The largest opportunity for this happened in late April, where a chance presented itself for a presentation and discussion with Kompetanse Norge\ref{kompetanseNorge}, a directorate of the government department of education. While their field of interest is more centered on the education and re-education of adults, rather than young job seekers working with NAV, their expertise in the field of career guidance could be useful nonetheless. The survey we had prepared for the final phase, with the extra questions for remote guidance, was employed afterwards in an attempt to gain a secondary data source. From the about 50 to 60 people we interacted with, 13 chose to respond to the survey. While the amount of respondents was not entirely as high as hoped considering this was not a random selection for participants, their status as a secondary data source mitigates this somewhat, as this data was always considered secondary to the data gathered from the primary target group, which would be of the qualitative sort.
 
@@ -204,9 +238,8 @@ The largest opportunity for this happened in late April, where a chance presente
 
 \subsection{Analysis}
 
-\subsubsection{Learning outcome}
+\subsubsection{Remote user test}
 
-\subsubsection{VR mode vs. desktop}
 
 \subsubsection{Expert evaluation}
 
