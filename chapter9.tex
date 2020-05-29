@@ -5,6 +5,7 @@ The outcome of the Design and Creation research strategy used for this thesis is
 Finally, we present our conclusions and recommendations for future work.
 
 
+
 \section{Discussion}
 
 \subsection{The artefact} 
@@ -54,7 +55,7 @@ The primary goal of this research paper has been to discover whether or not coll
 
 First and foremost, how did actual NAV clients and NAV employees compare the collaborative VR experience to a normal VR experience? While the number of respondents and testers were not as high as wanted, even for a qualitative study, the opinions of the actual users of the system were extremely important. Not only had they tested the single-user VR experience already, many of them were currently in or had been in  a situation where they needed NAV help to find employment. Looking at the qualitative data, we can see that the responses have been quite positive. Table \ref{table:phase3SatisfactionAnalysis} shows the perceived value of the concept based on interviews with the testers. One of the points brought up most often here is the concept of \textit{engagement}. Looking at table \ref{table:phase3MethaphorsAnalysis} which shows metaphors and keywords that appeared, engagement is one of only three which was used in every interview. 
 
-The engagement of users is an important point that 
+The engagement of users is an important aspect of learning. During the interviews, one of the most commonly discussed topics were how the inclusion of collaborative tasks would help raise the engagement of users. The NAV employees explained that with current single-user applications, users may grow tired of the VR applications after only a single use, citing boredom or repetitive tasks as the main reasons. They felt that with the inclusion of collaboration in VR, users would be more engaged and serious in their approach to the tasks. The interviewed NAV clients also expressed greater interest in the tasks when they were to be solved alongside someone else. 
 
 Foundation for VR: Immersion (HMD section => resolution, refresh rate, FOV) and presence, social presence, Workspace Awarenes, CSCL
 
@@ -99,11 +100,10 @@ How developers utilises the advantages of VR embedded in the technology is decis
 
 For any artefact to be effective for remote usage, we assumed the the process of installing, setup and application use must be easy so that as little as possible of technical support is needed. No one wants to use a system which is hard or difficult to use. It simply becomes too much of a burden so that other solutions such as video conferences are used. As such, during the development we put considerable effort into making sure the artefact could be as intuitive and easy to use as the time-frame allowed. Table \ref{table:phase3MethaphorsAnalysis} and figure \ref{fig:phase3_Intuitiveness} show that both survey participants and interviews generally agree that the artefact is intuitive and has a high degree of ease of use. However, there are inconsistencies with the survey rankings and the SUS score, which provides a scale on the usability of the artefact. The average  SUS score yielded a poor rating of the usability, meaning there is potential for improvement. An important note is that all participants of the survey (which gave the SUS score) was all in the age group of 45-64 and 65\% of those had little to none experience with VR. This could have impacted the results but there is no way of conclusively knowing without doing further studies.  
 
-With VR technology constantly evolving, allowing HMDs such as the Oculus Quest to disregard the use of a separate computer to hold the VR engine, the ease of use could be further improved. By publishing the application to the Oculus store it could be easier for the users to run the application, but also increase the availability, which was a keyword found in our theme analysis from the interviews (see table \ref{table:phase3MethaphorsAnalysis}). More on this in section \ref{section:futureWork}.
-Although VR becomes more available to users, there is still a large percentage who does not have the means or access to the equipment needed to experience a VR environment. With the inclusion of the desktop mode in the artefact and through gamification principles we hoped that this could lower the threshold for the artefact to be used in remote settings. From the survey (where half used desktop mode) it was quite evident that this was supported by the experts as there was a high agreement that such an application could be useful for remote occupational guidance (see figure \ref{fig:phase3_AppBeUsed}). This reasoning is also supported by career guides in the interview as seen in table \ref{table:phase3SatisfactionAnalysis}. However, the desktop mode does not have the functionality VR mode has, meaning interaction with the environment is very limited, and might impact the experience. The intent of the desktop mode was primarily to let councillors observe seekers in the workplace so that not much functionality was put into the feature. Seeing its potential this could be improved further and perhaps become part of an future IMTEL project. 
+%With VR technology constantly evolving, allowing HMDs such as the Oculus Quest to disregard the use of a separate computer to hold the VR engine, the ease of use could be further improved. By publishing the application to the Oculus store it could be easier for the users to run the application, but also increase the availability, which was a keyword found in our theme analysis from the interviews (see table \ref{table:phase3MethaphorsAnalysis}). More on this in section \ref{section:futureWork}.
+Although VR becomes more available to users, there is still a large percentage who does not have the means or access to the equipment needed to experience a VR environment. With the inclusion of the desktop mode in the artefact and through gamification principles we hoped that this could lower the threshold for the artefact to be used in remote settings. From the survey (where half used desktop mode) it was quite evident that this was supported by the experts as there was a high agreement that such an application could be useful for remote occupational guidance (see figure \ref{fig:phase3_AppBeUsed}). This reasoning is also supported by career guides in the interview as seen in table \ref{table:phase3SatisfactionAnalysis}. However, the desktop mode does not have the functionality VR mode has, meaning interaction with the environment is very limited, and might impact the experience. The intent of the desktop mode was primarily to let councillors observe seekers in the workplace so that not much functionality was put into the feature. Seeing its potential this could be improved further and perhaps become part of a future IMTEL project. 
 
-To summarise, when facilitating collaborative VR for remote
-career guidance it is important to factor in both fields of study such as CSCL, presence and interaction design while catering for the found effective features such as voice communication, gesticulation and visibility of users as avatars or other representations.   
+%To summarise, when facilitating collaborative VR for remote career guidance it is important to factor in both fields of study such as CSCL, presence and interaction design while catering for the found effective features such as voice communication, gesticulation and visibility of users as avatars or other representations.   
 
 %social presence
 %CSCL
@@ -119,27 +119,41 @@ career guidance it is important to factor in both fields of study such as CSCL, 
 \subsubsection{Secondary RQ3: \textit{What type of collaborative features are technologically feasible for workplace experience in a virtual environment?}} 
 \label{discussion:RQ3}
 
+The use of VR as Virtual Internships as a mean to inform and educate young job seekers with the added element of multi-user functionality opens up a whole new challenge for developers. What features can be added so that it supports and enhances collaboration amongst users (e.g. seekers and councillors) is difficult to answer conclusively, but some are explored in this thesis.
+
+Throughout this project we developed several features based on feedback and analysis of data materiel. The very first collaboration mechanisms was gesticulation, specifically hand gesticulation, using the avatar representations of the users. Later, voice communication and laser pointer was added as it was deemed necessary for collaboration to be effective and would satisfy the needs of the councillors and seekers which was not present in the first prototype. By our analysis, see figure \ref{fig:phase3_CollabHandGestures}, these features were mostly able to fulfil their objective aimed towards collaboration and workspace awareness. Gesticulation and user representation where also keywords found in the theme analysis, see table \ref{table:phase3MethaphorsAnalysis}.
+While the difficulty of implementing them into a multi-user project varies, they are technologically feasible. Both gesticulation and voice communication logic was abstracted away and put into reusable prefabs so that little work has to be done for new developers to utilise these collaboration mechanisms. Using the prefabs should exclude the need for data serialisation and synchronisation, while being customisable if the need should arise. 
+The implementation of laser pointer could, depending of what HMDs are used for the workplace experience, need some configuration to support the same action (press to enable laser) due to differences in controllers and thus different buttons amongst suppliers.  
+
+When developing a single-user VR application there is no need to consider how the user is represented, just the hands are visible to the player. This changes for multi-player applications. There is a distinct need to translate real world movement into corresponding actions represented by an avatar. It provides elements of presence, identity and awareness such as where they are looking or what they are doing. Our solution was simple, a clear and common avatar with a torso, head and hands. This could perhaps be improved by implementation a full body avatar. However it is extremely difficult to implement without using sensors placed on a users body in the real world to translate position data. There was also no mention of this from either the interviews or survey, so this is a feature we would deem not necessary as it also provides little additional value. One must also consider drawbacks such as uncanny valley, yielding an unsettling feeling for the users. 
+
+The most common VR headset today cannot track eye positing, so there no definite way of of knowing where users are looking. We can only assume it based on their head position. Gazing, the principle of looking at something for a period of time, is an feature which was not implemented in the artefact. However it could provide some value for collaboration as users could stare at objects and actions could be triggered (change colour etc.). Using ray-casting this could implemented. 
+
+Important aspect to consider when implementing collaborative features is that they must be visible and clear for all users. Different resolutions and FOV in HMDs could all impact the success of them. 
 
 
+The artefact developed contained both a VR mode and a desktop mode. The collaboration features was mainly implemented for the VR mode.   
+The desktop mode had only voice communication and the ability to use their position as a marker. Due to the different circumstances, the limit of time meant no this was a low priority. However, as testing was done in the last phase we experienced that it would be very useful to at least have  one or two more collaboration mechanisms. That way this mode could be used to a greater extent than just observation for career guidance. Using gamification principles, one could adapt common computer game features and thus lower the threshold for its use. This could also help improve the ease of use.  
 
 %Features (such as laserpointer or hand gesticulation) that can be developed and carried out to fulfil its objective.
 %Technologies sections: Unity, PUN2, syncing movement, cross compatible with most HMDs.  
 
 %fullbody avatar, uncanny valley 
 
-
+%desktop mode
 
 \subsubsection{Secondary RQ4: \textit{What challenges arise when implementing collaborative features in an ongoing
 single-user virtual reality project?}} 
 
-As described in the chapter \ref{chapter:1}, this thesis could be regarded as a branch project of the Virtual Internship project. No previous projects have been develop with multi-user capabilities or with that in mind. There was therefore a wide range of obstacles and challenges which was encountered during the three phases of software development. First of all, it is the fact that single-user VR projects does not need to be concerned with anything related to networking. This means the foundations of an single-user project are often not suited for it be evolved into a multi-user application which supports collaborative features. What we found during the development was that there were little to no project structure or followed code standards. It was obvious the application selected was a students bachelors project were Unity and VR development was new for most of them. Thus the lacking structure and inconsistencies should be considered an expected consequence. In case of IMTEL's future projects there could be created a basic template for how development should be done. This is however difficult to adhere to as projects differ but should at least provide some means of similarity between projects resulting in a better foundation if they were to further developed as multi-player applications.    
+As described in the chapter \ref{chapter:1}, this thesis could be regarded as a branch project of the Virtual Internship project. No previous projects have been develop with multi-user capabilities or with that in mind. There was therefore a wide range of obstacles and challenges which was encountered during the three phases of software development. First of all, it is the fact that single-user VR projects does not need to be concerned with anything related to networking. This means the foundations of an single-user project are often not suited for it be evolved into a multi-user application which supports collaborative features. What we found during the development was that there were little to no project structure or followed code standards. It was obvious the application selected was a students bachelors project were Unity and VR development was new for most of them. Thus the lacking structure and inconsistencies should be considered an expected consequence. In case of IMTEL's future projects there could be created a basic template for how development should be done. This is however difficult to adhere to as projects differ, but should at least provide some means of similarity between projects resulting in a better foundation if they were to further developed as multi-player applications.    
 
-There a few technical prerequisites that need to be in place before development can begin to implement collaborative features. However, some aspects determine the intricacies of implementation. These include the complexity of the application and underlying game elements, cohesion of code, number elements which needs networking and game state. With respect to technical requirements, there needs to be at least four things in place. First, (1) a  client-network architecture for data transmissions, (2) a lobby system for join or creating instances of scenes, (3) code (scripts) to handle networked objects and finally (4) managers for for keeping track of game state and general network related requests.
-A part goal of this project was to create a general framework (including prefabs, scripts and lobby system) for future use. With this framework the difficulty of accommodate collaborative features drastically reduces. To further reduce difficulty we created an demo application in our artefact so that it could be used as a guide for development and implantation.    
+There a few technical prerequisites that need to be in place before development can begin to implement collaborative features. However, some aspects determine the intricacies of implementation. These include the complexity of the application and underlying game elements, cohesion of code, numerous elements which needs networking and game state. With respect to technical requirements, there needs to be at least four things in place. First, (1) a  client-network architecture for data transmissions, (2) a lobby system for join or creating instances of scenes, (3) code (scripts) to handle networked objects and finally (4) managers for for keeping track of game state and general network related requests.
+A partial goal of this project was to create a general framework (including prefabs, scripts and lobby system) for future use. With this framework the difficulty of accommodating collaborative features drastically reduces. To further reduce difficulty we created a demo application in our artefact so that it could be used as a guide for development and implementation.    
 
 Consideration must also be made towards what type of project benefits and is suitable for collaborative features. As an example is the Wind-turbine electrician application. Here there are limitations in regards to virtual space within to the wind-turbine so that having multiple users could present a crammed feeling for the users resulting in a negative experience. Also, the PUN2 cloud service used in the project has a limit of 16 concurrent users (CCU). If an application needs to support more than that there are basically two options: pay for more capacity in the Photon cloud or change framework. However, having more than 16 CCU is an unlikely use case for career guidance, the aim of the Virtual Internship is not to be a massively multiplayer online game (MMO).          
 
-From experience there should also be at least two developers devoted to the task as it is very challenging to test collaboration features, or any other networking solutions with one developer. Additionally, for implementation purposes there should be an agreement of utilising a common VR SDK. SteamVR is a great choice as it enables support for building applications for major VR headset brands with little change. This yields a higher degree of user which can utilise the collaborating features, although some configuration could be needed to support similar actions by different button inputs due to differences in controllers amongst suppliers.  
+From experience there should also be at least two developers devoted to the task as it is very challenging to test collaboration features, or any other networking solutions with one developer. Additionally, for implementation purposes there should be an agreement of utilising a common VR SDK. SteamVR is a great choice as it enables support for building applications for major VR headset brands with little change. This yields a higher degree of users which can utilise the collaborating features, although some configuration could be needed.
+
 
 
 %IMTEL standards/prefab for future use. A foundation for future projects
@@ -152,17 +166,21 @@ From experience there should also be at least two developers devoted to the task
 
 
 \section{Contributions}
-Through this project, we have created an artefact that can be used for future work at the IMTEL lab. Primarily, this includes a lobby system that can be made to work with any number of Unity scenes, prefabs that hopefully will make developing multi-user functionality easier and a template for how to best create a multi-user VR experience. 
+Through this project, we have created an artefact that can be used for future work at the IMTEL lab. Primarily, this includes a lobby system that can be made to work with any number of Unity scenes, prefabs that can help developing multi-user functionality easier and a general framework (template) for how to best create a multi-user VR experience. 
+Findings in this thesis will be a contribution to the ongoing Research-and-Development between IMTEL and NAV. It can serve as an addition to the research so that decisions about multi-user and collaboration aspect can be made for future projects.   
 
-\textit{Trenger noe om research contributions}
 
-Artefact
-- Lobby system
-- Prefabs for VR/Desktop users
-- can be used as a template for future work at IMTEL and NAV
 
-Research-and-Development to the IMTEL and NAV partnership:
-- findings in this thesis contributes to this
+%\textit{Trenger noe om research contributions}
+
+%Artefact
+%- Lobby system
+%- Prefabs for VR/Desktop users
+%- can be used as a template for future work at IMTEL and NAV
+
+%Research-and-Development to the IMTEL and NAV partnership:
+%- findings in this thesis contributes to this
+
 
 
 \section{Limitations}
@@ -170,33 +188,55 @@ While the overall project has been successful and produced a functional artefact
 
 Originally, the plan was to test with NAV clients, which would allow for a good distribution of testers. This would include people from the entire spectrum of familiarity with technology and make sure that the artefact was usable to everyone, not just those who have used VR before. With the stay-at-home situation, testers were significantly harder to gather. Those that agreed to join us for remote testing already had VR headsets at home, or at least an interest in the technology, which introduces bias in the tester pool on top the already small selection. There was also no opportunity to test the artefact in schools.
 
-Covid-19
-Data gathering
-Limited testers to NAV clients, not tested at schools
-- Small scale tests
-- Alle testere hadde VR headset, eller var involverte med prosjektet fra før av (Bias)
+%Covid-19
+%Data gathering
+%Limited testers to NAV clients, not tested at schools
+%- Small scale tests
+%- Alle testere hadde VR headset, eller var involverte med prosjektet fra før av (Bias)
 
 
 
 
 
 \section{Conclusion}
-\textit{Conclusion}
+
+
+
+%\textit{Conclusion}
+
+%Hoved RQ
+    %JA, collab er positivt for karrieveildening
+        % engagement
+        % decision learning
+
+% RQ1
+    % kan ikke besvares, altså ingen konklusjon
+    
+% RQ2
+    % flere features som er viktig
+        % presence (også user representaiton as avatar)
+        % ease of use (SUS score low)
+        % CSCL/workspace awereness
+        
+% RQ3
+
+% RQ4
+
+    
 
 \section{Future Work}
 \label{section:futureWork}
 
+
 \subsection{Secondary RQ1}
 Secondary RQ1 as future work since we cannot definitely answer it now due to the Covid-19 situation.
 
-%Gaze, as is in coVAR and SteamVR has gazescripts? i think  
-
-\subsubsection{New hardware}
+\subsection{New Hardware}
 In order to make it easier to test quickly and easily, we recommend making use of hardware such as the Oculus Quest(\textcolor{red}{Legge til en ref til quest?}) in order to minimise the amount of hardware needed to run the applications. Our experience while testing showed that many schools and corporations had bought Oculus Quest in a large number, but had relatively few standard VR headsets, much less computers to run them on. 
 
 Alternatively, more can be done to make use of the more expensive "standard" VR headsets, such as the Valve Index, with increased feedback and detailed hand gestures to increase realism and user presence.
 
-\subsubsection{Desktop Mode}
+\subsection{Desktop Mode}
 While the desktop mode was not originally planned, it's inclusion garnered positive feedback and a desire to see more functionality added to it. Expanding it's features and allowing greater interaction with the scene while in this mode could increase the availability and usability of the artefact, and allowing a larger variation of use scenarios. The time allotted for this project did not allow for a thorough examination of potential features, but preliminary feedback would indicate that the most desired features are a laser pointer, the ability to pick up objects, and more highlighting opportunities.
 
 Depending on the extension of this mode, it may also be relevant to change the avatar and movement mode to something more akin to the VR players, i.e. a humanoid avatar and movement affected by physics constricted to ground level. It would be interesting to see how this affected collaboration and whether or not it is jarring for a VR user to collaborate with a humanoid avatar with less natural movement and behaviour like a desktop avatar would bring to the table.
