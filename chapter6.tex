@@ -78,6 +78,8 @@ Perhaps most important was the possibility of direct communication. To begin wit
 The effect on collaboration with voice chat would have to be investigated before adding more features to it, so certain Quality of Life features such as speech indicators or low fidelity animations to indicate speech could be implemented later based on time and further feedback. If users feel that it is hard to figure out who is talking, or where the other users are, the importance of these features can be adjusted to more accurately reflect their perceived value to the overall application.
 
 
+
+
 \begin{figure}[]
   \centering
   \begin{subfigure}[b]{0.4\textwidth}
@@ -107,7 +109,7 @@ The effect on collaboration with voice chat would have to be investigated before
     \hfill%
   \begin{subfigure}[b]{0.45\textwidth}
     \includegraphics[width=1\textwidth]{fig/phase_2/implementation/laser2.PNG}
-    \caption{A career guide highlighting a calibre bolt for the users who need help to complete the task.}
+    \caption{A career guide highlighting a caliper bolt for the users who need help to complete the task.}
     \label{fig:laser2}
   \end{subfigure}
   \hfill%
@@ -118,7 +120,15 @@ The effect on collaboration with voice chat would have to be investigated before
 
 \section{Implementation}
 \label{section:Phase2Implentation}
-As the implementation got started, it was obvious that some sort of triage needed to be performed. The overall application was broken into its composite pieces, and to the highest degree possible, components were separated and isolated. In the case of the car mechanic application, it consisted of two main scenes, one small and one large. First was the wardrobe, where players had to equip the proper equipment before heading into the garage proper, see figure \ref{fig:wardrobeApp}.
+As the implementation got started, it was obvious that some sort of triage needed to be performed. The overall application was broken into its composite pieces, and to the highest degree possible, components were separated and isolated. Figure \ref{fig:highLevelArchitecture} illustrates the high level architecture of the application. In the case of the car mechanic application, it consisted of two main scenes, one small and one large. First was the wardrobe, where players had to equip the proper equipment before heading into the garage proper, see figure \ref{fig:wardrobeApp}.
+
+\begin{figure}[H]
+  \centering
+    \captionsetup{width=1\linewidth}
+    \includegraphics[width=1\textwidth]{fig/phase_2/implementation/highLevelArchitecture.jpg}
+    \caption{High level diagram of the architecture.}
+\label{fig:highLevelArchitecture}
+\end{figure}
 
 
 \begin{figure}[H]
@@ -217,7 +227,7 @@ Covid-19 also meant we had continue work from home by setting up temporary VR st
 \section{Second Evaluation}
 \label{section:secondEvalPhase2}
 In order to evaluate the usability of the application and collaborative features we developed for this phase we utilised a reliable and well established method called system usability scale (or SUS). The scale gives a number representing a composite measure of the overall usability of the system being studied \cite{brooke1996sus}. In order for SUS to have the best result it is important that the test is performed before any discussion around the trial of the system takes place, which we tried our best to ensue.
-The SUS questions were translated in the native language (Norwegian) and included in a separate category in a survey, amongst two other likert scale questions categories related to career guidance/career choice and collaboration mechanisms. This is a popular strategy for user evaluation of a computer system \cite{oates2005researching}. Some of the question was adapted and utilised from a evaluation system designed by an associate professor from the Department of Education and Lifelong Learning at NTNU. Questions about career guidance, engagement and self-efficacy measurements where aimed to answer the primary RQ. SUS scale provides answer for usability, e.g. secondary RQ2. Comparing feedback from seeker-seeker vs. seeker-councillor would provide answers to secondary RQ1.  The survey can be found in appendix \ref{}.
+The SUS questions were translated in the native language (Norwegian) and included in a separate category in a survey, amongst two other likert scale questions categories related to career guidance/career choice and collaboration mechanisms. This is a popular strategy for user evaluation of a computer system \cite{oates2005researching}. Some of the question was adapted and utilised from a evaluation system designed by an associate professor from the Department of Education and Lifelong Learning at NTNU. Questions about career guidance, engagement and self-efficacy measurements where aimed to answer the primary RQ. SUS scale provides answer for usability, e.g. secondary RQ2. Comparing feedback from seeker-seeker vs. seeker-councillor would provide answers to secondary RQ1.  The survey can be found in appendix \ref{appendix:phase2}.
 
 The plan for the user testing was to conduct twelve separate tests were pairs of two, either peer and peer or peer and mentor, tried out the application in VR before answering the survey. This meant we would have 24 answers, half of which was peer and peer pairs and the other half peer and mentor. The peers would consist of young job seekers and the mentors would be career councillors from NAV Jobbhuset Falkenborg. Figure \ref{fig:tastingPhase2} shows a user equipped with HTC Vive testing the application and the experience once inside the virtual environment. 
 
@@ -232,14 +242,14 @@ The plan for the user testing was to conduct twelve separate tests were pairs of
 
 
 \subsection{User test data}
-As mentioned in the challenges we faced for this phase the Covid-19 pandemic meant that we were not able to complete our planned testing. We were only able to conduct six tests, i.e. \textit{3*2} pairs of peers, thus missing the other half of mentors and peers. Ideally we would have gotten the last half and from there we could  compare the data sets of the two half's. Because of the restrictions we were not able to complete the testing and thus it meant we could not evaluate what the effects of collaborating in virtual reality with a peer compared to a mentor was. At the time of writing the restrictions are still in effect leaving us unable to properly discuss and answer the Secondary RQ1.     
+As mentioned in the challenges we faced for this phase the Covid-19 pandemic meant that we were not able to complete our planned testing. We were only able to conduct six tests, i.e. \textit{3*2} pairs of peers, thus missing the other half of mentors and peers. Ideally we would have gotten the last half and from there we could  compare the data sets of the two half's. Because of the restrictions we were not able to complete the testing and thus it meant we could not evaluate what the effects of collaborating in virtual reality with a seeker compared to a councillor was. At the time of writing the restrictions are still in effect leaving us unable to properly discuss and answer the Secondary RQ1. The testing started in March 2020, see table \ref{table:dataGatheringSchedule}.     
 
 
 \subsection{Analysis}
 Although we did not complete the user testing we still got half of the data points of what intended, and they will be presented here. An important note is that we cannot definitely conclude or properly discuss using these results as they are incomplete and the number of answers is not enough for quantitative analysis but we will present key and interesting findings still. Since we used survey as the testing method the results are based on measure quantities of those primary users participating and not subjective opinions which means that potential findings still hold some good value for the thesis.       
 
 \subsubsection{Quantitative Data Analysis}
-In order to get meaningful information from the quantitative data we utilised different techniques to help manage, view and analyse it. The survey mainly consisted of likert scales, which is the ordinal data type, meaning the numbers are allocated to a quantities scale \cite{oates2005researching}. For example in our survey they were asked to grade their experience with VR on a scale from 1-5, where 1 is "Low degree" and 5 was "High degree". The survey had nominal data points as well which describes categories instead of number or scale,such as Yes/No scale. Finally, interval data type was used in regards to the age of the users, where measurement is along a scale but the points on the scale intervals with a fixed number such as the age intervals: 10-20, 21-30, 31-40. 
+In order to get meaningful information from the quantitative data we utilised different techniques to help manage, view and analyse it. The survey mainly consisted of likert scales, which is the ordinal data type, meaning the numbers are allocated to a quantities scale \cite{oates2005researching}. The full survey and answers can found in appendix \ref{appendix:phase2}. For example in our survey they were asked to grade their experience with VR on a scale from 1-5, where 1 is "Low degree" and 5 was "High degree". The survey had nominal data points as well which describes categories instead of number or scale,such as Yes/No scale. Finally, interval data type was used in regards to the age of the users, where measurement is along a scale but the points on the scale intervals with a fixed number such as the age intervals: 10-20, 21-30, 31-40. 
 
 Through organisation of the data into using visual aids and statistics we were able to identify interesting findings. The survey had six answers consisting of one woman and five males with age distribution 18-25 years. Of those, none had tried NAV VR applications before. Data results is presented in bar charts and was constructed using an online chart maker. 
 
