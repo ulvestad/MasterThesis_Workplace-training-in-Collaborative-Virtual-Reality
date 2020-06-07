@@ -3,30 +3,30 @@
 \chapter{Phase 3: Final Requirements and Finishing Up} 
 \label{chap:7}
 \label{chap:phase3}
-The primary target for the third and final phase of this thesis was to implement additional requirements, complete the artefact as a general multi-user framework to serve as a foundation for future development and analyse user test data. The following sections will detail changes due to Covid-19, development decisions and implementation as well as an evaluation of this phase's artefact.                 
+The primary targets for the third and final phase of this thesis were to implement additional requirements, complete the artefact as a general multi-user framework to serve as a foundation for future development and analyse user test data. The following sections will detail changes due to Covid-19, development decisions and implementation as well as an evaluation of this phase's artefact.                 
 
 
 \section{Planning and Changes}
-Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to combat Covid-19 (see section \ref{section:covid19}), effectively preventing us from going through with the plans that were laid out for this phase. Coupled with an enforced work from home situation, and the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be ran at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed. A brief overview of the changes can be seen below
+Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to combat Covid-19 (see section \ref{section:covid19}), effectively preventing us from going through with the plans that were laid out for this phase. Coupled with an enforced work from home situation, the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be ran at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed. A brief overview of the changes can be seen below.
 
 \subsection{Changes}
 \begin{description}
     \item [Change 1]\hfill \\
     Support for multiple concurrent rooms must be made. 
     \item [Change 2]\hfill \\
-    Artefact must be changed to an executable file by end-users with minimal to no input from developers.
+    Artefact must be changed to an executable file for end-users so it works with minimal to no input from developers.
     \item [Change 3]\hfill \\
     Features need to be complete and usable, or potentially removed if their unfinished state interferes with normal use of artefact.
     \item[Change 4]\hfill \\
-    Modified research questions, as new circumstances made them difficult to answer properly.
+    Modified research questions, as new circumstances made some difficult to answer properly.
 \end{description}
 
 \subsection{Changes to Research Questions}
-As a direct result of the Covid-19 situation, it became unfeasible to complete the research question looking into the difference between collaborating with a peer compared to a mentor, as it was impossible to set up a day for testing the scenarios properly. In order to thoroughly answer this research questions, we concluded we needed more people, and the time to test with multiple combinations of peers, mentors and experts. As such, secondary RQ1 will not be answered in a way we had hoped to. See \textit{Future Work} in section \ref{section:futureWork} for more on this.
+As a direct result of the Covid-19 situation, it became unfeasible to complete the research question looking into the difference between collaborating with a seeker compared to a councillor, as it was impossible to set up a day for testing the scenarios properly. In order to thoroughly answer this research questions, we concluded we needed more people, and time to test with multiple combinations of seekers, councillors and experts. As such, secondary RQ1 will not be answered in a way we had hoped to. See \textit{Future Work} in section \ref{section:futureWork} for more on this.
 
-On the other hand, the new circumstances paved the way for an additional research question. During a discussion held with IMTEL and NAV, a need to figure out what parts are essential for remote career guidance to work was expressed.  Thus, a new research question (secondary RQ2) was drafted, see section \ref{RQ}, with the aim of assessing essentials needed for collaborative VR in order for it to be applied effectively as a remote career guidance tool. 
+On the other hand, the new circumstances paved the way for an additional research question. During a discussion held with IMTEL and NAV, a need to figure out what parts are essential for remote career guidance to work was expressed. Thus, a new research question (secondary RQ2) was drafted, see section \ref{RQ}, with the aim of assessing essentials needed for collaborative VR in order for it to be applied effectively as a remote career guidance tool. 
 
-A revised plan for this phase was drafted to handle the new situation regarding the Covid-19 restrictions and adapt the changes to the research questions. The new plan included testing with NAV clients remotely, online seminars and testing with experts from NAV, Kompetanse Norge and Arbeids- og velferdsdirektoratet. See section \ref{section:evalPhase3} for more details.    
+A revised plan for this phase was drafted to handle the new situation regarding the Covid-19 restrictions and adapt to the changes of the research questions. The new plan included testing with NAV clients remotely, online seminars and testing with experts from NAV and Kompetanse Norge. See section \ref{section:evalPhase3} for more details.    
 
 As such, the new topic regarding remote career guidance could be integrated seamlessly into the paper with only some minor adjustments to surveys and plans. Therefore, work began on stabilising features in the application so remote guidance could work smoothly. With the final features nailed down, the survey could be updated to find out which of them were essential, and whether any features were missing that we had not considered.
 
@@ -38,7 +38,7 @@ As outlined previously this phase sees changes to the artefact and past plans. T
   \setlength\itemsep{0em}
     \item [\textbf{F1}] The applications must allow multiple players to join the same scene.
     \item [\textbf{F2}] Interactable objects must be serialised and and synchronised over the network.
-    \item [\textbf{F3}] A player shall be represented as a avatar with corresponding movement from the VR world to the real world.
+    \item [\textbf{F3}] A player shall be represented as an avatar with corresponding movement from the real world to the VR world.
     \item [\textbf{F4}] The application must offer the option of using VR equipment or desktop mode (mouse and keyboard) for interaction.
     \item [\textbf{F5}] The application must contain a scene with tasks enabling collaborative learning.
     \item [\textbf{F6}] The multiplayer component must be generalisable and scalable to work with other NAV applications.
@@ -54,39 +54,35 @@ As outlined previously this phase sees changes to the artefact and past plans. T
 
 
 \subsection{Development Decisions}
-While the previous phase focused on creating a fully functional multi-user collaborative workplace by implementing a car mechanic workplace and due a slight adjustment to this phase's target, phase 3 is about adding remote usage possibilities in the existing artefact while finishing up prioritised features.  
+While the previous phase focused on creating a fully functional multi-user collaborative workplace by implementing network functionality into a car mechanic workplace, phase 3 is about adding remote usage possibilities in the existing artefact while finishing up prioritised features.  
 
 
 \subsubsection{Remote Application Use}
-In order for the virtual workplace to be used successfully in remote circumstances, it was decided that the artefact needed updates to the limited \textit{Launcher} logic. Architecture, setup, network related methods and callbacks as well as optimisation settings needed an overhaul so that clients could seamlessly host, create and join instances of different applications (rooms). The launcher logic should also include an example including a new application (not car mechanic) so that it could serve as a foundation for future development and be utilised for the basics of implementing multi-user mechanisms.   
+In order for the virtual internship to be used successfully in remote circumstances, it was decided that the artefact needed updates to the limited \textit{Launcher} logic. Architecture, setup, network related methods and callbacks, as well as optimisation settings needed an overhaul so that clients could seamlessly host, create and join instances of different applications (rooms). The launcher logic should also include multiple selectable applications (scenes) so that it could serve as a foundation for future development and be utilised to demonstrate the basics of implementing multiple workplaces into one lobby.   
 
 \subsubsection{Usability}
-While the previous phases focused on application implementation and  development of a general framework for multi-user environment, we also considered the aspect of user experience. However, it was mainly in relation to the VR aspect, not so much in terms of other parts such as the user interface for the lobby. For the application to be used remote by users, this phase's artefact should include a distributable file. Hence, more consideration towards the software usability must be taken. A general rule of thumb while developing software is to have a goal that whomever (young digitally-skilled or elderly with little skill) should be able use it with as little support as possible. With that in mind, the development must consider subjective objectives such as intuitiveness, ease of use, feedback, and efficiency to hopefully increase the overall satisfaction for the end users.
+User experience had always been considered when developing the application, but it was mainly in relation to the VR aspect, and not as much was placed on other parts such as the user interface for the lobby. For the application to be used remotely by users, this phase's artefact should include a distributable file. Hence, more consideration towards the usability of the software must be taken. A general rule of thumb while developing software is to have a goal that whomever (young digitally-skilled or elderly with little skill) should be able use it with as little support as possible. With that in mind the development must consider subjective objectives such as intuitiveness, ease of use, feedback, and efficiency to hopefully increase the overall satisfaction for the end users.
 
 
 
 \subsubsection{Networking}
-Due to the shift of focus for this phase we discussed possible arising challenges we could fase. One of them being an increased number of concurrent users. From previous phases the intention of the artefact accommodate collaboration mechanisms by having two or three users (possibly more, but a intended cap at six). Either two VR users and a guide using desktop, or any other combination. Now that the artefact is distributable we decided that in should at least sustain sixteen concurrent users per room (application instance) to better accommodate remote application use. An increase of minimum 150\%. 
-The PUN2 framework we opted for and used in development uses Photon Cloud to host the server-side of the application. Photon has several subscription plans for this, including a free \textit{Public Cloud}. That was the plan we used in phase 1 and 2. At the time it was the obvious choice, being free and plenty of capability for the intended use. This plan supports up to 20 Concurrent Users (CCU), i.e the number of users allowed to connect to the application, eighth thousand monthly activities and 500 msg/s per room. The other subscription plans \textit{Premium Cloud} and \textit{Enterprise Cloud} can handle 50.000+ CCU but has a cost of at least \$580 per month. After some network traffic calculations and discussion we decided the \textit{Public Cloud} could still satisfy our needs, but some restrictions in the code was needed to limit the number of users so that it does not exceed the CCU cap. 
+Due to the shift in focus for this phase, many possible challenges were discussed. One of them being an increased number of concurrent users. From previous phases the intention of the artefact was to accommodate collaboration mechanisms by allowing two or three users to work together (possibly more, but an intended cap at six). With a distributable file we decided that it should at least sustain sixteen concurrent users per room (application instance) to better accommodate different scenarios for remote career guidance. An increase in concurrent users of at least 150\%. 
 
-
-
-%Faster datatransfer? no need to always go through server. 
-%se figure fra chap 5 
+The PUN2 framework we opted to use in development uses Photon Cloud to host the server-side of the application. Photon has several subscription plans for this, including a free \textit{Public Cloud}. That was the plan used in phase 1 and 2. At the time it was the obvious choice, being free and providing plenty of capability for the intended use. This plan supports up to 20 Concurrent Users (CCU), i.e., the number of users allowed to connect to the application, eighth thousand monthly activities and 500 messages per second per room. The other subscription plans \textit{Premium Cloud} and \textit{Enterprise Cloud} can handle 50.000+ CCU but has a cost of at least \$580 per month. After some network traffic calculations and discussion we decided the \textit{Public Cloud} could still satisfy our needs, but some restrictions in the code was needed to limit the number of users so that it does not exceed the CCU cap. 
 
 
 
 
 
 \section{Final Artefact}
-As the development phases came to a close, and the highest priority requirements were finished up, a final version of the artefact was created and prepared for the last phase of testing. To be able to test properly, it is important that all testers experience the same artefact. By prioritising the features with the greatest impact on the overall experience, it is possible to create an artefact that captures the essence of the concepts presented in the paper. While not every feature that may have been wanted has been implemented, the final artefact still stands as a usable proof of concept with a fully functional lobby system, app selection and a network synced virtual reality workplace.
+As the development came to a close, and the highest priority requirements were finished up, a final version of the artefact was created and prepared for testing. To be able to test properly, it is important that all testers experience the same artefact. By prioritising the features with the greatest impact on the overall experience, it is possible to create an artefact that captures the essence of the concepts presented in the paper. While not every feature that may have been wanted were implemented, the final artefact still stands as a usable proof of concept with a fully functional lobby system, app selection and a network synced VR workplace.
 
 
 \subsection{Lobby Supporting Different Applications}
 \label{section:lobbySystem}
-Being a part of the larger collaboration project between IMTEL and NAV, it is natural for new projects to build on the older ones, like this one did. To keep this going, a lot of effort went into making sure the artefact is reusable and easy to build further should the need arise to do so. As part of this, the starting screen of the application has received updates, as seen in figure \ref{fig:phase3_lobby1}. All the elements in the user interface was redesigned to support multiple resolutions so that the layout adapts to it.  
-We also including a new feature, where the user can select which application they would like to start as a mean to ease the reusability and future development. Seen in figure \ref{fig:phase3_dropwdown}. This allows future developers to effortlessly target any desired scene (or application) to be created as a public hosted instance on the server so that users can join. 
-However, it must be pointed out that this does not serialise or network objects within the scene automatically. Players that join the room are synced, but every other interactable object requires some variation of PUN2 networking implementation. 
+Being a part of the larger collaboration project between IMTEL and NAV, it is natural for new projects to build on the older ones, as this one did. To further enable this process, considerable effort went into making sure the artefact is reusable and easy to expand further should the need arise to do so. As part of this, the starting screen of the application received updates, as seen in figure \ref{fig:phase3_lobby1}. All the elements in the user interface were redesigned to support multiple resolutions so that the layout adapts to it.  
+We also included a new feature, where the user can select which application they would like to start as a mean to ease reusability and future development, seen in figure \ref{fig:phase3_dropwdown}. This allows future developers to effortlessly target any desired scene (or application) to be created as a public hosted instance on the server so that users can join. 
+However, it must be pointed out that this does not serialise or network objects within the scene automatically. Players that join the room are synchronised, but every other interactable object requires some level of PUN2 networking implementation. 
     
 
 \begin{figure}[H]
@@ -107,8 +103,8 @@ However, it must be pointed out that this does not serialise or network objects 
 \label{fig:phase3_dropwdown}
 \end{figure}
 
-Once a specific application is chosen in the dropdown and the \textit{Next} button is pressed the user is taken to a new \textit{Lobby} screen for the selected application as seen in figure \ref{fig:phase3_LobbyScene1}. Here the users have several options. Firstly, the system automatically connects the user to the Photon network and once connected successfully it joins the corresponding lobby based on the application selection in the previous screen.    
-Then the system fetches all the corresponding rooms (application instances) hosted on the Photon Cloud server. If none are found, meaning no rooms are active or being hosted, are simple textbox notifies the user that no rooms exist and that they can create their own. Otherwise, the rooms are listed in a scrollable list element, see figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. 
+Once a specific application is chosen in the dropdown and the \textit{Next} button is pressed the user is taken to a new \textit{Lobby} screen for the selected application as seen in figure \ref{fig:phase3_LobbyScene1}. Here the users have several options. First, the system automatically connects the user to the Photon network and once connected successfully it joins the corresponding lobby based on the application selected in the previous screen.    
+Then the system fetches all the corresponding rooms (application instances) hosted on the Photon Cloud server. If none are found, meaning no rooms are active or being hosted, a simple textbox notifies the user that no rooms exist and that they can create their own. Otherwise, the rooms are listed in a scrollable list element, see figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. 
 
 \begin{figure}[H]
   \centering
@@ -126,21 +122,21 @@ Then the system fetches all the corresponding rooms (application instances) host
 \label{fig:phase3_LobbyMultiRoomsSelectSmall}
 \end{figure}
 
-The process of creating a room was to a great extent simplified (while ensuring functionality is kept) so that most users could perform the operation. Only a name for the rooms is required. It does not even need to be unique, as we accounted for it in our code. Custom logic assigns a unique ID number to a room instance, which is then used as a key identifier when for instance a user wants to join that room. Once a user successfully creates a room on the server, the client joins the room and their local player instance is instantiated. They are now the masterclient of the room. If they were to leave, and other users are connected to the room, the masterclient privileges are delegated to another user. Otherwise the room is closed. After the client has created and joined the room, a callback is made to all connected remote clients in the lobby and the room is added and displayed in the list of rooms. 
+The process of creating a room was to a large extent simplified (while ensuring functionality is kept) so that most users could perform the operation. Only a name for the room is required. It does not need to be unique, as that is accounted for in the code. Custom logic assigns a unique ID number to a room instance, which is then used as a key identifier when a user wants to join that room. Once a user successfully creates a room on the server, the client joins the room and their local player instance is instantiated. They are now the master client of the room. If they were to leave, and other users are connected to the room, the master client privileges are delegated to another user. Otherwise the room is closed. After the client has created and joined the room, a callback is made to all connected remote clients in the lobby and the room is added and displayed in the list of rooms. 
 
-To join a hosted room the user only needs to selected the desired one from the list by clicking on it and press \textit{Join selected room}. As a verification that the correct room is selected, a text string below the join button is updated with the corresponding room name, see figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. Similar to creating a room, the process of joining is automated. The difference being there is no need to create it, just instantiate the client's local player instance. 
+To join a hosted room the user only needs to select the desired one from the list by clicking on it and press \textit{Join selected room}. As a verification that the correct room is selected, a text string below the join button is updated with the corresponding room name, see figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. Similar to creating a room, the process of joining is automated. The difference being there is no need to create it, just instantiate the client's local player instance. 
 
-A player cap of 16 concurrent users are set for each room. The number of connected clients in a room are shown list of rooms as with the name, type of application and ID. See figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall} for an example.  
+A player cap of 16 concurrent users are set for each room. The number of connected clients in a room are shown in the list of rooms along the name, type of application and ID. See figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall} for an example.  
 
 
-To demonstrate the new feature that allows multiple applications in the lobby system, a demo room was made. It allows the users to select different rooms and see the new feature in action. It also servers to demonstrate how to implement a new scene for future developers who may use the lobby system. This aligns closely with secondary RQ4, as part of the challenge of implementing these features is that they must be general enough to work in a multitude of scenarios. Figure \ref{fig:phase3_demoApp} is a screenshot of the demo application scene. This is not the early demo from phase 1, but a new barebones scene used as an example of how to manage multiple applications in the launcher, primarily for the benefit of other developers.  
+To demonstrate the new feature that allows multiple applications in the lobby system, a demo application was made. The dropdown menu allows the users to select different applications and see the new feature in action. It also serves to demonstrate how to implement a new scene for future developers who may use the lobby system. This aligns closely with secondary RQ4, as part of the challenge of implementing these features is that they must be general enough to work in a multitude of scenarios. Figure \ref{fig:phase3_demoApp} is a screenshot of the demo application scene. This is not the early demo from phase 1, but a new barebones scene used as an example of how to manage multiple applications in the launcher, primarily for the benefit of other developers.  
 
 
 \begin{figure}[H]
   \centering
    \captionsetup{width=.9\linewidth}
     \includegraphics[width=0.9\textwidth]{fig/phase_3/implementation/demoApp.PNG}
- \caption{The demo application with basic collaboration mechanism and networked integration.}
+ \caption{The example application with basic collaboration mechanism and networked integration.}
 \label{fig:phase3_demoApp}
 \end{figure}
 
@@ -153,106 +149,94 @@ To demonstrate the new feature that allows multiple applications in the lobby sy
 
 
 \subsubsection{Identifiable rooms}
-In the preliminary stage of this phase the primary target to begin with was to implement a functional lobby system as described in section \ref{section:lobbySystem}. To start the rooms where only had an identification number and the type of application as room name. The ID was given when the room was created. This meant the creator of a room did not know the ID and it was hard for other users to identify which room they were supposed to join. As such we improved the situation by allowing the users to enter a custom name for the room so that other users could identify it by its name.   
+In the preliminary stage of this phase the primary focus was to implement a functional lobby system as described in section \ref{section:lobbySystem}. To begin with, the rooms only had an identification number and the type of application as room name. The ID was set when the room was created. This meant the creator of a room did not know the ID and it was hard for other users to identify which room they were supposed to join. As such we improved the situation by allowing the users to enter a custom name for the room so that other users could identify the room by its name.   
 
 
 \subsubsection{Custom keybindings}
-As mentioned in the previous chapter (see section \ref{section:covid19}) we had gotten Oculus devices to support our work from home. We was therefore somewhat forced to adapt and as such we added custom controller binding settings so that features such as laserpointer is supported for Oculus Rift controllers.   
+As mentioned in the previous chapter (see section \ref{section:covid19}) we had gotten Oculus devices to support our work from home. We therefore added custom controller binding settings so that features such as laserpointer were supported for Oculus Touch controllers.   
 
 
 
 \subsection{Usability}
-As a measure to hopefully increase the users opinion about subjective objectives related to the artefacts usability we considered and added different heuristics. 
+As a measure to increase the users' opinions about subjective objectives related to the artefacts usability we considered and added different heuristics. 
 
-Firstly, we added symbols and status text so that the user has visibility of the system status. As an example the lobby displays a loading symbol and appropriate text in the rooms list while it is fetching data, see figure \ref{fig:phase3_LobbyScene1}.  
-To prevent error by the user, some buttons were disabled until the user has fulfilled the requirements. In our solution the user needs to enter a name for the rooms before the \textit{Create own room} button becomes active and clickable.
-Use of consistent elements such as colour scheme, size of buttons, text font and other mechanisms was adapted so that situations stay the same for the user. For example a mouse hovering over a button yields the same green colour overlay to signal that it can be clicked. See figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. 
+First, we added symbols and status text so that the user has visibility of the system status. As an example the lobby displays a loading symbol and appropriate text in the room list while it is fetching data, seen in figure \ref{fig:phase3_LobbyScene1}.  
+To prevent error by the user, some buttons are disabled until the user fulfils the requirements. In our solution the user needs to enter a name for the rooms before the \textit{Create own room} button becomes active and clickable.
+The use of consistent elements such as colour scheme, size of buttons, text font and other mechanisms were also adapted. For example a mouse hovering over a button yields the same green colour overlay for all buttons to signal that it can be clicked. See figure \ref{fig:phase3_LobbyMultiRoomsSelectSmall}. 
 
 
 
 \subsection{Challenges}
 
 \subsubsection{Corrupted Prefabs}
-The work from home environment presented some issues that were not expected occurred. When work was done at the lab, the computers were kept up to date, programs were updated and things ran smoothly. When setting up at home, a fair bit of time was spent correctly setting up VR headsets on home computers, and importing the project files onto a new install of Unity. One of the issues was related to Unity prefabs and Blender files. During an import, several prefabs stopped working properly due to a lacking blender install. References to these prefabs broke, models did not show up as intended, and related networking components stopped working. 
+The work from home environment presented some issues that were not expected. When work was done at the lab, the computers were kept up to date, programs were updated and things ran smoothly. When setting up at home, a fair bit of time was spent correctly setting up VR headsets on home computers, and importing the project files onto a new install of Unity. One of the issues was related to Unity prefabs and Blender files. During an import, several prefabs stopped working properly due to a lacking blender install. References to these prefabs broke, models did not show up as intended, and related networking components stopped working. 
 
-As it turns out, .blend files open in Blender in the background, and are exported as .fbx files. But even when blender was installed on both computers used during the work from home period, there were still issues with certain .blend files not being properly exported. Something about these files in particular must have used a newer function of Blender, as they were finally solved when the Blender version of the second computer was completely reinstalled to make sure the newest version was present on both computers. 
+As it turns out, \textit{.blend} files open in Blender in the background, and are exported as \textit{.fbx} files. But even when blender was installed on both computers used during the work from home period, there were still issues with certain \textit{.blend} files not being properly exported. Something about these files in particular must have used a newer function of Blender, as they were finally solved when the Blender version of the second computer was completely reinstalled to make sure the newest version was present on both computers. 
 
 
 
 \subsubsection{GameObject tag - NullReferenceException}
-During the work on a distributable executable file we experienced a bug in the build process. The application worked as expected when running it from the editor but running it from the executable after the build process we would encounter a \textit{NullReferenceException}. This exception is raised when the system is trying to access a reference variable which does not reference to anything. It turns out if there is a removed tag in tag index, Unity wont see this change and the build file will try to access a variable which does not exist. In the application we used methods to get GameObjects by their tag, which was what raised the error. After much debugging the issue was solved by simply restarting Unity so that references and metadata was updated.  
+During the development on a distributable executable file we experienced a bug in the build process. The application worked as expected when running it from the editor, but running it from the executable after the build process we would encounter a \textit{NullReferenceException}. This exception is raised when the system is trying to access a reference variable which does not refer to anything. It turns out if a tag is removed from the tag index, Unity will not see this change and the build file will try to access a variable which does not exist. In the application we used methods to get GameObjects by their tag, which was what raised the error. After much debugging the issue was solved by simply restarting Unity so that references and metadata was updated.  
 
 
 \subsection{Unimplemented Features}
-Due to unexpected situations, corresponding changes and limited time some features we wanted was not implemented. 
+Due to the unexpected situation and the corresponding changes, some features that were wanted were not implemented. 
 
 \subsubsection{Speech Indicator}
-As mentioned in the previous chapter (see section \ref{section:phase2visibility}) some users have difficulty identifying who talks and when. One idea was to add speech indicators on avatars which is visible when a user talks in the application as a mean to aid the visibility of speech amongst users, both VR and desktop users. Figure \ref{fig:phase3_speech} shows how such indicators might look.
+As mentioned in the previous chapter (see section \ref{section:phase2visibility}) some users have difficulty identifying who talks and when. One idea was to add speech indicators on avatars which is visible when a user talks in the application as a means to aid the visibility of speech amongst both VR and desktop users. Figure \ref{fig:phase3_speech} shows how such indicators might look.
 
-The addition of speech indicator would be beneficial for the workspace awareness of the users in cases where there are more than two users at the same time. If users have trouble identifying who is currently speaking, the elements of and identity authorship (See table \ref{table:awarenessPresent}) are not reinforced enough. This negatively affects the workspace awareness of the user and, as a result, the overall experience suffers.
+The addition of speech indicator would be beneficial for the workspace awareness of the users in cases where there are more than two users at the same time. If users have trouble identifying who is currently speaking, the elements of identity and authorship (see table \ref{table:awarenessPresent}) are not reinforced enough. This negatively affects the workspace awareness of the user and, as a result, the overall experience suffers.
 
 
 \begin{figure}[H]
   \centering
    \captionsetup{width=.6\linewidth}
     \includegraphics[width=0.6\textwidth]{fig/phase_3/implementation/speechIndicator.PNG}
- \caption{An example of how speech indicator might look.}
+ \caption{An example of how a speech indicator might look.}
 \label{fig:phase3_speech}
 \end{figure}
 
 
 \subsubsection{Synchronised finger movement}
-A discussed, but not implemented feature was the synchronisation and networking of the animated hands that Steam VR provides. While the hands of the user is correctly tracked and displayed to other users, the fingers are set in a static position. For the user, the fingers animate correctly, and change according to the input on the controller.
+A discussed, but not implemented feature was the synchronisation and networking of the animated hands that Steam VR provides. While the hands of the user is correctly tracked and displayed to other users, the fingers are set in a static position. A user is able to see their own fingers move, but these animations are not played for other users.
 
-When weighing the pros and cons of the feature, simplification of communication (See table \ref{table:awarenessActivity} is the concept that weighs most heavily. Deictic gestures is one of the most basic forms of communication, and any feature strengthening the users ability to communicate is worth considering for implementation. When prioritising different features, finger movements was not considered as important as other aspects of the artefact. To begin with, the avatars as they are now are not accurate or realistic, with missing limbs and little to no animation on the head. The direction, position and rotation of the hands were thought to serve satisfyingly as a representation of deictic gestures. Therefore, finger movements were considered unnecessary for the current implementation, but may be considered later in the IMTEL project life cycle.
+When weighing the pros and cons of the feature, simplification of communication (see table \ref{table:awarenessActivity} is the concept that weighs most heavily. Deictic gestures are some of the most basic forms of communication, and any feature strengthening the users ability to communicate is worth considering for implementation. When prioritising different features, finger movement was not considered as important as other aspects of the artefact. To begin with, the avatars as they are now are not accurate or realistic, with missing limbs and little to no animation on the head. The direction, position and rotation of the hands were thought to serve satisfyingly as a representation of deictic gestures. Therefore finger movements were considered unnecessary for the current implementation, but may be considered later in the IMTEL project life cycle.
 
 
 
 \section{Third Evaluation}
 \label{section:evalPhase3}
-While evaluation turned out to be more difficult than anticipated, tests were still able to be performed with some effort. As planned, tests with the  users remain the primary source of data, but the new circumstances placed further importance on expert evaluation to garner additional data sets. Table \ref{table:dataGatheringSchedule} shows how and when data was gathered for this phase, which began with video conferences in April 2020. 
+While evaluation turned out to be more difficult than anticipated, tests were still able to be performed with some effort. As planned, tests with  users remain the primary source of data, but the new circumstances placed further importance on expert evaluation to garner additional data sets. Table \ref{table:dataGatheringSchedule} shows how and when data was gathered for this phase, which began with video conferences in April 2020. 
 
 
 \subsection{Remote User Tests}
-Since tests could no longer be performed at the lab or at the offices of NAV, the tests had to be adapted to fit the new circumstances. That meant finding testers who were available who also had VR gear at home. This turned out to be somewhat difficult, and a significant amount of time has been spent finding testers so that the project could finish as planned. Due to the collaboration with NAV, the task of finding suitable testers could be at least partially delegated to our collaborators at NAV. Since this would take an undetermined amount of time, time could be spent finishing up other aspects of the artefact that needed work or more polish to ensure the best result.
-Finding job young seekers willing to participate turned out to be very difficult. A combination of lacking VR equipment, insecurity and no obligation to attend meant some job seekers first wanted to participate but ended up withdrawing from the testing. Due to the new circumstances the amount of testers was drastically lower than initially planned for, so the methodology of testing had to be adjusted as well. As a consequence, these tests was conducted remotely over the internet using video chat tools and the remote guidance opportunities built into the artefact for this phase. Also, focus had to be placed on the qualitative data with quantitative data to support it, to make sure the samples obtained were useful and thorough. In late May, with testers finally found, the testing was conducted as planned. Although the amount of primary target testers were low, we had to proceed as they were the only ones available.   
+Since tests could no longer be performed at the lab or at the offices of NAV, they had to be adapted to fit the new circumstances. That meant finding testers who were available who also had VR gear at home. This turned out to be somewhat difficult, and a significant amount of time was  spent finding testers so that the project could finish as planned. Due to the collaboration with NAV, the task of finding suitable testers could be at least partially delegated to our collaborators at NAV. Since this would take an undetermined amount of time, time could be spent finishing up other aspects of the artefact that needed work or more polish to ensure the best result.
+
+Finding job young seekers willing to participate turned out to be very difficult. A combination of lacking VR equipment, insecurity and no obligation to attend meant some job seekers first wanted to participate but ended up withdrawing from the testing. Due to the new circumstances, the amount of testers was drastically lower than initially planned for, so the methodology of testing had to be adjusted as well. As a consequence, these tests were conducted remotely over the internet using video conference tools and the remote guidance opportunities built into the artefact for this phase. Furthermore, more focus was placed on the qualitative data with additional quantitative data to support it, to make sure the samples obtained were useful and thorough. In late May, with testers finally secured, testing was conducted as planned. Although the amount of primary target testers were low, we had to proceed as they were the only ones available.   
 
 
 
 \subsection{Expert Evaluation}
 \label{section:phase3_expertEval}
-While work was underway in securing testers for the planned remote guidance tests, other avenues for feedback were also pursued. Due to the special circumstances, there was some concern enough test data could not be secured. By working with various relevant collaboration partners of IMTEL, we could present the project and garner feedback and opinions from experts in the fields of career guidance and mentoring. While this alone is not a satisfactory type or amount of data, it is helpful to see their opinion on what we have made, particularly for the research questions that pertain to remote guidance, i.e. RQ2 and RQ3.
+While work was underway in securing testers for the planned remote guidance tests, other avenues for feedback were also pursued. Due to the special circumstances, there was some concern that enough test data could not be secured. By working with various collaboration partners of IMTEL, we could present the project and garner feedback and opinions from experts in the fields of career guidance and mentoring. While this alone is not a satisfactory type or amount of data, it is helpful to see their opinion on what we have made, particularly for the research questions that pertain to remote guidance, i.e., RQ2 and RQ3.
 
-This data will primarily be gathered using Microsoft Forms, where a survey was created through multiple iterations. A copy of this form can be seen in appendix \ref{}. Microsoft Forms was selected as it was suggested by the our advisers and complies with concerns regarding general data protection rules (GDPR).
+This data was primarily to be gathered using Microsoft Forms, where a survey was created over the course of multiple iterations. A copy of this form can be seen in appendix \ref{appendix:phase3}. Microsoft Forms was selected as it was suggested by the our advisers and complies with concerns regarding general data protection rules (GDPR), as well as being a platform all NTNU students have access to.
 
-The largest opportunity for expert feedback happened in late April, where a chance presented itself for a presentation and discussion with NAV, Arbeids- og velferdsdirektoratet and Kompetanse Norge, a directorate of the government department of education. While their field of interest is more centered on the education and re-education of adults, rather than young job seekers working with NAV, their expertise in the field of career guidance could be useful nonetheless.
-This opportunity was a academic forum about VR in training and guidance hosted over Zoom, a video conference tool. During the meeting we presented our thesis and the artefact developed. To ease the explanation we made a short video showcasing and demonstrating the abilities and features of the artefact. The video is available on  \href{https://www.youtube.com/watch?v=ZNnK4ohWSag}{\textcolor{blue}{YouTube}} \footnote{https://www.youtube.com/watch?v=ZNnK4ohWSag}. 
+The largest opportunity for expert feedback happened in late April, where a possibility presented itself for a presentation and discussion with NAV and Kompetanse Norge, a directorate of the government department of education. While their field of expertise is primarily focused on the education and re-education of adults rather than young job seekers working with NAV, their expertise in the field of career guidance could be useful nonetheless.
+This opportunity was an academic forum about VR in training and guidance hosted over Zoom, a video conference tool. During the meeting we presented our thesis and the developed artefact. To ease the explanation we made a short video showcasing and demonstrating the potential and features of the artefact. The video is available on  \href{https://www.youtube.com/watch?v=ZNnK4ohWSag}{\textcolor{blue}{Youtube}} \footnote{https://www.youtube.com/watch?v=ZNnK4ohWSag}. 
 
-The survey we prepared for the final phase consisted of four main sections aimed at providing data related to our research questions. These sections included \textit{Career Decision and Guidance}, \textit{Collaboration Mechanisms}, \textit{SUS - System Usability Scale} and \textit{Remote Guidance}. Since participants of the survey could have different experience of the application (actually used it, watched the video etc.) the survey considered all such cases, branching to the correct section depending of their experience and answers. 
+The survey that was prepared for the final phase consisted of four main sections aimed at providing data related to our research questions. These sections included \textit{Decision Learning and Career Guidance}, \textit{Collaboration Mechanisms}, \textit{SUS - System Usability Scale} and \textit{Remote Guidance}. Since participants of the survey could have different experiences with the application (used it, watched the video etc.) the survey considered all such cases, branching to the correct sections depending of their experience and answers. 
 
-The survey was employed after the meeting in an attempt to gain a secondary data source. From the about 50 to 60 people we interacted with, 14 chose to respond to the survey. While the amount of respondents was not entirely as high as hoped considering this was not a random selection for participants, their status as a secondary data source mitigates this somewhat, as this data was always considered secondary to the data gathered from the primary target group, which would be of the qualitative sort. We did however remind the participants of the meeting after some days to take the survey but with little response. There is so much we could do, but we got creative and got a few more answers provided by chief advisers in the Norwegian automotive federation, who has worked previously with the IMTEL lab on projects.    
-
-
-
-
-%Graph data: 
-
-%Learning
-
-%Other improvements
-
-%VR mode vs. desktop
-
-%Expert feedback
+The survey was employed after the meeting in an attempt to gain a secondary data source. From the about 50 to 60 people we interacted with, 14 chose to respond to the survey. While the amount of respondents was not entirely as high as hoped considering this was not an entirely random selection for participants, their status as a secondary data source mitigates this somewhat, as this data was always considered secondary to the data gathered from the primary target group, which would be of the qualitative sort. We did however remind the participants of the meeting after some days to take the survey but with little response. More answers were provided by chief advisers in the Norwegian automotive association, who have worked previously with the IMTEL lab on career guidance projects.    
 
 
 
 \subsection{Analysis}
-Due to the challenges regarding user testing as described above we gathered data through both semi-structured interviews and surveys. Interviews was completed with our primary user target (young job seekers and career guides). The amount of interviews was limited and as such we also conducted surveys with experts to support our data gathering.      
+Due to the challenges regarding user testing as described above data was gathered through both semi-structured interviews and surveys. Interviews were completed with the primary target users (young job seekers and career councillors). The amount of interviews was limited and as such we also conducted surveys with experts to support our data gathering.      
 
 
 \subsubsection{Qualitative Textual Data Analysis}
-To analyse the textual data from the interviews conducted we utilised the same method and procedure as previously used in section \ref{section:phase1Analysis}. See appendix \ref{appendix:phase3} for interview guide and answers. Using theme analysis we identified themes and their related more refined sub-themes as seen in table \ref{table:phase3ThemeAnalysis}. Table \ref{table:phase3MethaphorsAnalysis} shows relevant metaphors found in the interviews by each participant, and table \ref{table:phase3SatisfactionAnalysis} presents the interviewees perceived value of the concept of the final artefact developed for this thesis.
+To analyse the textual data from the interviews conducted we utilised the same method and procedure as previously used in section \ref{section:phase1Analysis}. See appendix \ref{appendix:phase3} for interview guide and answers. Using theme analysis we identified themes and  related refined sub-themes as seen in table \ref{table:phase3ThemeAnalysis}. Table \ref{table:phase3MethaphorsAnalysis} shows relevant metaphors found in the interviews for each participant, and table \ref{table:phase3SatisfactionAnalysis} presents the interviewees perceived value of the final artefact developed for this thesis and the underlying concept.
 
 
 \begin{table}[H]
@@ -311,7 +295,7 @@ Intuitive               & *          & *         & *        &*      &*\\
          & \#05  & High potential & Yes, I definitively think so. Speaking from previous experience, [...] people motivate each other, and dare to do more, as they can't see other real people looking at them.
          \\\midrule \vspace{0.2cm}
         Career guide & \#02  & High & In a situation where geographic distances are challenging, the concept is very valuable. The multiplayer concept is very interesting.\\ \vspace{0.2cm}
-        Career guide & \#03  & High & Has a lot of potential. Being able to communicate with VR goggles on, being able to collaborate like that and being able to work with employers are good things. \\ 
+        Career guide & \#03  & High & Has a lot of potential. Being able to communicate with VR headset on, being able to collaborate like that and being able to work with employers are good things. \\ 
         Career guide & \#04  & High & In regards to VR as a remote guidance tool it is a very cool way of reaching many people. I thinks multiple users can increase engagement. \\
         \bottomrule
         \end{tabular}
@@ -322,16 +306,16 @@ Intuitive               & *          & *         & *        &*      &*\\
 
 
 \subsubsection{Quantitative Data Analysis}
-The data from the expert evaluation process was generated through a survey made using Microsoft Forms. See appendix \ref{appendix:phase3} for full survey and answers. To get meaningful and interesting information out of it, we used similar techniques as previous analysis to manage, view and analysis the data. The survey mainly consisted of ordinal data types from likert scales, a few nominal data types from categorical questions and finally one interval data type from age of the participants.  
-A benefit with utilising Microsoft Forms as our survey tools is that the data was automatically organised into visual aids such as bar and pie charts. Using them and analysis we were able to identify interesting findings. 
-The survey had 17 participants (experts in respective fields) consisting of 10 women and 7 males, all within the age group  of 45-64 years. 
+The data from the expert evaluation process was generated through a survey made using Microsoft Forms. See appendix \ref{appendix:phase3} for the full survey and answers. To get meaningful and interesting information out of it, we used similar techniques as the previous analysis phases to manage, view and analyse the data. The survey mainly consisted of ordinal data types from likert scales, a few nominal data types from categorical questions and finally one interval data type for the age of the participants.  
+A benefit of utilising Microsoft Forms as our survey tool is that the data was automatically organised into visual aids such as bar and pie charts. Using these and the analysis we were able to identify interesting findings. 
+The survey had 17 participants (experts in respective fields) consisting of 10 women and 7 men, all within the age group  of 45-64 years. 
 
 
 The participants experience with VR was generally low, with 64,7\% ranking it either \textit{Very low degree} or \textit{Low degree}, but this was to be expected as the use of VR in public sectors is not common. 35\% experienced (used) the application on their own computer before answering the survey, whereas 65\% saw the video presentation as mentioned in section \ref{section:phase3_expertEval}.  
 
 
 
-Independent of their experience of the application there was common consent amongst all participants in relation to various statements regarding career guidance and career decision. Figure \ref{fig:phase3_SurveyValgkompApp} and \ref{fig:phase3_SurveyValgkompVideo} shows the ranking to similar but adapted statements depending on their experience of the application. As evident from the bar charts most participants ranked statements \textit{High degree} or \textit{Very high degree}. The mean being \textit{High degree} with an average of 59\% ranked for figure \ref{fig:phase3_SurveyValgkompApp} and 60\% for figure \ref{fig:phase3_SurveyValgkompVideo}.
+Independent of their experience of the application there was common consensus amongst all participants in relation to various statements regarding career guidance and decision learning. Figure \ref{fig:phase3_SurveyValgkompApp} and \ref{fig:phase3_SurveyValgkompVideo} shows the answers to similar statements but adapted depending on whether they used the application or watched the video presentation. As evident from the bar charts most participants ranked statements \textit{High degree} or \textit{Very high degree}. The mean being \textit{High degree} with an average of 59\% ranked for figure \ref{fig:phase3_SurveyValgkompApp} and 60\% for figure \ref{fig:phase3_SurveyValgkompVideo}.
 
 \begin{figure}[H]
   \centering
@@ -355,7 +339,7 @@ Independent of their experience of the application there was common consent amon
 
 
 
-Most participants agreed that collaboration can contribute to decision learning in regards to career choice as seen in figure \ref{fig:phase3_SurveyCollaborationIncreased}. Here the mode was \textit{High degree} with 83.3\% of participants ranking it. However 16,7\% of participants were neutral in their opinion. This was the exact ranking received for another statement in regards to potentially increased engagement when there are multiple users present in the application, see figure \ref{fig:phase3_SurveyEngagementIncreased}. Interestingly, the participant were divided in how they felt the feeling of presence affected the experience of the application as seen in figure \ref{fig:phase3_SurveyPrecenceIncrease}. Here the mode was \textit{Neutral} with 50\%. \textit{High degree} was ranked only 16,7\% whereas \textit{Low degree} was ranked 33,3\% of the time. A clear spread of data values, illustrating a difference in opinion between the participants. However, it must be mentioned that the understanding of presence in VR relation is often misunderstood as being immersed, which we in section \ref{immersionAndPresence} outlined, and thus might affect the results.       
+Most participants agreed that collaboration can contribute to decision learning in regards to career choice as seen in figure \ref{fig:phase3_SurveyCollaborationIncreased}. Here the mode was \textit{High degree} with 83.3\% of participants ranking it. However 16,7\% of participants were neutral in their opinion. This was the exact ranking received for another statement in regards to potentially increased engagement when there are multiple users present in the application, see figure \ref{fig:phase3_SurveyEngagementIncreased}. Interestingly, the participant were divided in how they experienced the feeling of presence affected the experience of the application as seen in figure \ref{fig:phase3_SurveyPrecenceIncrease}. Here the mode was \textit{Neutral} with 50\%. \textit{High degree} was ranked only 16,7\% whereas \textit{Low degree} was ranked 33,3\% of the time. A clear spread of data values, illustrating a difference in opinion between the participants.
 
 
 \begin{figure}[H]
@@ -412,9 +396,9 @@ conscious of other users.}
 \end{figure}
 
 
-In regards features which can facilitate the use of the application for remote carer guidance and to what degree they could be useful, the participants ranked several. These features included for instance verbal or written communication, ability to mark objects, and system intuitiveness. Figure \ref{fig:phase3_VerbalWritten} show that participant heavily favoured verbal communication over written as a quality which is important for remote usage. Almost two thirds (64.7\%) ranked verbal communication as \textit{Very important} whereas none ranked in \textit{Very important} for written communication. The mode and median being \textit{Neutral}.
+In regards to features which can facilitate the use of the application for remote carer guidance and to what degree they could be useful, the participants ranked several of them. These features included for instance verbal or written communication, ability to mark objects, and system intuitiveness. Figure \ref{fig:phase3_VerbalWritten} shows that participants heavily favoured verbal communication over written as a quality which is important for remote usage. Almost two thirds (64.7\%) ranked verbal communication as \textit{Very important} whereas none ranked in \textit{Very important} for written communication. The mode and median being \textit{Neutral}.
 For qualities related to ease of use and intuitiveness the mode was \textit{Very important} for all, with an average ranking of \textit{Very important} of 72\%, which is almost three fourths of all answers.  See figure \ref{fig:phase3_Intuitiveness}.   
-Additional as figure \ref{fig:phase3_AppBeUsed} shows the distribution of their opinion regarding if the application developed in this thesis can be useful for remote occupational guidance. 82\% ranked either \textit{Very agree} or \textit{Agree}.
+Additionally,  figure \ref{fig:phase3_AppBeUsed} shows the distribution of their opinions regarding whether or not the application developed in this thesis can be useful for remote career guidance. 82\% ranked either \textit{Strongly agree} or \textit{Agree}.
 
 
 \begin{figure}[H]
@@ -429,7 +413,7 @@ Additional as figure \ref{fig:phase3_AppBeUsed} shows the distribution of their 
   \centering
    \captionsetup{width=.8\linewidth}
     \includegraphics[width=0.9\textwidth]{fig/phase_3/survey/EaseOfUse.jpg}
- \caption{Bar chart showing the distribution of how the participants ranked statements regarding intuitiveness and ease of use.}
+ \caption{Bar chart showing the distribution of how the participants ranked statements related to intuitiveness and ease of use.}
 \label{fig:phase3_Intuitiveness}
 \end{figure}
 
@@ -442,8 +426,7 @@ Additional as figure \ref{fig:phase3_AppBeUsed} shows the distribution of their 
 \end{figure}
 
 
-The were also a strong general consent that remote guidance in VR can be relevant for several use cases, including young job seekers, at school, as a result of geographical distance or 
-safety measures in the workplace. The mode for all, except one, was the rank \textit{Very relevant} with an average of 62\%. The use case in context of unemployed's as a cause of Covid-19 had the mode ranking of \textit{Somewhat relevant} being the least ranked relevant use case with 11.8\%  ranking it \textit{Little relevant}. Se figure \ref{fig:phase3_RemoteUsecases}.    
+The were also a strong general consensus that remote guidance in VR can be relevant for several use cases, including young job seekers, at school, as a result of geographical distance or due safety measures in workplaces. The mode for all, except one, was \textit{Very relevant} with an average of 62\%. The use case in context of unemployed as a cause of Covid-19 had the mode ranking of \textit{Somewhat relevant} being the least ranked relevant use case with 11.8\%  ranking it \textit{Less relevant}. Se figure \ref{fig:phase3_RemoteUsecases}.    
 
 \begin{figure}[H]
   \centering
@@ -455,7 +438,7 @@ safety measures in the workplace. The mode for all, except one, was the rank \te
 
 
 \subsubsection{SUS Score}
-The survey contained a section for system usability scale (SUS). To interpret the score we used the same procedure as in phase 2 (see section \ref{section:phase2SUS}). Firstly, we calculated the SUS score for each participant. There were a total of six score as these participants were the one who had use the application during the testing. The scores can be found in table \ref{table:phase3SUSscores} alongside their adjective rating and grade from table \ref{table:SUSinterpret} in phase 2.
+The survey contained a section for a system usability scale (SUS). To interpret the score we used the same procedure as in phase 2 (see section \ref{section:phase2SUS}). Firstly, we calculated the SUS score for each participant. There were a total of six scores as these participants were the one who had used the application during testing. The scores can be found in table \ref{table:phase3SUSscores} alongside their adjective rating and grade from table \ref{table:SUSinterpret} in phase 2.
 
 
 \begin{table}[H]
