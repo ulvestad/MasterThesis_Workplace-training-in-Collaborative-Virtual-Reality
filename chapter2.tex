@@ -41,7 +41,7 @@ Although, they are quite similar it is important to note and that for this proje
 
 
   
-\subsubsection{Immersion and presence} \label{immersionAndPresence}
+\subsection{Immersion and presence} \label{immersionAndPresence}
 It is important to note the difference between presence and immersion. While immersion refers to an an objective level of fidelity, which can be measured against the immersion levels of another application, presence refers to a person's subjective feeling of being in a location while physically being in another \cite{slater2003note}. With this project we hope to increase the presence of the user in the virtual workplaces, not necessarily the immersion.
 
 \subsubsection{Social presence}
@@ -126,7 +126,7 @@ A popular and effective technique for 3D environments is the use of avatars as a
 
 In the versions of the applications made for one user at a time, the guidance counsellor/operator would have to explain how things like tasks worked and where objectives were located without existing in the same virtual space. This disconnect proved disadvantageous and ineffective, and the presence of the user suffered due to the disconnect between the virtual space they were in and the instructions coming in from outside of this space. Enabling workspace awareness with others, be it other users or supervisors, enhances several activities. A brief summary of these can be seen in table \ref{table:awarenessActivity} \cite{gutwin2002descriptive}. 
 
-Perhaps the most significant activity that can easily be enhanced with VR is \textit{simplification of communication}. This refers to the deictic gestures like pointing and waving, interacting with artefacts to show other users, etc. These interactions will be included as a byproduct of achieving the level of immersion deemed necessary by us, the IMTEL lab and NAV. The other activities are also important, allowing greater ease of communication and planning for the users and significantly increasing their awareness of the current status of the work being done, and how they can best assist each other.
+Perhaps the most significant activity that can easily be enhanced with VR is \textit{simplification of communication}. This refers to the deictic gestures like pointing and waving, interacting with objects to show other users, etc. These interactions will be included as a byproduct of achieving the level of immersion deemed necessary by us, the IMTEL lab and NAV. The other activities are also important, allowing greater ease of communication and planning for the users and significantly increasing their awareness of the current status of the work being done, and how they can best assist each other.
 
 \begin{table}[!h]
       \centering
@@ -259,7 +259,7 @@ According to Fominykh and Prasolova-Førland \cite{fominykh2019immersive} this c
 
 \section{Technologies}
 \label{sec:technologies}
-This section briefly explains some of the main technologies and frameworks that were used during the development of the artefacts necessary for the projects. 
+This section briefly explains some of the main technologies and frameworks that were used during the development of the software components necessary for the project. 
 
 \subsection{Git}
 Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project we used GitLab \cite{GitLab} as Git-repository manager since the IMTEL lab has their own codebase there. To make Unity work with Git we needed to configure Unity for version control adding specific \textit{.gitignore} settings and using Git LFS (large file system) with corresponding \textit{.gitattributes} settings so that Git tracks large files but keep them out of the GitLab repository. 
@@ -307,7 +307,7 @@ Take for example an RPC or a data stream writing procedure for the updated posit
 
 The framework operates on an application/version system. For every program you intend to create and use with Photon, you need to register with Photon as its own application. You can then use this to watch over traffic, manage subscriptions, etc. Each application also supports versioning. If two players running the same program have different versions of it, as dictated by the \textit{GameVersion} variable, they will not be able to connect to each other, even if they are on the same application ID. With this, it can be ensured that players will only connect to those on the same version, hindering serious bugs from appearing due to differences in code or scenes.
 
-Photon comes with several features straight out of the box, including matchmaking, in-room communication and dedicated servers. This makes it well suited for creating the necessary artefacts for the project. Features can be customised as needed, and while one can use the provided example scripts for basic game objects, they do not properly account for all the logic a game object can contain. In most cases, a custom script implementing the API has to be created to cover the needed functionality. As mentioned earlier, one of the artefacts of the project is planned to be a general platform which can be used to develop new projects without needing to do the more basic setup of Photon every time. This would include functionality like voice chat, lobbies, launchers and avatar functionality.
+Photon comes with several features straight out of the box, including matchmaking, in-room communication and dedicated servers. This makes it well suited for creating the necessary software components for the project. Features can be customised as needed, and while one can use the provided example scripts for basic game objects, they do not properly account for all the logic a game object can contain. In most cases, a custom script implementing the API has to be created to cover the needed functionality. As mentioned earlier, one of the end-goals of the project is to create a general platform which can be used to develop new projects without needing to do the more basic setup of Photon every time. This would include functionality like voice chat, lobbies, launchers and avatar functionality.
 
 It is therefore important that sufficient time is set aside to not only learn the framework, but also create general solutions that can then be refined in more specific scripts on a per-need basis and embedded in future and existing workplace applications.
 
