@@ -3,22 +3,23 @@
 \chapter{Phase 3: Final Requirements and Finishing Up} 
 \label{chap:7}
 \label{chap:phase3}
-The primary targets for the third and final phase of this thesis were to implement additional requirements, complete the artefact as a general multi-user framework to serve as a foundation for future development and analyse user test data. The following sections will detail changes due to Covid-19, development decisions and implementation as well as an evaluation of this phase's artefact.                 
+The primary targets for the third and final phase of this thesis were to implement additional requirements, complete the artefact as a general multi-user framework to serve as a foundation for future development and analyse user test data. The following sections will describe changes due to Covid-19, development decisions and implementation, as well as an evaluation of this phase's artefact.                 
 
 
 \section{Planning and Changes}
-Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to combat Covid-19 (see section \ref{section:covid19}), effectively preventing us from going through with the plans that were laid out for this phase. Coupled with an enforced work from home situation, the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be ran at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed. A brief overview of the changes can be seen below.
+\label{section:planningandchanges}
+Phase 3 was originally meant to contain changes and finishing touches based on the feedback received during phase 2. However, just as the main testing was about to begin, Norway took measures to limit spread of Covid-19 (see section \ref{section:covid19}), effectively preventing us from going through with the original plans for this phase. Coupled with an enforced work from home situation, the plan needed to be changed drastically. Primarily, some triage had to be done as to figure out which parts of the application were the most necessary for remote data gathering. Since the application is a proof of concept, it was never that important that it ran without supervision, or that multiple server instances could be run at the same time, since we were always present to run the tests and could manage all of this manually. Now that could no longer be assured. This lead to some significant changes in the planned schedule, and more features needed to be developed. A brief overview of the changes can be seen below.
 
 \subsection{Changes}
 \begin{description}
     \item [Change 1]\hfill \\
     Support for multiple concurrent rooms must be made. 
     \item [Change 2]\hfill \\
-    Artefact must be changed to an executable file for end-users so it works with minimal to no input from developers.
+    Artefact must be changed to an executable file for end-users so it works with minimal or no input from developers.
     \item [Change 3]\hfill \\
     Features need to be complete and usable, or potentially removed if their unfinished state interferes with normal use of artefact.
     \item[Change 4]\hfill \\
-    Modified research questions, as new circumstances made some difficult to answer properly.
+    Modified research questions, as the new circumstances made some of the difficult to answer properly.
 \end{description}
 
 \subsection{Changes to Research Questions}
@@ -28,11 +29,11 @@ On the other hand, the new circumstances paved the way for an additional researc
 
 A revised plan for this phase was drafted to handle the new situation regarding the Covid-19 restrictions and adapt to the changes of the research questions. The new plan included testing with NAV clients remotely, online seminars and testing with experts from NAV and Kompetanse Norge. See section \ref{section:evalPhase3} for more details.    
 
-As such, the new topic regarding remote career guidance could be integrated seamlessly into the paper with only some minor adjustments to surveys and plans. Therefore, work began on stabilising features in the application so remote guidance could work smoothly. With the final features nailed down, the survey could be updated to find out which of them were essential, and whether any features were missing that we had not considered.
+As such, the new topic regarding remote career guidance could be integrated seamlessly into the paper with only some minor adjustments to surveys and plans. Therefore, work began on stabilising features in the application so remote guidance could work smoothly. With the final features in place, the survey could be updated to find out which of them were essential, and whether any features were missing that we had not considered.
 
 
 \subsection{Final Requirements}
-As outlined previously this phase sees changes to the artefact and past plans. The requirements outlined in bold are additions for this phase.
+As outlined in section \ref{section:planningandchanges} this phase saw changes to the artefact and past plans. The requirements outlined in bold are additions for this phase.
 
 \begin{enumerate}
   \setlength\itemsep{0em}
@@ -61,12 +62,12 @@ While the previous phase focused on creating a fully functional multi-user colla
 In order for the virtual internship to be used successfully in remote circumstances, it was decided that the artefact needed updates to the limited \textit{Launcher} logic. Architecture, setup, network related methods and callbacks, as well as optimisation settings needed an overhaul so that clients could seamlessly host, create and join instances of different applications (rooms). The launcher logic should also include multiple selectable applications (scenes) so that it could serve as a foundation for future development and be utilised to demonstrate the basics of implementing multiple workplaces into one lobby.   
 
 \subsubsection{Usability}
-User experience had always been considered when developing the application, but it was mainly in relation to the VR aspect, and not as much was placed on other parts such as the user interface for the lobby. For the application to be used remotely by users, this phase's artefact should include a distributable file. Hence, more consideration towards the usability of the software must be taken. A general rule of thumb while developing software is to have a goal that whomever (young digitally-skilled or elderly with little skill) should be able use it with as little support as possible. With that in mind the development must consider subjective objectives such as intuitiveness, ease of use, feedback, and efficiency to hopefully increase the overall satisfaction for the end users.
+User experience have always been considered when developing the application, but it was mainly in relation to the VR aspect, and less focus was placed on other parts such as the user interface for the lobby. For the application to be used remotely by users, this phase's artefact should include a distributable file. Hence, more consideration towards the usability of the software had to be taken. A general rule of thumb while developing software is to have a goal that whomever (young digitally-skilled or elderly with little skill) should be able use it with as little support as possible. With that in mind the development must consider subjective objectives such as intuitiveness, ease of use, feedback, and efficiency to hopefully increase the overall satisfaction for the end users.
 
 
 
 \subsubsection{Networking}
-Due to the shift in focus for this phase, many possible challenges were discussed. One of them being an increased number of concurrent users. From previous phases the intention of the artefact was to accommodate collaboration mechanisms by allowing two or three users to work together (possibly more, but an intended cap at six). With a distributable file we decided that it should at least sustain sixteen concurrent users per room (application instance) to better accommodate different scenarios for remote career guidance. An increase in concurrent users of at least 150\%. 
+Due to the shift in focus for this phase, many possible challenges were discussed. One of them being an increased number of concurrent users. From previous phases the intention of the artefact was to accommodate collaboration mechanisms by allowing two or three users to work together (possibly more, but with an intended cap at six). Introducing a distributable file we decided that it should at least sustain sixteen concurrent users per room (application instance) to better accommodate different scenarios for remote career guidance. An increase in concurrent users of at least 150\%. 
 
 The PUN2 framework we opted to use in development uses Photon Cloud to host the server-side of the application. Photon has several subscription plans for this, including a free \textit{Public Cloud}. That was the plan used in phase 1 and 2. At the time it was the obvious choice, being free and providing plenty of capability for the intended use. This plan supports up to 20 Concurrent Users (CCU), i.e., the number of users allowed to connect to the application, eighth thousand monthly activities and 500 messages per second per room. The other subscription plans \textit{Premium Cloud} and \textit{Enterprise Cloud} can handle 50.000+ CCU but has a cost of at least \$580 per month. After some network traffic calculations and discussion we decided the \textit{Public Cloud} could still satisfy our needs, but some restrictions in the code was needed to limit the number of users so that it does not exceed the CCU cap. 
 
@@ -75,7 +76,7 @@ The PUN2 framework we opted to use in development uses Photon Cloud to host the 
 
 
 \section{Final Artefact}
-As the development came to a close, and the highest priority requirements were finished up, a final version of the artefact was created and prepared for testing. To be able to test properly, it is important that all testers experience the same artefact. By prioritising the features with the greatest impact on the overall experience, it is possible to create an artefact that captures the essence of the concepts presented in the paper. While not every feature that may have been wanted were implemented, the final artefact still stands as a usable proof of concept with a fully functional lobby system, app selection and a network synced VR workplace. Figure \ref{fig:finalArtefact} shows the car mechanic scene from the final artefact. A \href{https://www.youtube.com/watch?v=ZNnK4ohWSag}{\textcolor{blue}{YouTube}} video is found at \textcolor{blue}{\textit{https://www.youtube.com/watch?v=ZNnK4ohWSag}} illustrating the system in action.
+As the development came to a close, and the highest priority requirements were finished up, a final version of the artefact was created and prepared for testing. To be able to test properly, it is important that all testers experience the same artefact. By prioritising the features with the greatest impact on the overall experience, it is possible to create an artefact that captures the essence of the concepts presented in the paper. While not every desirable feature were implemented, the final artefact still stands as a usable proof of concept with a fully functional lobby system, app selection and a network synced VR workplace. Figure \ref{fig:finalArtefact} shows the car mechanic scene from the final artefact. A \href{https://www.youtube.com/watch?v=ZNnK4ohWSag}{\textcolor{blue}{YouTube}} video is found at \textcolor{blue}{\textit{https://www.youtube.com/watch?v=ZNnK4ohWSag}} showing the system in action.
 
 
 \begin{figure}[]
