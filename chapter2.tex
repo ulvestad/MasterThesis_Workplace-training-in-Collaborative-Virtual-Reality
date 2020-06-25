@@ -10,7 +10,7 @@ This section explains some of the essential concepts for this thesis.
 
 
 \subsection{Reality-Virtuality Continuum} \label{background:Continuum}
-In 1996, Paul Milgram described the \textit{Reality-Virtuality Continuum}\cite{milgram1995augmented}. The paper describes in detail the different types of virtuality and reality that exist on this scale, and the major differences that separate them. As Figure \ref{fig:VR_continuum} illustrates the the real world and virtual world are opposite ends of the continuum, with mixed reality (MR) covering the majority, but not including, the fully real and virtual environments. 
+In 1996, Paul Milgram described the \textit{Reality-Virtuality Continuum}\cite{milgram1995augmented}. The paper describes in detail the different types of virtuality and reality that exist on this scale, and the major differences that separate them. As Figure \ref{fig:VR_continuum} illustrates the the real world and virtual world are opposite ends of the continuum, with mixed reality (MR) covering the majority, but not including, the fully real and fully virtual environments. 
 
 The application system developed for this project find themselves at the right hand side of the continuum, as mostly virtual environments, but also within the mixed reality concept.  
 
@@ -28,9 +28,9 @@ The definition of virtual reality has changed over the years, for example when M
 Although definitions differ, the concept remains the same - a virtual environment which supports navigation and interaction. Today, these environments are often displayed to the user using a head mounted display (HMD), but there exists other ways, including room scale projections.
 
 \subsubsection{Mixed Reality} \label{background:MixedReality}
-As with virtual reality, the definition of mixed reality (MR) has changed from when Milgram et al. defined it  \cite{milgram1995augmented} as an environment where "...real world and virtual world object are presented together within a single display...". It can been seen as anywhere on the continuum except on the extrema, see Figure \ref{fig:VR_continuum}. However, the usage of the term MR has been somewhat lose with manufactures such as HP and Microsoft putting it on their headsets or in their desktop application. In the \textit{What is mixed reality?} \cite{microsoftMR} article by Microsoft they describe it as a blend of physical and digital world where the mixed reality spectrum covers and fully includes the physical world and the digital world, unlike the continuum by Milgram et al. which does not, see Figure \ref{fig:MicrosoftSpectrum}.
+As with virtual reality, the definition of mixed reality (MR) has changed from when Milgram et al. defined it  \cite{milgram1995augmented} as an environment where "...real world and virtual world object are presented together within a single display...". It can been seen as anywhere on the continuum except on the extrema, see Figure \ref{fig:VR_continuum}. However, the usage of the term MR has been somewhat loose with manufactures such as HP and Microsoft putting it on their headsets or in their desktop application. In the \textit{What is mixed reality?} \cite{microsoftMR} article by Microsoft they describe it as a blend of physical and digital world where the mixed reality spectrum covers and fully includes the physical world and the digital world, unlike the continuum by Milgram et al. which does not, see Figure \ref{fig:MicrosoftSpectrum}.
 
-Although, they are quite similar it is important to note and that for this project we will follow the definition of MR defined by Milgram et al., which means whenever we refer to mixed reality we do not include the fully real- or virtual environment in that reasoning.  
+Although, they are quite similar it is important to note and that for this project we will follow the definition of MR defined by Milgram et al., which means whenever we refer to mixed reality we do not include the fully real or fully virtual environment in that reasoning.  
 
 \begin{figure}
     \centering
@@ -51,7 +51,7 @@ Presence refers to the subjective feeling of being somewhere else than you are p
 %One of the primary goals of... 
 One of the goals of the project is to create a high level of social presence. Social presence was defined by Biocca in a 1997 paper as "\textit{The minimum level of social presence occurs when users feel that a form, behaviour, or sensory experience indicates the presence of another intelligence. The amount of social presence is the degree to which a user feels access to the intelligence, intentions, and sensory impressions of another}\cite{biocca1997cyborg}."
 
-There are several conditions that can affect the social presence of a user, one of which is the visual representation. While it may seem logical to assume that a higher degree of photographic or anthropomorphic realism for avatars would increase the feeling of social presence, studies show that this may not be enough. The two things that seem to be the most important for social presence is the presence of a visual representation and a more behaviourally realistic visual representation. People show increased involvement and engagement when the person they are communicating with is visible at all, or has a profile picture instead of a default picture. While a high degree of photo realism can be used, it will be detrimental if there is not a commensurate increase in behavioural realism \cite{oh2018systematic}.
+There are several conditions that can affect the social presence of a user, one of which is the visual representation. While it may seem logical to assume that a higher degree of photographic or anthropomorphic realism for avatars would increase the feeling of social presence, studies show that this may not be enough, and in some cases detrimental. The two things that seem to be the most important for social presence is the presence of a visual representation of any sort, and a more behaviourally realistic visual representation. People show increased involvement and engagement when the person they are communicating with is visible at all, or has a profile picture instead of a default picture. While a high degree of photo realism can be used, it will be detrimental if there is not a commensurate increase in behavioural realism \cite{oh2018systematic}.
 
 Interactivity is another part of social presence. Skalski noted that being able to interact with virtual agents increased users feeling of social presence\cite{skalski2007role}. There are also several other aspects that can affect social presence, such as haptic feedback, depth cues, audio quality and display types\cite{oh2018systematic}. 
 
@@ -174,7 +174,9 @@ In a research project by R.L. Jackson, an attempt was made to use collaborative 
 
 \subsection{Learning in Virtual Reality}
 \label{learningVR}
-A literature review in 2015 found that the uses for virtual reality in education were many, stating that "Immersive VR can offer great advantages for learning:  [...] it supports training in a safe environment avoiding potential real dangers and [...] it increases the learner's involvement and motivation..." \cite{freina2015literature}. While there is a general consensus among the scientific community that virtual reality can contribute to educational efficacy there are some aspects to consider when developing VR applications for educational use. Roussos et al. describes several dimensions in relation to virtual reality and learning including \textit{technical}, \textit{orientation}, \textit{affective}, \textit{cognitive} and \textit{pedagogical} aspects \cite{roussos1999learning}, as seen in Table \ref{table:awarenessAspects}.
+Using VR for learning purposes can be useful as the technology provides means of giving experiences through virtual environments which can be difficult to obtain normally, such as being a astronaut on Mars or a wind-turbine electrician. VR changes how content is delivered to users compared to traditional learning situations. It allows users to both experience and interact with virtual environments. However, a VR environment needs facilitation and work so that it supports learning for its users. VR does not implicitly create learning experiences, but provide unique learning experiences if properly capitalised on.              
+
+A literature review in 2015 found that the uses for VR in education were many, stating that "Immersive VR can offer great advantages for learning:  [...] it supports training in a safe environment avoiding potential real dangers and [...] it increases the learner's involvement and motivation..." \cite{freina2015literature}. While there is a general consensus among the scientific community that virtual reality can contribute to educational efficacy there are some aspects to consider when developing VR applications for educational use. Roussos et al. describes several dimensions in relation to virtual reality and learning including \textit{technical}, \textit{orientation}, \textit{affective}, \textit{cognitive} and \textit{pedagogical} aspects \cite{roussos1999learning}, as seen in Table \ref{table:awarenessAspects}.
 
 
 
@@ -206,12 +208,14 @@ A literature review in 2015 found that the uses for virtual reality in education
 \end{table}
 
 \subsubsection{Career Guidance}
-Due to the collaboration with NAV, the expertise in career guidance that NAV has available is available to us, allowing for easier exploration of possibilities in the field. Coupled with available papers, there are considerations that need to be accounted for. According to the literature, the most popular method of career guidance when using computer supported career guidance appears to be individual counselling, followed by classroom and group counselling. They are also mostly used as complementary systems in the counselling process\cite{sampson1987computer}. This lines up well with what NAV has described, and needs to be considered for how the application is developed. 
+By collaborating with NAV, the expertise in career guidance that NAV has is available to us, allowing for easier exploration of possibilities within the field. When considering how to build the solution for testing VR career guidance, any questions we have regarding the career guidance process can be swiftly answered by NAV.
+
+There are, however, considerations that need to be accounted for. According to the literature, the most popular method of career guidance when using computer supported career guidance appears to be individual counselling, followed by classroom and group counselling \cite{sampson1987computer}. They are also mostly used as complementary systems in the counselling process \cite{sampson1987computer}. This lines up well with what NAV has described, and needs to be considered for how the application is developed. 
 
 
 
 \subsubsection{Workplace Training}
-The use of virtual reality for workplace training is at the core of this project. Previous studies have shown that there is a strong desire for virtual reality workplaces to be applied on a larger scale, both from job seekers and welfare professionals \cite{prasolova2019empowering}. While these applications are being used to some degree, so far it has mostly been for specialised industries or purposes like safety and hazard training. Using the applications to help job seekers enter the workforce has however been less pervasive. 
+The use of virtual reality for workplace training is at the core of this project. Previous studies have shown that there is a strong desire for virtual reality workplaces to be applied on a larger scale, both from job seekers and welfare professionals \cite{prasolova2019empowering}. While these applications are being used to some degree, so far it has mostly been for specialised industries or purposes like safety and hazard training. Using the applications to help job seekers enter the workforce has on the other hand been less pervasive. 
 
 \subsubsection{Experiential Learning}
 \label{sec:experientialLearning}
@@ -250,8 +254,8 @@ They can be made to tell a story, educate players about a topic or serve as an i
 
 Using serious games for training and education comes with few requirements. For the user to gain anything, it is important that they can gain feedback and be properly assessed. They must also offer the correct level of challenge. Too little, and the player loses interest, while too much difficulty can cause anxiety and stress \cite{de2014serious}. Prasolova-Førland et al. \cite{prasolova2019empowering} recommends care should be taken to balance the educational purpose and entertainment aspects when developing applications for career guidance.
 
-\subsection{Immersive Job Taste}
-The IMTEL lab has developed the concept \textit{immersive job taste} as part of the ongoing NAV  project. The concept is designed as a means to provide a virtual and interactive experience of various occupations with elements of workplace training \cite{fominykh2019immersive}. The target audience for immersive job taste is  young job seekers, e.g. unemployed high school graduates, with the aim of giving the unemployed a look and experience a different occupations so that they can get a feeling of the daily activities and atmosphere so that they could perhaps avoid wrong career decisions. 
+\subsection{Virtual Internship}
+The IMTEL lab has developed the concept \textit{virtual internship} as part of the ongoing NAV  project. The concept is designed as a means to provide a virtual and interactive experience of various occupations with elements of workplace training \cite{fominykh2019immersive}. The target audience for immersive job taste is  young job seekers, e.g. unemployed high school graduates, with the aim of giving the unemployed a look at workplaces and experience a different occupations so they can get a feeling for the daily activities and atmosphere so  they can potentially avoid erroneous career decisions. 
 
 According to Fominykh and Prasolova-Førland \cite{fominykh2019immersive} this concept can make job searching more motivating and provide a more accurate image of a workplace compared to text descriptions. In their research paper confirms that immersive and gaming technologies used in immersive job taste applications contributes to an engaging alternative for young job seekers \cite{fominykh2019immersive}. The concept has also seen recognition from the world, being awarded in EuroVR 2018 conference for best demo and was a breakthrough finalist in AWE (Augmented World Expo) 2018 \cite{euroVR} \cite{aweAwards}.
 
@@ -262,14 +266,14 @@ According to Fominykh and Prasolova-Førland \cite{fominykh2019immersive} this c
 This section briefly explains some of the main technologies and frameworks that were used during the development of the software components necessary for the project. 
 
 \subsection{Git}
-Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project we used GitLab \cite{GitLab} as Git-repository manager since the IMTEL lab has their own codebase there. To make Unity work with Git we needed to configure Unity for version control adding specific \textit{.gitignore} settings and using Git LFS (large file system) with corresponding \textit{.gitattributes} settings so that Git tracks large files but keep them out of the GitLab repository. 
+Git is a version-control-system for collaborative software development work. It makes it easy for multiple participants to work together on single project, and abstracts away a lot of the work involved in merging multiple pieces of code together. For this project  GitLab \cite{GitLab} was used as Git-repository manager since the IMTEL lab has their own codebase there. To make Unity work with Git we needed to configure Unity for version control adding specific \textit{.gitignore} settings and using Git LFS (large file system) with corresponding \textit{.gitattributes} settings so that Git tracks large files properly. 
 
 \subsection{Unity}
 \label{section: untiy}
-Unity is one of the most common game development engines used recently \cite{unity}. It is free to use, has a large community and a rich asset store. Unity allows for both 2D and 3D game development with support of physics, advanced graphics rendering and has basic and complex game objects ready to use. As this project contributes to an already established project, the same tools need to be used. Unity allows for quick editing of a scene, and provides a powerful toolset within its layers for developers. Scripting can be done with the C\# or JavaScript coding language and it integrates well with numerous frameworks and plugins.
+Unity is one of the most common game development engines used recently \cite{unity}. It is free to use, has a large community and a rich asset store. Unity allows for both 2D and 3D game development with support of physics, advanced graphics rendering and has basic and complex game objects ready to use. As this project contributes to an already established project, the same tools need to be used. Unity allows for quick editing of a scene, and provides a powerful toolset within its layers for developers. Scripting can be done with the C\# or JavaScript coding languages and it integrates well with numerous frameworks and plugins.
 
 \subsubsection{Other considerations: Unreal Engine 4}
-Another alternative to Unity for VR developments is the Unreal Engine 4 development suite. It delivers real-time technology and provides an solid foundation for demanding applications across multiple platforms \cite{unrealEngine}. Unreal Engine 4 offers highly advanced visuals but has generally been considered to have a steeper learning curve than compared to Unity. It uses C++, a high level programming language. As mentioned in Section \ref{section: untiy} previous applications has been made using Unity so using Unreal would disallow the use of existing code without rewriting it.       
+Another alternative to Unity for VR developments is the Unreal Engine 4 development suite. It delivers real-time technology and provides a solid foundation for demanding applications across multiple platforms \cite{unrealEngine}. Unreal Engine 4 offers highly advanced visuals but has generally been considered to have a steeper learning curve compared to Unity. It uses C++ for its coding and scripting needs. As mentioned in Section \ref{section: untiy} previous applications has been made using Unity so using Unreal would disallow the use of existing code without rewriting it.       
 
 \subsection{Virtual Reality SDKs}
 \label{section:sdks}
@@ -277,7 +281,7 @@ For developing VR applications in Unity there exists several software developmen
 
 % \footnote{https://docs.unity3d.com/Manual/XRPluginArchitecture.html}
 
-Previous Virtual Internship development at the IMTEL lab has used SteamVR which is mainly target for HTC Vive but is fully compatible with other HMDs including Oculus Rift and Touch. For this project OpenVR and SteamVR is chosen as OpenVR enables support for building applications for OpenVR/SteamVR supported devices (eg. most devices at the IMTEL lab). Using SteamVR, we can develop for any headset that supports OpenVR easily, as SteamVR is an implementation of OpenVR. As long as the headset works for OpenVR, which most do, SteamVR will function without issue. Figure \ref{fig:vr_sdk} describes the arrangement of the SDKs in this project. The greyed out boxes are SDKs not used in this project, and the green (OpenVR) and red (SteamVR) are SDKs and APIs used in the VR application. As illustrated in the figure we target the SteamVR API in our application but it uses OpenVR which is why it wraps the SDK.
+Previous Virtual Internship development at the IMTEL lab has used SteamVR which is mainly targeting HTC Vive and other OpenVR HMDs, but is fully compatible with other HMDs including Oculus Rift and Touch. For this project OpenVR and SteamVR is chosen as OpenVR enables support for building applications for OpenVR/SteamVR supported devices (eg. most devices at the IMTEL lab). Using SteamVR, we can develop for any headset that supports OpenVR easily, as SteamVR is an implementation of OpenVR. As long as the headset works for OpenVR, which most do, SteamVR will function without issue. Figure \ref{fig:vr_sdk} describes the arrangement of the SDKs in this project. The greyed out boxes are SDKs not used in this project, and the green (OpenVR) and red (SteamVR) are SDKs and APIs used in the VR application. As illustrated in the figure we target the SteamVR API in our application but it uses OpenVR which is why it wraps the SDK.
 
 \begin{figure}[!ht]
     \centering
@@ -316,7 +320,7 @@ It is therefore important that sufficient time is set aside to not only learn th
 \subsection{VR Hardware}
 \label{section:VRhardware}
 A VR system consists of three major hardware components. As seen in figure \ref{fig:vrHardware} these are the input and output devices (I/O devices) and the VR engine (computer system) \cite{bamodu2013virtual}.  
-Input devices includes devices which transmits user actions to the VR engine so that the system can make appropriate actions. This can include headset position data from tracking sensors or simple button presses from the controllers. The VR engine has the responsibility of displaying 3D models through computing tasks such as physics calculations and rendering. Feedback from the engine are sent to the output devices to simulate the virtual environment such as visual and sound.         
+Input devices includes devices which transmits user actions to the VR engine so that the system can make appropriate actions. This can include headset position data from tracking sensors or simple button presses from the controllers. The VR engine has the responsibility of displaying 3D models through computing tasks such as physics calculations and rendering. Feedback from the engine are sent to the output devices to simulate the virtual environment, such as visuals and sound.         
 
 \begin{figure}[!ht]
     \centering
@@ -326,7 +330,7 @@ Input devices includes devices which transmits user actions to the VR engine so 
 \end{figure}
 
 \subsubsection{Displays}
-According to Alexander et al there are three different types of displays used for virtual reality . \cite{alexander2017virtual}. They allow a varying degree of immersion and being involved in the synthetic environment \cite{alexander2017virtual}. Figure \ref{fig:vrDiplays} shows the different types which includes handheld, projection and head-mounted display. For this project we will only use head-mounted displays as they give the user a high immersive experience and is already used by previous workplace projects.  
+According to Alexander et al. there are three different types of displays used for virtual reality \cite{alexander2017virtual}. They allow a varying degree of immersion and involvement in the synthetic environment \cite{alexander2017virtual}. Figure \ref{fig:vrDiplays} shows the different types which includes handheld, projection and head-mounted display. For this project we will only use head-mounted displays as they give the user a high immersive experience and is already used by previous workplace projects.  
 
 
 \begin{figure}[!ht]
@@ -339,9 +343,9 @@ According to Alexander et al there are three different types of displays used fo
 
 
 \subsubsection{Head-mounted display}
-Most virtual reality headsets are head-mounted devices that has separate images for each eye. This is a technique known as stereoscopy which creates the illusion of depth from images in order to provide a virtual reality experience. Commonly virtual reality headset systems comes with speakers, microphone, tracking sensors and game controllers. These systems tracks position of the player and the headset using the sensors which enables the program to correctly display part of game scenes relative to the angle and position of the head-mounted display (HMD).
+Most virtual reality headsets are head-mounted devices that has separate images for each eye. This is a technique known as stereoscopy which creates the illusion of depth from images in order to provide a virtual reality experience. Commonly virtual reality headset systems comes with speakers, a microphone, tracking sensors and game controllers. These systems tracks position of the player and the headset using the sensors which enables the program to correctly display part of game scenes relative to the angle and position of the head-mounted display (HMD).
 
-Head-mounted displays gives a high feeling of immersions but there are important considerations in terms of display and hardware to be aware of as it can greatly effect the experience of the user. These are described in the table \ref{table:hmdSpecs}. HMDs provides a vivid and immersion full experiences however they can also have negative side effects like motion sickness. Reports shows that many users transition from a pleasurable sense of immersion to a high sense of discomfort, disorientation, and nausea \cite{munafo2017virtual}. 
+Head-mounted displays gives a high feeling of immersions but there are important considerations in terms of display and hardware to be aware of as it can greatly effect the experience of the user. These are described in the table \ref{table:hmdSpecs}. HMDs provides a vivid and immersive experiences, however they can also have negative side effects like motion sickness. Reports shows that many users transition from a pleasurable sense of immersion to a high sense of discomfort, disorientation, and nausea \cite{munafo2017virtual}. 
 
 \begin{table}[!ht]
       \centering
@@ -352,7 +356,7 @@ Head-mounted displays gives a high feeling of immersions but there are important
        \\ 
        \midrule
        \vspace{0.2cm}
-        Resolution & The number of pixels used for the display. The more pixel the higher the resolution and thus the details in game providing a more realistic experience.                                   
+        Resolution & The number of pixels used for the display. The more pixels the higher the resolution and thus the details in-game, providing a more immersive experience.                                   
         \\
         \vspace{0.2cm}
         Refresh rate & How many frames the display can display per second. The higher the refresh rate the smoother the experience is. To avoid motion sickness in VR it is recommended to have a minimum of 90 Hz. 
@@ -366,7 +370,7 @@ Head-mounted displays gives a high feeling of immersions but there are important
 \end{table}
 
 
-Since this thesis uses OpenVR and SteamVR we are not limited to the development of software for specific head-mounted displays. The IMTEL lab offers several modern HMDs including HTC Vive Pro, Valve Index, HP Reverb Mixed Reality and numerous Oculus headsets. The main difference between these HMDs is the use of \textit{base stations}, i.e. wall mounted tracking sensors. HTC Vive Pro (seen in Figure \ref{fig:htcVivePro}) uses these sensors, whereas the HP Reverb (seen in Figure \ref{fig:hpReverb}) does not. Instead it tracks controllers and position using built in sensors in the headset. This is useful when performing test outside the IMTEL lab as there is no need to use base stations.   
+Since this thesis uses OpenVR and SteamVR we are not limited to the development of software for specific head-mounted displays. The IMTEL lab offers several modern HMDs including HTC Vive Pro, Valve Index, HP Reverb Mixed Reality and numerous Oculus headsets. The main difference between these HMDs is the use of \textit{base stations}, i.e. wall mounted tracking sensors. HTC Vive Pro (seen in Figure \ref{fig:htcVivePro}) uses these sensors, whereas the HP Reverb (seen in Figure \ref{fig:hpReverb}) does not. Instead it tracks controllers and position using built in sensors in the headset. This is useful when performing test outside the IMTEL lab as there is no need to use base stations, but the tracking itself may not be quite as good as it would be with base stations.   
 
 \begin{figure}[!ht]
     \centering
